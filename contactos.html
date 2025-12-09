@@ -3,90 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>André Abrantes | Contactos</title>
+
+  <meta name="description"
+    content="Contactos profissionais de André Abrantes — email, GitHub, LinkedIn e outras formas de comunicação." />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="layout">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
+
         <div class="avatar-wrapper">
           <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
         </div>
+
         <div>
           <div class="sidebar-name">André Abrantes</div>
-          <p class="sidebar-quote">
-            Automate what you repeat. Improve what you automate.
-          </p>
+          <p class="sidebar-quote">Automate what you repeat. Improve what you automate.</p>
         </div>
 
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
-            <span class="nav-icon">🏠</span>
+            <span>🏠</span>
             <span class="nav-label">Home</span>
           </a>
+
           <a href="projetos.html" class="nav-item">
-            <span class="nav-icon">💻</span>
+            <span>💻</span>
             <span class="nav-label">Projetos</span>
           </a>
+
           <a href="sobre.html" class="nav-item">
-            <span class="nav-icon">👤</span>
+            <span>👤</span>
             <span class="nav-label">Sobre</span>
           </a>
+
           <a href="archives.html" class="nav-item">
-            <span class="nav-icon">📚</span>
+            <span>📚</span>
             <span class="nav-label">Arquivo</span>
           </a>
+
           <a href="contactos.html" class="nav-item">
-            <span class="nav-icon">✉️</span>
+            <span>✉️</span>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
       </div>
 
+      <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
-          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
-          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">in</a> -->
+
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+             class="social-pill" target="_blank">in</a>
         </div>
+
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
       <section class="page-section">
+
         <h1 class="page-title">Contactos</h1>
+
         <p class="page-intro">
-          Se quiseres falar comigo sobre projetos, ideias ou oportunidades, estes são os melhores canais.
+          Aqui podes encontrar todas as formas de entrar em contacto comigo, seja para oportunidades profissionais,
+          colaboração em projetos ou questões gerais.
         </p>
 
         <ul class="contacts-list">
+
           <li>
-            <span class="contacts-label">GitHub</span>
-            <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer">github.com/xoxpto</a>
+            <span class="contacts-label">Email:</span>
+            <a href="mailto:andreabrantes.dev@gmail.com">andreabrantes.dev@gmail.com</a>
           </li>
-          <!-- Quando tiveres LinkedIn, descomenta -->
-          <!--
+
           <li>
-            <span class="contacts-label">LinkedIn</span>
-            <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer">linkedin.com/in/teu-perfil</a>
+            <span class="contacts-label">GitHub:</span>
+            <a href="https://github.com/xoxpto" target="_blank">github.com/xoxpto</a>
           </li>
-          -->
-          <!-- Se quiseres partilhar email, descomenta -->
-          <!--
+
           <li>
-            <span class="contacts-label">Email</span>
-            <a href="mailto:teuemail@exemplo.com">teuemail@exemplo.com</a>
+            <span class="contacts-label">LinkedIn:</span>
+            <a
+              href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+              target="_blank">linkedin.com/in/andré-abrantes</a>
           </li>
-          -->
+
         </ul>
+
       </section>
     </main>
   </div>

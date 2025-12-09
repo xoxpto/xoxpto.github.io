@@ -52,7 +52,7 @@
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
           <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
-          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">in</a> -->
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" rel="noreferrer" class="social-pill">in</a>
         </div>
         <div class="sidebar-footer">
           © <span id="year"></span> AA
@@ -64,55 +64,19 @@
       <section class="page-section">
         <h1 class="page-title">Arquivo</h1>
         <p class="page-intro">
-          Linha temporal simples com alguns marcos no meu percurso em informática
-          e no desenvolvimento deste portefólio.
+          Arquivo automático dos meus repositórios GitHub, organizado por área.  
+          Sempre que crio um novo repositório com as tags certas, ele aparece aqui.
         </p>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">2023</div>
-            <div class="timeline-title">Entrada em Engenharia Informática</div>
-            <p class="timeline-desc">
-              Início do curso de Engenharia Informática e primeiros contactos mais sérios
-              com programação, algoritmos e bases de dados.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-title">Primeiros projetos de automação</div>
-            <p class="timeline-desc">
-              Criação de scripts em PowerShell e Python para automatizar tarefas repetitivas
-              e gestão de sistemas. Nascimento dos repositórios de automação no GitHub.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-title">Projeto académico: TravelBuddy</div>
-            <p class="timeline-desc">
-              Desenvolvimento do TravelBuddy em Python, focado na organização de viagens,
-              orçamentos e experiências – consolidando boas práticas de desenvolvimento.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-title">Portefólio técnico online</div>
-            <p class="timeline-desc">
-              Criação deste portefólio em GitHub Pages, com foco em DevOps, automação
-              e apresentação limpa dos meus projetos e evolução.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">Futuro</div>
-            <div class="timeline-title">Carreira em DevOps / Infraestrutura</div>
-            <p class="timeline-desc">
-              Objetivo de trabalhar em ambientes profissionais com foco em automação,
-              fiabilidade, Cloud e melhoria contínua de sistemas.
-            </p>
-          </div>
+        <div id="archives-root" class="archives-root">
+          <div class="archives-tabs" id="archives-tabs"></div>
+          <div class="archive-grid" id="archives-grid"></div>
+          <p class="archives-empty-message" id="archives-empty" hidden>
+            Ainda não tenho projetos nesta categoria (ou os repositórios não têm tags configuradas).
+          </p>
+          <p class="archives-error-message" id="archives-error" hidden>
+            Ocorreu um erro ao carregar os repositórios do GitHub. Tenta atualizar a página.
+          </p>
         </div>
       </section>
     </main>

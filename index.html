@@ -3,17 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>André Abrantes | Portefólio Técnico</title>
-  <meta name="description" content="Portefólio técnico de André Abrantes, estudante de Engenharia Informática, focado em DevOps, automação, programação e tecnologia.">
+
+  <!-- SEO básico -->
+  <meta name="description" content="Portefólio técnico de André Abrantes, estudante de Engenharia Informática, focado em DevOps, automação, Cloud e programação." />
+  <meta name="author" content="André Abrantes" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="André Abrantes | Portefólio Técnico" />
+  <meta property="og:description" content="Estudante de Engenharia Informática a explorar DevOps, automação, Cloud, programação e áreas criativas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xoxpto.github.io" />
+
+  <!-- Favicon (vamos criar favicon.svg já a seguir) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fontes & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page-wrapper">
     <!-- HEADER / HERO -->
-    <header class="hero">
+    <header class="hero" id="top">
       <nav class="navbar">
         <div class="logo">AA</div>
         <ul class="nav-links">
@@ -26,22 +41,25 @@
 
       <section class="hero-content">
         <div class="hero-text fade-in">
-          <p class="hero-kicker">Olá, eu sou o</p>
+          <p class="hero-kicker">Portefólio Técnico</p>
           <h1>André Abrantes</h1>
           <p class="hero-subtitle">
-            Estudante de <span class="highlight">Engenharia Informática</span> a explorar
+            Estudante de <span class="highlight">Engenharia Informática</span>, a explorar
             <span class="highlight">DevOps</span>, automação, Cloud e programação.
           </p>
           <p class="hero-description">
-            Gosto de construir projetos reais, aprender pela prática e manter um portefólio
-            transparente da minha evolução na área de tecnologia.
+            Gosto de aprender pela prática, construir projetos reais e documentar de forma transparente a minha evolução na área de tecnologia.
           </p>
           <div class="hero-buttons">
             <a class="btn primary" href="https://github.com/xoxpto" target="_blank" rel="noreferrer">
               Ver GitHub
             </a>
-            <!-- Atualiza quando tiveres LinkedIn -->
-            <!-- <a class="btn secondary" href="#" target="_blank" rel="noreferrer">LinkedIn</a> -->
+            <!-- Quando tiveres LinkedIn, descomenta isto e atualiza o link -->
+            <!--
+            <a class="btn secondary" href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            -->
           </div>
         </div>
       </section>
@@ -64,13 +82,12 @@
             <p>
               Ainda estou a explorar diferentes caminhos dentro da informática, incluindo
               <strong>Cybersegurança</strong>, <strong>Game Development</strong> e
-              <strong>3D</strong>, mas o meu foco atual é desenvolver bases sólidas em
-              ferramentas modernas de desenvolvimento, infraestruturas e automação.
+              <strong>3D</strong>, mas o foco atual é criar bases sólidas em ferramentas modernas,
+              infraestruturas e boas práticas de desenvolvimento.
             </p>
             <p>
-              Este portefólio é um registo transparente da minha evolução: aqui mostro os
-              projetos que vou criando, as tecnologias que estou a aprender e o rumo que
-              estou a dar à minha carreira na área de tecnologia.
+              Este portefólio é um registo da minha evolução: aqui mostro os projetos que vou criando,
+              as tecnologias que estou a aprender e o rumo que estou a dar à minha carreira em tecnologia.
             </p>
           </div>
           <div class="about-cards">
@@ -101,14 +118,14 @@
             <h3>DevOps &amp; Automação</h3>
             <p>
               Interesse em pipelines CI/CD, integração de ferramentas, scripts de automação
-              e melhoria contínua de processos de desenvolvimento.
+              e melhoria contínua dos processos de desenvolvimento.
             </p>
           </article>
           <article class="card">
             <h3>Cloud Fundamentals</h3>
             <p>
-              Conceitos de Cloud (principalmente Azure), gestão de recursos, monitorização e
-              boas práticas de infraestruturas.
+              Conceitos de Cloud (principalmente Azure), gestão de recursos, monitorização
+              e boas práticas de infraestruturas modernas.
             </p>
           </article>
           <article class="card">
@@ -128,7 +145,7 @@
           <article class="card">
             <h3>3D &amp; Game Development</h3>
             <p>
-              Exploração criativa com Blender e pequenos projetos de jogos para perceber melhor
+              Exploração criativa com Blender e pequenos projetos de jogos, para perceber melhor
               pipelines gráficos e de desenvolvimento.
             </p>
           </article>
@@ -150,7 +167,7 @@
             </div>
             <p>
               Coleção de scripts em PowerShell focados em automatizar tarefas administrativas
-              e de sistema. Ideal para gestão de máquinas e recolha de informação.
+              e de sistema. Útil para gestão de máquinas e recolha de informação.
             </p>
             <a class="project-link" href="https://github.com/xoxpto/powershell-automation" target="_blank" rel="noreferrer">
               Ver no GitHub →
@@ -250,7 +267,7 @@
             <!--
             <li>
               <span>LinkedIn:</span>
-              <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/teu-perfil</a>
+              <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer">linkedin.com/in/teu-perfil</a>
             </li>
             -->
             <!-- Se quiseres pôr email profissional, adiciona aqui -->
@@ -270,9 +287,6 @@
     </footer>
   </div>
 
-  <script>
-    // Atualizar ano automaticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>

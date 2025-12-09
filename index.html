@@ -3,288 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Home</title>
 
-  <title>André Abrantes | Portefólio Técnico</title>
-
-  <!-- SEO básico -->
-  <meta name="description" content="Portefólio técnico de André Abrantes, estudante de Engenharia Informática, focado em DevOps, automação, Cloud e programação." />
+  <meta name="description" content="Portefólio técnico de André Abrantes, estudante de Engenharia Informática focado em DevOps, automação, Cloud e programação." />
   <meta name="author" content="André Abrantes" />
 
-  <!-- Social / Open Graph -->
   <meta property="og:title" content="André Abrantes | Portefólio Técnico" />
   <meta property="og:description" content="Estudante de Engenharia Informática a explorar DevOps, automação, Cloud, programação e áreas criativas." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://xoxpto.github.io" />
 
-  <!-- Favicon (vamos criar favicon.svg já a seguir) -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fontes & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-wrapper">
-    <!-- HEADER / HERO -->
-    <header class="hero" id="top">
-      <nav class="navbar">
-        <div class="logo">AA</div>
-        <ul class="nav-links">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#areas">Áreas</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contactos">Contactos</a></li>
-        </ul>
-      </nav>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="avatar-wrapper">
+          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" class="avatar-img" />
+        </div>
+        <div class="sidebar-name">André Abrantes</div>
+        <p class="sidebar-quote">
+          Automate what you repeat. Improve what you automate.
+        </p>
 
-      <section class="hero-content">
-        <div class="hero-text fade-in">
-          <p class="hero-kicker">Portefólio Técnico</p>
-          <h1>André Abrantes</h1>
-          <p class="hero-subtitle">
-            Estudante de <span class="highlight">Engenharia Informática</span>, a explorar
-            <span class="highlight">DevOps</span>, automação, Cloud e programação.
-          </p>
-          <p class="hero-description">
-            Gosto de aprender pela prática, construir projetos reais e documentar de forma transparente a minha evolução na área de tecnologia.
-          </p>
-          <div class="hero-buttons">
-            <a class="btn primary" href="https://github.com/xoxpto" target="_blank" rel="noreferrer">
-              Ver GitHub
-            </a>
-            <!-- Quando tiveres LinkedIn, descomenta isto e atualiza o link -->
-            <!--
-            <a class="btn secondary" href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            -->
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+          </a>
+          <a href="projetos.html" class="nav-item">
+            <span class="nav-icon">💻</span>
+            <span class="nav-label">Projetos</span>
+          </a>
+          <a href="sobre.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Sobre</span>
+          </a>
+          <a href="contactos.html" class="nav-item">
+            <span class="nav-icon">✉️</span>
+            <span class="nav-label">Contactos</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-socials">
+          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
+          <!-- Quando tiveres LinkedIn, descomenta e mete o link -->
+          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">IN</a> -->
+        </div>
+        <div class="sidebar-footer">
+          © <span id="year"></span> AA
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <section class="page-section">
+        <h1 class="page-title">Bem-vindo 👋</h1>
+        <p class="page-intro">
+          Sou estudante de <strong>Engenharia Informática</strong> (2.º ano) e estou a construir a minha base
+          em <strong>DevOps</strong>, <strong>automação</strong>, <strong>Cloud</strong> e <strong>programação</strong>,
+          enquanto exploro também áreas como <strong>Cybersegurança</strong>, <strong>GameDev</strong> e <strong>3D</strong>.
+        </p>
+        <p class="page-intro">
+          Este portefólio junta o que vou aprendendo, os projetos que vou desenvolvendo e o caminho que estou a traçar
+          para uma carreira sólida em tecnologia.
+        </p>
+
+        <div class="home-grid">
+          <div class="home-card">
+            <h2>O que estou a fazer agora</h2>
+            <ul>
+              <li>A aprofundar scripting com <strong>PowerShell</strong> e <strong>Python</strong>.</li>
+              <li>A organizar o meu GitHub como portefólio profissional.</li>
+              <li>A explorar conceitos de DevOps, CI/CD e Cloud.</li>
+            </ul>
+          </div>
+          <div class="home-card">
+            <h2>Próximos passos</h2>
+            <ul>
+              <li>Criar pipelines CI/CD para projetos pessoais.</li>
+              <li>Trabalhar mais em automação e monitorização.</li>
+              <li>Reforçar bases para uma futura carreira internacional.</li>
+            </ul>
           </div>
         </div>
-      </section>
-    </header>
 
-    <main>
-      <!-- SOBRE MIM -->
-      <section id="sobre" class="section">
-        <div class="section-header">
-          <h2>Sobre mim</h2>
-          <p>Um pouco de contexto sobre quem sou e o que estou a construir.</p>
-        </div>
-        <div class="section-body about-grid">
-          <div class="about-text">
-            <p>
-              Sou estudante de <strong>Engenharia Informática</strong> (2.º ano), com interesse em
-              <strong>DevOps</strong>, <strong>automação</strong>, <strong>Cloud</strong> e
-              <strong>programação</strong>.
-            </p>
-            <p>
-              Ainda estou a explorar diferentes caminhos dentro da informática, incluindo
-              <strong>Cybersegurança</strong>, <strong>Game Development</strong> e
-              <strong>3D</strong>, mas o foco atual é criar bases sólidas em ferramentas modernas,
-              infraestruturas e boas práticas de desenvolvimento.
-            </p>
-            <p>
-              Este portefólio é um registo da minha evolução: aqui mostro os projetos que vou criando,
-              as tecnologias que estou a aprender e o rumo que estou a dar à minha carreira em tecnologia.
-            </p>
-          </div>
-          <div class="about-cards">
-            <div class="about-card">
-              <h3>Estado atual</h3>
-              <p>2.º ano de Engenharia Informática, a terminar o 1.º semestre.</p>
-            </div>
-            <div class="about-card">
-              <h3>Foco principal</h3>
-              <p>DevOps, automação, scripting e boas práticas de desenvolvimento.</p>
-            </div>
-            <div class="about-card">
-              <h3>Objetivo</h3>
-              <p>Construir uma base forte para uma carreira internacional em tecnologia.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ÁREAS DE INTERESSE -->
-      <section id="areas" class="section section-alt">
-        <div class="section-header">
-          <h2>Áreas de interesse</h2>
-          <p>Domínios que estou a explorar e nos quais quero crescer.</p>
-        </div>
-        <div class="section-body card-grid">
-          <article class="card">
-            <h3>DevOps &amp; Automação</h3>
-            <p>
-              Interesse em pipelines CI/CD, integração de ferramentas, scripts de automação
-              e melhoria contínua dos processos de desenvolvimento.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Cloud Fundamentals</h3>
-            <p>
-              Conceitos de Cloud (principalmente Azure), gestão de recursos, monitorização
-              e boas práticas de infraestruturas modernas.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Programação &amp; Scripting</h3>
-            <p>
-              Utilização de <strong>Python</strong>, <strong>PowerShell</strong> e
-              <strong>JavaScript</strong> para resolver problemas reais e automatizar tarefas.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Cybersegurança (iniciante)</h3>
-            <p>
-              Curiosidade por segurança de sistemas, boas práticas, hardening e fundamentos
-              de defesa e testes básicos.
-            </p>
-          </article>
-          <article class="card">
-            <h3>3D &amp; Game Development</h3>
-            <p>
-              Exploração criativa com Blender e pequenos projetos de jogos, para perceber melhor
-              pipelines gráficos e de desenvolvimento.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- PROJETOS -->
-      <section id="projetos" class="section">
-        <div class="section-header">
-          <h2>Projetos</h2>
-          <p>Alguns dos projetos que tenho desenvolvido e mantido no GitHub.</p>
-        </div>
-        <div class="section-body card-grid projects-grid">
-          <!-- powershell-automation -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>powershell-automation</h3>
-              <span class="tag">PowerShell</span>
-            </div>
-            <p>
-              Coleção de scripts em PowerShell focados em automatizar tarefas administrativas
-              e de sistema. Útil para gestão de máquinas e recolha de informação.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/powershell-automation" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-
-          <!-- python-docsorter-automation -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>python-docsorter-automation</h3>
-              <span class="tag">Python</span>
-            </div>
-            <p>
-              Script em Python para ajudar na organização de documentos e pastas, automatizando
-              o processo de classificação e arrumação de ficheiros.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/python-docsorter-automation" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-
-          <!-- python-pipeline-automation -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>python-pipeline-automation</h3>
-              <span class="tag">Python</span>
-            </div>
-            <p>
-              Projeto orientado à criação de pipelines e automatização de processos com Python,
-              explorando boas práticas de estruturação de código e fluxo de dados.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/python-pipeline-automation" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-
-          <!-- travelbuddy-python-project -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>travelbuddy-python-project</h3>
-              <span class="tag">Python</span>
-            </div>
-            <p>
-              Projeto académico para planeamento de viagens, com gestão de destinos, orçamentos
-              e organização de informação relevante para o utilizador.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/travelbuddy-python-project" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-
-          <!-- js-clash-of-kingdoms-game -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>js-clash-of-kingdoms-game</h3>
-              <span class="tag">JavaScript</span>
-            </div>
-            <p>
-              Projeto criativo em JavaScript que explora conceitos de lógica de jogo e interface,
-              combinando desenvolvimento front-end com mecânicas simples.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/js-clash-of-kingdoms-game" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-
-          <!-- blender-3d-projects -->
-          <article class="card project-card">
-            <div class="project-header">
-              <h3>blender-3d-projects</h3>
-              <span class="tag">3D</span>
-            </div>
-            <p>
-              Conjunto de experiências e estudos em Blender, desde modelos simples até cenas mais
-              trabalhadas, explorando pipelines de criação 3D.
-            </p>
-            <a class="project-link" href="https://github.com/xoxpto/blender-3d-projects" target="_blank" rel="noreferrer">
-              Ver no GitHub →
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <!-- CONTACTOS -->
-      <section id="contactos" class="section section-alt">
-        <div class="section-header">
-          <h2>Contactos</h2>
-          <p>Formas simples de chegar até mim.</p>
-        </div>
-        <div class="section-body contacts">
-          <ul>
-            <li>
-              <span>GitHub:</span>
-              <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer">github.com/xoxpto</a>
-            </li>
-            <!-- Quando tiveres LinkedIn, descomenta e ajusta -->
-            <!--
-            <li>
-              <span>LinkedIn:</span>
-              <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer">linkedin.com/in/teu-perfil</a>
-            </li>
-            -->
-            <!-- Se quiseres pôr email profissional, adiciona aqui -->
-            <!--
-            <li>
-              <span>Email:</span>
-              <a href="mailto:teuemail@exemplo.com">teuemail@exemplo.com</a>
-            </li>
-            -->
-          </ul>
+        <div class="home-cta">
+          <a href="projetos.html" class="btn primary">Ver projetos</a>
+          <a href="sobre.html" class="btn secondary">Saber mais sobre mim</a>
         </div>
       </section>
     </main>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> André Abrantes. Portefólio em evolução.</p>
-    </footer>
   </div>
 
   <script src="script.js" defer></script>

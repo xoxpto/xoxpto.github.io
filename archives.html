@@ -3,20 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>André Abrantes | Arquivo</title>
+
+  <meta name="description"
+    content="Arquivo automático dos projetos de André Abrantes — organizado por áreas como DevOps, GameDev, 3D e CyberSecurity." />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="layout">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
+
         <div class="avatar-wrapper">
           <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
         </div>
+
         <div>
           <div class="sidebar-name">André Abrantes</div>
           <p class="sidebar-quote">
@@ -26,58 +40,82 @@
 
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
-            <span class="nav-icon">🏠</span>
+            <span>🏠</span>
             <span class="nav-label">Home</span>
           </a>
+
           <a href="projetos.html" class="nav-item">
-            <span class="nav-icon">💻</span>
+            <span>💻</span>
             <span class="nav-label">Projetos</span>
           </a>
+
           <a href="sobre.html" class="nav-item">
-            <span class="nav-icon">👤</span>
+            <span>👤</span>
             <span class="nav-label">Sobre</span>
           </a>
+
           <a href="archives.html" class="nav-item">
-            <span class="nav-icon">📚</span>
+            <span>📚</span>
             <span class="nav-label">Arquivo</span>
           </a>
+
           <a href="contactos.html" class="nav-item">
-            <span class="nav-icon">✉️</span>
+            <span>✉️</span>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
       </div>
 
+      <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
-          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" rel="noreferrer" class="social-pill">in</a>
+
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" class="social-pill" target="_blank">in</a>
         </div>
+
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
       <section class="page-section">
+
         <h1 class="page-title">Arquivo</h1>
+
         <p class="page-intro">
-          Arquivo automático dos meus repositórios GitHub, organizado por área.  
-          Sempre que crio um novo repositório com as tags certas, ele aparece aqui.
+          Esta página organiza automaticamente os teus repositórios GitHub por áreas —
+          <strong>DevOps</strong>, <strong>GameDev</strong>, <strong>3D & Design</strong> e
+          <strong>CyberSecurity</strong>.  
+          Sempre que criares um novo repositório com tags adequadas, ele aparece aqui sem precisares alterar o site.
         </p>
 
+        <!-- ROOT DO SISTEMA DINÂMICO -->
         <div id="archives-root" class="archives-root">
-          <div class="archives-tabs" id="archives-tabs"></div>
-          <div class="archive-grid" id="archives-grid"></div>
-          <p class="archives-empty-message" id="archives-empty" hidden>
-            Ainda não tenho projetos nesta categoria (ou os repositórios não têm tags configuradas).
+
+          <!-- Tabs -->
+          <div id="archives-tabs" class="archives-tabs"></div>
+
+          <!-- Grid dos projetos -->
+          <div id="archives-grid" class="archive-grid"></div>
+
+          <!-- Mensagem se a tab estiver vazia -->
+          <p id="archives-empty" class="archives-empty-message" hidden>
+            Ainda não existem projetos nesta categoria.
           </p>
-          <p class="archives-error-message" id="archives-error" hidden>
-            Ocorreu um erro ao carregar os repositórios do GitHub. Tenta atualizar a página.
+
+          <!-- Mensagem de erro (API falhou) -->
+          <p id="archives-error" class="archives-error-message" hidden>
+            Não foi possível carregar os projetos a partir do GitHub.  
+            Tenta atualizar a página.
           </p>
+
         </div>
+
       </section>
     </main>
   </div>

@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>André Abrantes | Arquivo</title>
 
   <meta name="description"
-    content="Arquivo automático dos projetos de André Abrantes — organizado por áreas como DevOps, GameDev, 3D e CyberSecurity." />
+    content="Arquivo automático dos projetos de André Abrantes, agrupados por categoria: DevOps, GameDev, 3D & Design e CyberSecurity." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -34,10 +30,12 @@
         <div>
           <div class="sidebar-name">André Abrantes</div>
           <p class="sidebar-quote">
-            Automate what you repeat. Improve what you automate.
+            Automate what you repeat.<br>
+            Improve what you automate.
           </p>
         </div>
 
+        <!-- MENU ATUALIZADO -->
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
             <span>🏠</span>
@@ -59,26 +57,35 @@
             <span class="nav-label">Arquivo</span>
           </a>
 
+          <a href="tags.html" class="nav-item">
+            <span>🏷️</span>
+            <span class="nav-label">Tags</span>
+          </a>
+
           <a href="contactos.html" class="nav-item">
             <span>✉️</span>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
+
       </div>
 
       <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
+
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
 
           <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" class="social-pill" target="_blank">in</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+             class="social-pill" target="_blank">in</a>
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -88,36 +95,39 @@
         <h1 class="page-title">Arquivo</h1>
 
         <p class="page-intro">
-          Esta página organiza automaticamente os teus repositórios GitHub por áreas —
-          <strong>DevOps</strong>, <strong>GameDev</strong>, <strong>3D & Design</strong> e
-          <strong>CyberSecurity</strong>.  
-          Sempre que criares um novo repositório com tags adequadas, ele aparece aqui sem precisares alterar o site.
+          Esta página lista <strong>automaticamente</strong> os teus projetos públicos do GitHub,
+          organizados por categoria.  
+          Atualiza-se sozinha sempre que criares novos repositórios.
         </p>
 
-        <!-- ROOT DO SISTEMA DINÂMICO -->
-        <div id="archives-root" class="archives-root">
+        <!-- TABS -->
+        <div id="archives-root">
 
-          <!-- Tabs -->
-          <div id="archives-tabs" class="archives-tabs"></div>
+          <div id="archives-tabs" class="archives-tabs">
+            <!-- JS-injected tab buttons -->
+          </div>
 
-          <!-- Grid dos projetos -->
-          <div id="archives-grid" class="archive-grid"></div>
+          <!-- GRID DOS PROJETOS -->
+          <div id="archives-grid" class="archives-grid">
+            <!-- JS-injected project cards -->
+          </div>
 
-          <!-- Mensagem se a tab estiver vazia -->
+          <!-- MENSAGEM: VAZIO -->
           <p id="archives-empty" class="archives-empty-message" hidden>
-            Ainda não existem projetos nesta categoria.
+            Nenhum projeto encontrado nesta categoria.
           </p>
 
-          <!-- Mensagem de erro (API falhou) -->
+          <!-- MENSAGEM: ERRO -->
           <p id="archives-error" class="archives-error-message" hidden>
             Não foi possível carregar os projetos a partir do GitHub.  
-            Tenta atualizar a página.
+            Tenta recarregar a página dentro de instantes.
           </p>
 
         </div>
 
       </section>
     </main>
+
   </div>
 
   <script src="script.js" defer></script>

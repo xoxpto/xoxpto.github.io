@@ -1,33 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Atualizar ano no footer
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+  // Ano no footer
+  const years = document.querySelectorAll("#year");
+  years.forEach((el) => (el.textContent = new Date().getFullYear()));
 
-  // Destaque da secção ativa na navbar
-  const sections = document.querySelectorAll("main section[id]");
-  const navLinks = document.querySelectorAll(".nav-links a");
+  // Destacar item ativo na sidebar com base no pathname
+  const path = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll(".sidebar-nav .nav-item");
 
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === `#${id}`
-            );
-          });
-        }
-      });
-    },
-    {
-      root: null,
-      threshold: 0.4,
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    if (path === href || (path === "" && href === "index.html")) {
+      link.classList.add("active");
     }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
+  });
 });

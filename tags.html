@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>André Abrantes | Tags</title>
+
+  <meta name="description"
+    content="Página de tags de André Abrantes — explora projetos por tecnologia como DevOps, Python, JavaScript, GameDev, 3D e CyberSecurity." />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+
+        <div class="avatar-wrapper">
+          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
+        </div>
+
+        <div>
+          <div class="sidebar-name">André Abrantes</div>
+          <p class="sidebar-quote">
+            Automate what you repeat. Improve what you automate.
+          </p>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <span class="nav-label">Home</span>
+          </a>
+
+          <a href="projetos.html" class="nav-item">
+            <span>💻</span>
+            <span class="nav-label">Projetos</span>
+          </a>
+
+          <a href="sobre.html" class="nav-item">
+            <span>👤</span>
+            <span class="nav-label">Sobre</span>
+          </a>
+
+          <a href="archives.html" class="nav-item">
+            <span>📚</span>
+            <span class="nav-label">Arquivo</span>
+          </a>
+
+          <a href="tags.html" class="nav-item">
+            <span>🏷️</span>
+            <span class="nav-label">Tags</span>
+          </a>
+
+          <a href="contactos.html" class="nav-item">
+            <span>✉️</span>
+            <span class="nav-label">Contactos</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- SOCIALS + FOOTER -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-socials">
+          <button class="social-pill theme-toggle" type="button">◐</button>
+
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+             class="social-pill" target="_blank">in</a>
+        </div>
+
+        <div class="sidebar-footer">
+          © <span id="year"></span> AA
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <section class="page-section">
+
+        <h1 class="page-title">Tags</h1>
+
+        <p class="page-intro">
+          Explora os meus projetos por tecnologia ou área.  
+          Cada tag agrupa repositórios relacionados — por exemplo <strong>Python</strong>, <strong>JavaScript</strong>,
+          <strong>DevOps</strong>, <strong>GameDev</strong>, <strong>3D</strong> ou <strong>CyberSecurity</strong>.
+        </p>
+
+        <div id="tags-root" class="tags-root">
+
+          <!-- Tag cloud -->
+          <div id="tags-cloud" class="tags-cloud"></div>
+
+          <!-- Mensagem de dica -->
+          <p id="tags-hint" class="tags-hint">
+            Escolhe uma tag para ver os projetos relacionados.
+          </p>
+
+          <!-- Resultados -->
+          <div id="tags-results" class="tags-results"></div>
+
+          <!-- Mensagem se não houver projetos com essa tag -->
+          <p id="tags-empty" class="tags-empty-message" hidden>
+            Ainda não existem projetos com esta tag.
+          </p>
+
+          <!-- Mensagem de erro (API) -->
+          <p id="tags-error" class="tags-error-message" hidden>
+            Não foi possível carregar os projetos a partir do GitHub.  
+            Tenta atualizar a página daqui a alguns segundos.
+          </p>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

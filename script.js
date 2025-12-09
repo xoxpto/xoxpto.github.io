@@ -62,10 +62,12 @@ function initArchives() {
   const grid = document.getElementById("archives-grid");
   const emptyMsg = document.getElementById("archives-empty");
   const errorMsg = document.getElementById("archives-error");
+  const searchInput = document.getElementById("archives-search");
 
   const GITHUB_USER = "xoxpto";
 
   const CATEGORIES = [
+    { key: "all", label: "Todos" },
     { key: "devops", label: "DevOps" },
     { key: "gamedev", label: "GameDev" },
     { key: "3d", label: "3D & Design" },
@@ -125,26 +127,72 @@ function initArchives() {
   const state = {
     repos: [],
     byCategory: {},
-    currentCategory: "devops",
+    currentCategory: "all",
+    searchQuery: "",
   };
 
-  CATEGORIES.forEach((cat) => (state.byCategory[cat.key] = []));
+  async function fetchRepos() {
+    const url = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=created&direction=desc`;
 
-  createTabs();
-  fetchRepos();
+    try {
+      const response = await fetch(url, {
+        headers: { Accept: "application/vnd.github+json" },
+      });
+
+      if (!response.ok) throw new Error("GitHub API error");
+
+      const repos = await response.json();
+      state.repos = repos.filter((r) => !r.fork);
+
+      // Inicializar categorias
+      CATEGORIES.forEach((cat) => (state.byCategory[cat.key] = []));
+
+      // "Todos" recebe tudo
+      state.byCategory["all"] = [...state.repos];
+
+      // Classificar por categorias específicas
+      state.repos.forEach((repo) => {
+        Object.keys(categoryMatchers).forEach((key) => {
+          if (categoryMatchers[key](repo)) {
+            state.byCategory[key].push(repo);
+          }
+        });
+      });
+
+      // Ordenar por data em todas as categorias
+      Object.keys(state.byCategory).forEach((key) => {
+        state.byCategory[key].sort(
+          (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
+      });
+
+      createTabs();
+      setupSearch();
+      renderCategory();
+    } catch (err) {
+      console.error("Erro ao carregar repositórios (archives):", err);
+      if (errorMsg) errorMsg.hidden = false;
+    }
+  }
 
   function createTabs() {
     tabsContainer.innerHTML = "";
 
-    CATEGORIES.forEach((cat, index) => {
+    CATEGORIES.forEach((cat) => {
       const btn = document.createElement("button");
       btn.className = "tab-button";
       btn.dataset.category = cat.key;
-      btn.textContent = cat.label;
 
-      if (index === 0) {
+      const count =
+        cat.key === "all"
+          ? state.repos.length
+          : (state.byCategory[cat.key] || []).length;
+
+      btn.textContent =
+        count > 0 ? `${cat.label} (${count})` : `${cat.label} (0)`;
+
+      if (cat.key === state.currentCategory) {
         btn.classList.add("active");
-        state.currentCategory = cat.key;
       }
 
       btn.addEventListener("click", () => {
@@ -160,55 +208,43 @@ function initArchives() {
     });
   }
 
-  async function fetchRepos() {
-    const url = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=created&direction=desc`;
+  function setupSearch() {
+    if (!searchInput) return;
 
-    try {
-      const response = await fetch(url, {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-      });
-
-      if (!response.ok) throw new Error("GitHub API error");
-
-      const repos = await response.json();
-      state.repos = repos.filter((r) => !r.fork);
-
-      state.repos.forEach((repo) => {
-        Object.keys(categoryMatchers).forEach((key) => {
-          if (categoryMatchers[key](repo)) {
-            state.byCategory[key].push(repo);
-          }
-        });
-      });
-
-      Object.keys(state.byCategory).forEach((key) => {
-        state.byCategory[key].sort(
-          (a, b) => new Date(b.created_at) - new Date(a.created_at)
-        );
-      });
-
+    searchInput.addEventListener("input", () => {
+      state.searchQuery = searchInput.value.trim().toLowerCase();
       renderCategory();
-    } catch (err) {
-      console.error("Erro ao carregar repositórios (archives):", err);
-      if (errorMsg) errorMsg.hidden = false;
-    }
+    });
   }
 
   function renderCategory() {
-    const key = state.currentCategory;
-    const repos = state.byCategory[key] || [];
-
     grid.innerHTML = "";
 
-    if (!repos.length) {
+    const baseRepos =
+      state.currentCategory === "all"
+        ? state.repos
+        : state.byCategory[state.currentCategory] || [];
+
+    let filtered = baseRepos;
+
+    if (state.searchQuery) {
+      filtered = baseRepos.filter((repo) => {
+        const name = repo.name.toLowerCase();
+        const desc = (repo.description || "").toLowerCase();
+        return (
+          name.includes(state.searchQuery) ||
+          desc.includes(state.searchQuery)
+        );
+      });
+    }
+
+    if (!filtered.length) {
       if (emptyMsg) emptyMsg.hidden = false;
       return;
     }
     if (emptyMsg) emptyMsg.hidden = true;
 
-    repos.forEach((repo) => {
+    filtered.forEach((repo) => {
       const created = new Date(repo.created_at);
       const dateStr = created.toLocaleDateString("pt-PT", {
         year: "numeric",
@@ -228,12 +264,16 @@ function initArchives() {
           <span class="archive-date">${dateStr}</span>
         </div>
         <p class="archive-desc">${desc}</p>
-        <a href="${repo.html_url}" target="_blank" class="archive-link">Ver no GitHub →</a>
+        <a href="${repo.html_url}" target="_blank" class="archive-link">
+          Ver no GitHub →
+        </a>
       `;
 
       grid.appendChild(card);
     });
   }
+
+  fetchRepos();
 }
 
 /* TAGS — página de tags com cloud neon + filtro */
@@ -268,7 +308,7 @@ function initTagsPage() {
 
   const state = {
     repos: [],
-    tagsData: {}, // key -> { label, repos: [] }
+    tagsData: {},
     currentTag: null,
   };
 
@@ -300,9 +340,7 @@ function initTagsPage() {
 
     try {
       const response = await fetch(url, {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
+        headers: { Accept: "application/vnd.github+json" },
       });
 
       if (!response.ok) throw new Error("GitHub API error");
@@ -322,7 +360,7 @@ function initTagsPage() {
         });
       });
 
-      // Remover tags sem repos para não ficar “morto”
+      // Remover tags sem repos
       Object.keys(state.tagsData).forEach((key) => {
         if (state.tagsData[key].repos.length === 0) {
           const btn = cloudEl.querySelector(`[data-tag="${key}"]`);

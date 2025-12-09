@@ -5,19 +5,17 @@ document.addEventListener("DOMContentLoaded", () => {
   initArchives();
 });
 
-/* Atualizar ano(s) no footer */
+/* Atualizar ano no footer */
 function initYear() {
   document.querySelectorAll("#year").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
 }
 
-/* Destacar item ativo na sidebar com base no pathname */
+/* Sidebar ativa conforme a página */
 function initNavActive() {
   const path = window.location.pathname.split("/").pop() || "index.html";
-  const navLinks = document.querySelectorAll(".sidebar-nav .nav-item");
-
-  navLinks.forEach((link) => {
+  document.querySelectorAll(".sidebar-nav .nav-item").forEach((link) => {
     const href = link.getAttribute("href");
     if (!href) return;
     if (path === href || (path === "" && href === "index.html")) {
@@ -26,13 +24,12 @@ function initNavActive() {
   });
 }
 
-/* Tema (dark / light) com localStorage */
+/* Tema dark/light */
 function initThemeToggle() {
   const body = document.body;
   const themeToggleBtn = document.querySelector(".theme-toggle");
 
-  const applyThemeLabel = () => {
-    if (!themeToggleBtn) return;
+  function updateToggleLabel() {
     if (body.classList.contains("theme-light")) {
       themeToggleBtn.textContent = "☾";
       themeToggleBtn.setAttribute("aria-label", "Mudar para tema escuro");
@@ -40,28 +37,24 @@ function initThemeToggle() {
       themeToggleBtn.textContent = "◐";
       themeToggleBtn.setAttribute("aria-label", "Mudar para tema claro");
     }
-  };
-
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
-    body.classList.add("theme-light");
   }
-  applyThemeLabel();
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", () => {
-      body.classList.toggle("theme-light");
-      const isLight = body.classList.contains("theme-light");
-      localStorage.setItem("theme", isLight ? "light" : "dark");
-      applyThemeLabel();
-    });
-  }
+  const saved = localStorage.getItem("theme");
+  if (saved === "light") body.classList.add("theme-light");
+  updateToggleLabel();
+
+  themeToggleBtn.addEventListener("click", () => {
+    body.classList.toggle("theme-light");
+    const isLight = body.classList.contains("theme-light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    updateToggleLabel();
+  });
 }
 
-/* ARCHIVES DINÂMICO (GitHub API + tabs por área) */
+/* Archives automáticos via GitHub API */
 function initArchives() {
   const root = document.getElementById("archives-root");
-  if (!root) return; // só corre em archives.html
+  if (!root) return;
 
   const tabsContainer = document.getElementById("archives-tabs");
   const grid = document.getElementById("archives-grid");
@@ -70,6 +63,7 @@ function initArchives() {
 
   const GITHUB_USER = "xoxpto";
 
+  /* Categorias definidas por ti */
   const CATEGORIES = [
     { key: "devops", label: "DevOps" },
     { key: "gamedev", label: "GameDev" },
@@ -77,7 +71,7 @@ function initArchives() {
     { key: "security", label: "CyberSecurity" },
   ];
 
-  // Mapeamento de funções que decidem a que categoria pertence cada repo
+  /* Funções para identificar a categoria de cada repo */
   const categoryMatchers = {
     devops: (repo) => {
       const t = repo.topics || [];
@@ -92,6 +86,7 @@ function initArchives() {
         name.includes("pipeline")
       );
     },
+
     gamedev: (repo) => {
       const t = repo.topics || [];
       const name = repo.name.toLowerCase();
@@ -102,6 +97,7 @@ function initArchives() {
         name.includes("game")
       );
     },
+
     "3d": (repo) => {
       const t = repo.topics || [];
       const name = repo.name.toLowerCase();
@@ -113,6 +109,7 @@ function initArchives() {
         name.includes("blender")
       );
     },
+
     security: (repo) => {
       const t = repo.topics || [];
       const name = repo.name.toLowerCase();
@@ -129,35 +126,41 @@ function initArchives() {
   const state = {
     repos: [],
     byCategory: {},
-    currentCategory: null,
+    currentCategory: "devops",
   };
 
-  CATEGORIES.forEach((cat) => {
-    state.byCategory[cat.key] = [];
-  });
+  /* Iniciar arrays vazios para cada categoria */
+  CATEGORIES.forEach((cat) => (state.byCategory[cat.key] = []));
 
+  /* Criar tabs */
   createTabs();
   fetchRepos();
 
   function createTabs() {
     tabsContainer.innerHTML = "";
+
     CATEGORIES.forEach((cat, index) => {
       const btn = document.createElement("button");
       btn.className = "tab-button";
-      if (index === 0) btn.classList.add("active");
       btn.dataset.category = cat.key;
       btn.textContent = cat.label;
+
+      if (index === 0) {
+        btn.classList.add("active");
+        state.currentCategory = cat.key;
+      }
+
       btn.addEventListener("click", () => {
-        document
-          .querySelectorAll(".tab-button")
-          .forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-button").forEach((b) => {
+          b.classList.remove("active");
+        });
         btn.classList.add("active");
         state.currentCategory = cat.key;
         renderCategory();
       });
+
       tabsContainer.appendChild(btn);
     });
-    state.currentCategory = CATEGORIES[0].key;
   }
 
   async function fetchRepos() {
@@ -170,25 +173,22 @@ function initArchives() {
         },
       });
 
-      if (!response.ok) {
-        throw new Error("GitHub API error");
-      }
+      if (!response.ok) throw new Error("GitHub API error");
 
       const repos = await response.json();
 
-      state.repos = repos.filter((r) => !r.fork); // ignora forks
+      state.repos = repos.filter((r) => !r.fork);
 
-      // classificar por categorias
+      /* Classificação por categoria */
       state.repos.forEach((repo) => {
-        const catKeys = Object.keys(categoryMatchers);
-        catKeys.forEach((key) => {
+        Object.keys(categoryMatchers).forEach((key) => {
           if (categoryMatchers[key](repo)) {
             state.byCategory[key].push(repo);
           }
         });
       });
 
-      // ordenar projetos por data (mais recente primeiro)
+      /* Ordenar cada categoria por data */
       Object.keys(state.byCategory).forEach((key) => {
         state.byCategory[key].sort(
           (a, b) => new Date(b.created_at) - new Date(a.created_at)
@@ -197,8 +197,8 @@ function initArchives() {
 
       renderCategory();
     } catch (err) {
-      console.error("Erro a carregar repos do GitHub:", err);
-      if (errorMsg) errorMsg.hidden = false;
+      console.error("Erro ao carregar repositórios:", err);
+      errorMsg.hidden = false;
     }
   }
 
@@ -206,21 +206,16 @@ function initArchives() {
     const key = state.currentCategory;
     const repos = state.byCategory[key] || [];
 
-    if (!grid) return;
-
     grid.innerHTML = "";
 
-    if (repos.length === 0) {
-      if (emptyMsg) emptyMsg.hidden = false;
+    if (!repos.length) {
+      emptyMsg.hidden = false;
       return;
-    } else {
-      if (emptyMsg) emptyMsg.hidden = true;
     }
 
-    repos.forEach((repo) => {
-      const card = document.createElement("article");
-      card.className = "archive-card";
+    emptyMsg.hidden = true;
 
+    repos.forEach((repo) => {
       const created = new Date(repo.created_at);
       const dateStr = created.toLocaleDateString("pt-PT", {
         year: "numeric",
@@ -229,7 +224,10 @@ function initArchives() {
 
       const desc =
         repo.description ||
-        "Repositório ainda sem descrição detalhada. (A atualizar brevemente.)";
+        "Este repositório ainda não tem descrição. (A atualizar em breve.)";
+
+      const card = document.createElement("article");
+      card.className = "archive-card";
 
       card.innerHTML = `
         <div class="archive-card-header">
@@ -237,9 +235,7 @@ function initArchives() {
           <span class="archive-date">${dateStr}</span>
         </div>
         <p class="archive-desc">${desc}</p>
-        <a class="archive-link" href="${repo.html_url}" target="_blank" rel="noreferrer">
-          Ver no GitHub →
-        </a>
+        <a href="${repo.html_url}" target="_blank" class="archive-link">Ver no GitHub →</a>
       `;
 
       grid.appendChild(card);

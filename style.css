@@ -353,7 +353,56 @@ body {
 .archive-link:hover {
   text-decoration: underline;
 }
+/* TAGS PAGE */
+.tags-root {
+  margin-top: 1.5rem;
+}
 
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.tag-chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #2a2a33;
+  background: radial-gradient(circle at top left, rgba(255, 70, 85, 0.12), transparent);
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background 0.18s ease-out, color 0.18s ease-out,
+    border-color 0.18s ease-out, box-shadow 0.18s ease-out, transform 0.12s ease-out;
+}
+
+.tag-chip:hover {
+  border-color: var(--accent-neon);
+  background: #15151f;
+  color: #f9fafb;
+  box-shadow: 0 0 18px var(--glow);
+  transform: translateY(-1px);
+}
+
+.tag-chip.active {
+  border-color: var(--accent-neon);
+  background: linear-gradient(135deg, var(--accent-neon), var(--accent-rubi));
+  color: #f9fafb;
+  box-shadow: 0 10px 26px var(--glow);
+}
+
+.tags-results {
+  margin-top: 0.5rem;
+}
+
+.tags-empty-message,
+.tags-error-message,
+.tags-hint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
 /* RESPONSIVE */
 @media (max-width: 880px) {
   .sidebar {

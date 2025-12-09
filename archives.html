@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Arquivo</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="avatar-wrapper">
+          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
+        </div>
+        <div>
+          <div class="sidebar-name">André Abrantes</div>
+          <p class="sidebar-quote">
+            Automate what you repeat. Improve what you automate.
+          </p>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+          </a>
+          <a href="projetos.html" class="nav-item">
+            <span class="nav-icon">💻</span>
+            <span class="nav-label">Projetos</span>
+          </a>
+          <a href="sobre.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Sobre</span>
+          </a>
+          <a href="archives.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Arquivo</span>
+          </a>
+          <a href="contactos.html" class="nav-item">
+            <span class="nav-icon">✉️</span>
+            <span class="nav-label">Contactos</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-socials">
+          <button class="social-pill theme-toggle" type="button">◐</button>
+          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
+          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">in</a> -->
+        </div>
+        <div class="sidebar-footer">
+          © <span id="year"></span> AA
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-section">
+        <h1 class="page-title">Arquivo</h1>
+        <p class="page-intro">
+          Linha temporal simples com alguns marcos no meu percurso em informática
+          e no desenvolvimento deste portefólio.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">Entrada em Engenharia Informática</div>
+            <p class="timeline-desc">
+              Início do curso de Engenharia Informática e primeiros contactos mais sérios
+              com programação, algoritmos e bases de dados.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Primeiros projetos de automação</div>
+            <p class="timeline-desc">
+              Criação de scripts em PowerShell e Python para automatizar tarefas repetitivas
+              e gestão de sistemas. Nascimento dos repositórios de automação no GitHub.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Projeto académico: TravelBuddy</div>
+            <p class="timeline-desc">
+              Desenvolvimento do TravelBuddy em Python, focado na organização de viagens,
+              orçamentos e experiências – consolidando boas práticas de desenvolvimento.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">Portefólio técnico online</div>
+            <p class="timeline-desc">
+              Criação deste portefólio em GitHub Pages, com foco em DevOps, automação
+              e apresentação limpa dos meus projetos e evolução.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Futuro</div>
+            <div class="timeline-title">Carreira em DevOps / Infraestrutura</div>
+            <p class="timeline-desc">
+              Objetivo de trabalhar em ambientes profissionais com foco em automação,
+              fiabilidade, Cloud e melhoria contínua de sistemas.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

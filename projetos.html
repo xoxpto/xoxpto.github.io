@@ -4,153 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>André Abrantes | Projetos</title>
+
+  <meta name="description"
+    content="Projetos de André Abrantes — automação, Python, PowerShell, GameDev e outros desenvolvimentos técnicos." />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="layout">
+
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
+
         <div class="avatar-wrapper">
           <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
         </div>
+
         <div>
           <div class="sidebar-name">André Abrantes</div>
-          <p class="sidebar-quote">
-            Automate what you repeat. Improve what you automate.
-          </p>
+          <p class="sidebar-quote">Automate what you repeat. Improve what you automate.</p>
         </div>
 
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
-            <span class="nav-icon">🏠</span>
+            <span>🏠</span>
             <span class="nav-label">Home</span>
           </a>
+
           <a href="projetos.html" class="nav-item">
-            <span class="nav-icon">💻</span>
+            <span>💻</span>
             <span class="nav-label">Projetos</span>
           </a>
+
           <a href="sobre.html" class="nav-item">
-            <span class="nav-icon">👤</span>
+            <span>👤</span>
             <span class="nav-label">Sobre</span>
           </a>
+
           <a href="archives.html" class="nav-item">
-            <span class="nav-icon">📚</span>
+            <span>📚</span>
             <span class="nav-label">Arquivo</span>
           </a>
+
           <a href="contactos.html" class="nav-item">
-            <span class="nav-icon">✉️</span>
+            <span>✉️</span>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
       </div>
 
+      <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
-          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
-          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">in</a> -->
+
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" class="social-pill" target="_blank">in</a>
         </div>
+
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
       <section class="page-section">
         <h1 class="page-title">Projetos</h1>
+
         <p class="page-intro">
-          Alguns dos projetos que tenho desenvolvido e mantido no meu GitHub, focados em automação,
-          scripting, programação e exploração criativa.
+          Aqui encontrarás uma seleção dos meus projetos principais, desenvolvidos ao longo do meu percurso em
+          Engenharia Informática e nas áreas de automação, scripting, programação, GameDev e 3D.
+          Para uma lista completa e automática, visita o <a href="archives.html" class="project-link">Arquivo →</a>.
         </p>
 
         <div class="projects-grid">
-          <article class="card project-card">
+
+          <!-- PROJETO 1 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>powershell-automation</h2>
               <span class="tag">PowerShell</span>
             </div>
-            <p>
-              Coleção de scripts em PowerShell focados em automatizar tarefas administrativas e de sistema.
-              Útil para gestão de máquinas e recolha de informação.
-            </p>
-            <a href="https://github.com/xoxpto/powershell-automation" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Scripts de automação para gestão de sistemas, recolha de inventário, contas, permissões e tarefas administrativas.</p>
+            <a href="https://github.com/xoxpto/powershell-automation" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
 
-          <article class="card project-card">
+          <!-- PROJETO 2 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>python-docsorter-automation</h2>
               <span class="tag">Python</span>
             </div>
-            <p>
-              Script em Python para organizar documentos e pastas, automatizando a classificação
-              e arrumação de ficheiros.
-            </p>
-            <a href="https://github.com/xoxpto/python-docsorter-automation" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Sistema automático de organização de ficheiros, renomeação, categorização e limpeza de diretórios.</p>
+            <a href="https://github.com/xoxpto/python-docsorter-automation" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
 
-          <article class="card project-card">
+          <!-- PROJETO 3 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>python-pipeline-automation</h2>
               <span class="tag">Python</span>
             </div>
-            <p>
-              Projeto orientado à criação de pipelines e automatização de processos com Python,
-              explorando boas práticas de estruturação de código.
-            </p>
-            <a href="https://github.com/xoxpto/python-pipeline-automation" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Exploração de pipelines automatizados e processamento de dados com boas práticas de organização modular.</p>
+            <a href="https://github.com/xoxpto/python-pipeline-automation" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
 
-          <article class="card project-card">
+          <!-- PROJETO 4 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>travelbuddy-python-project</h2>
               <span class="tag">Python</span>
             </div>
-            <p>
-              Projeto académico para planeamento de viagens, com gestão de destinos, orçamentos
-              e organização de informação relevante.
-            </p>
-            <a href="https://github.com/xoxpto/travelbuddy-python-project" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Projeto académico que permite planear viagens, gerir destinos, custos e opções de interesse.</p>
+            <a href="https://github.com/xoxpto/travelbuddy-python-project" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
 
-          <article class="card project-card">
+          <!-- PROJETO 5 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>js-clash-of-kingdoms-game</h2>
               <span class="tag">JavaScript</span>
             </div>
-            <p>
-              Projeto criativo em JavaScript que explora lógica de jogo e interface, combinando front-end
-              com mecânicas simples.
-            </p>
-            <a href="https://github.com/xoxpto/js-clash-of-kingdoms-game" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Mini-jogo em JavaScript com lógica de combate, recursos e estratégia, completamente criado por ti.</p>
+            <a href="https://github.com/xoxpto/js-clash-of-kingdoms-game" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
 
-          <article class="card project-card">
+          <!-- PROJETO 6 -->
+          <article class="project-card">
             <div class="project-header">
               <h2>blender-3d-projects</h2>
-              <span class="tag">3D</span>
+              <span class="tag">3D / Blender</span>
             </div>
-            <p>
-              Conjunto de experiências e estudos em Blender, desde modelos simples até cenas mais trabalhadas.
-            </p>
-            <a href="https://github.com/xoxpto/blender-3d-projects" target="_blank" rel="noreferrer" class="project-link">
-              Ver no GitHub →
-            </a>
+            <p>Modelação e experimentação 3D no Blender — ideal para desenvolver criatividade e portefólio visual.</p>
+            <a href="https://github.com/xoxpto/blender-3d-projects" target="_blank" class="project-link">Ver no GitHub →</a>
           </article>
+
         </div>
       </section>
     </main>

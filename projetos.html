@@ -6,15 +6,12 @@
   <title>André Abrantes | Projetos</title>
 
   <meta name="description"
-    content="Projetos de André Abrantes — automação, Python, PowerShell, GameDev e outros desenvolvimentos técnicos." />
+    content="Projetos em várias áreas de André Abrantes — DevOps, automação, programação, segurança, GameDev e 3D." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -32,9 +29,13 @@
 
         <div>
           <div class="sidebar-name">André Abrantes</div>
-          <p class="sidebar-quote">Automate what you repeat. Improve what you automate.</p>
+          <p class="sidebar-quote">
+            Automate what you repeat.<br>
+            Improve what you automate.
+          </p>
         </div>
 
+        <!-- MENU ATUALIZADO -->
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
             <span>🏠</span>
@@ -56,102 +57,90 @@
             <span class="nav-label">Arquivo</span>
           </a>
 
+          <a href="tags.html" class="nav-item">
+            <span>🏷️</span>
+            <span class="nav-label">Tags</span>
+          </a>
+
           <a href="contactos.html" class="nav-item">
             <span>✉️</span>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
+
       </div>
 
       <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
+
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
 
           <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" class="social-pill" target="_blank">in</a>
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+             class="social-pill" target="_blank">in</a>
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <section class="page-section">
+
         <h1 class="page-title">Projetos</h1>
 
         <p class="page-intro">
-          Aqui encontrarás uma seleção dos meus projetos principais, desenvolvidos ao longo do meu percurso em
-          Engenharia Informática e nas áreas de automação, scripting, programação, GameDev e 3D.
-          Para uma lista completa e automática, visita o <a href="archives.html" class="project-link">Arquivo →</a>.
+          Alguns dos meus projetos em destaque.  
+          Para ver todos os repositórios de forma automática, visita o <a href="archives.html">Arquivo</a>.
         </p>
 
+        <!-- GRELHA DE PROJETOS -->
         <div class="projects-grid">
 
-          <!-- PROJETO 1 -->
-          <article class="project-card">
+          <!-- Exemplo de card 1 -->
+          <article class="card project-card">
             <div class="project-header">
-              <h2>powershell-automation</h2>
-              <span class="tag">PowerShell</span>
-            </div>
-            <p>Scripts de automação para gestão de sistemas, recolha de inventário, contas, permissões e tarefas administrativas.</p>
-            <a href="https://github.com/xoxpto/powershell-automation" target="_blank" class="project-link">Ver no GitHub →</a>
-          </article>
-
-          <!-- PROJETO 2 -->
-          <article class="project-card">
-            <div class="project-header">
-              <h2>python-docsorter-automation</h2>
+              <h2>Exemplo de Projeto</h2>
               <span class="tag">Python</span>
             </div>
-            <p>Sistema automático de organização de ficheiros, renomeação, categorização e limpeza de diretórios.</p>
-            <a href="https://github.com/xoxpto/python-docsorter-automation" target="_blank" class="project-link">Ver no GitHub →</a>
+            <p>
+              Uma breve descrição do projeto.  
+              Podes substituir este texto pelos teus projetos reais.
+            </p>
+            <a href="#" class="project-link" target="_blank">Ver no GitHub →</a>
           </article>
 
-          <!-- PROJETO 3 -->
-          <article class="project-card">
+          <!-- Exemplo de card 2 -->
+          <article class="card project-card">
             <div class="project-header">
-              <h2>python-pipeline-automation</h2>
-              <span class="tag">Python</span>
+              <h2>Projeto DevOps</h2>
+              <span class="tag">DevOps</span>
             </div>
-            <p>Exploração de pipelines automatizados e processamento de dados com boas práticas de organização modular.</p>
-            <a href="https://github.com/xoxpto/python-pipeline-automation" target="_blank" class="project-link">Ver no GitHub →</a>
+            <p>
+              Exemplo de projeto relacionado com automação, pipelines ou scripts DevOps.
+            </p>
+            <a href="#" class="project-link" target="_blank">Ver no GitHub →</a>
           </article>
 
-          <!-- PROJETO 4 -->
-          <article class="project-card">
+          <!-- Exemplo de card 3 -->
+          <article class="card project-card">
             <div class="project-header">
-              <h2>travelbuddy-python-project</h2>
-              <span class="tag">Python</span>
+              <h2>Modelação 3D</h2>
+              <span class="tag">3D</span>
             </div>
-            <p>Projeto académico que permite planear viagens, gerir destinos, custos e opções de interesse.</p>
-            <a href="https://github.com/xoxpto/travelbuddy-python-project" target="_blank" class="project-link">Ver no GitHub →</a>
-          </article>
-
-          <!-- PROJETO 5 -->
-          <article class="project-card">
-            <div class="project-header">
-              <h2>js-clash-of-kingdoms-game</h2>
-              <span class="tag">JavaScript</span>
-            </div>
-            <p>Mini-jogo em JavaScript com lógica de combate, recursos e estratégia, completamente criado por ti.</p>
-            <a href="https://github.com/xoxpto/js-clash-of-kingdoms-game" target="_blank" class="project-link">Ver no GitHub →</a>
-          </article>
-
-          <!-- PROJETO 6 -->
-          <article class="project-card">
-            <div class="project-header">
-              <h2>blender-3d-projects</h2>
-              <span class="tag">3D / Blender</span>
-            </div>
-            <p>Modelação e experimentação 3D no Blender — ideal para desenvolver criatividade e portefólio visual.</p>
-            <a href="https://github.com/xoxpto/blender-3d-projects" target="_blank" class="project-link">Ver no GitHub →</a>
+            <p>
+              Projeto gráfico ou modelação artística, ideal para a secção de portfolio visual.
+            </p>
+            <a href="#" class="project-link" target="_blank">Ver no GitHub →</a>
           </article>
 
         </div>
+
       </section>
     </main>
   </div>

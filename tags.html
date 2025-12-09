@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>André Abrantes | Tags</title>
 
   <meta name="description"
-    content="Página de tags de André Abrantes — explora projetos por tecnologia como DevOps, Python, JavaScript, GameDev, 3D e CyberSecurity." />
+    content="Explora os projetos de André Abrantes por tags como DevOps, Python, JavaScript, GameDev, 3D e CyberSecurity." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -34,10 +30,12 @@
         <div>
           <div class="sidebar-name">André Abrantes</div>
           <p class="sidebar-quote">
-            Automate what you repeat. Improve what you automate.
+            Automate what you repeat.<br>
+            Improve what you automate.
           </p>
         </div>
 
+        <!-- MENU ATUALIZADO -->
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
             <span>🏠</span>
@@ -69,10 +67,12 @@
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
+
       </div>
 
       <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
+
         <div class="sidebar-socials">
           <button class="social-pill theme-toggle" type="button">◐</button>
 
@@ -84,7 +84,9 @@
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
+
       </div>
+
     </aside>
 
     <!-- MAIN CONTENT -->
@@ -95,37 +97,43 @@
 
         <p class="page-intro">
           Explora os meus projetos por tecnologia ou área.  
-          Cada tag agrupa repositórios relacionados — por exemplo <strong>Python</strong>, <strong>JavaScript</strong>,
-          <strong>DevOps</strong>, <strong>GameDev</strong>, <strong>3D</strong> ou <strong>CyberSecurity</strong>.
+          Cada tag agrupa repositórios relacionados — como <strong>DevOps</strong>, <strong>Python</strong>,
+          <strong>JavaScript</strong>, <strong>GameDev</strong>, <strong>3D</strong> ou <strong>CyberSecurity</strong>.
         </p>
 
         <div id="tags-root" class="tags-root">
 
-          <!-- Tag cloud -->
-          <div id="tags-cloud" class="tags-cloud"></div>
+          <!-- CLOUD DE TAGS -->
+          <div id="tags-cloud" class="tags-cloud">
+            <!-- Injected by JS -->
+          </div>
 
-          <!-- Mensagem de dica -->
+          <!-- HINT -->
           <p id="tags-hint" class="tags-hint">
-            Escolhe uma tag para ver os projetos relacionados.
+            Seleciona uma tag para ver os projetos relacionados.
           </p>
 
-          <!-- Resultados -->
-          <div id="tags-results" class="tags-results"></div>
+          <!-- RESULTADOS -->
+          <div id="tags-results" class="tags-results">
+            <!-- Injected by JS -->
+          </div>
 
-          <!-- Mensagem se não houver projetos com essa tag -->
+          <!-- MENSAGEM: SEM PROJETOS -->
           <p id="tags-empty" class="tags-empty-message" hidden>
-            Ainda não existem projetos com esta tag.
+            Não existem projetos associados a esta tag.
           </p>
 
-          <!-- Mensagem de erro (API) -->
+          <!-- MENSAGEM: ERRO -->
           <p id="tags-error" class="tags-error-message" hidden>
-            Não foi possível carregar os projetos a partir do GitHub.  
-            Tenta atualizar a página daqui a alguns segundos.
+            Não foi possível carregar os projetos do GitHub.  
+            Tenta novamente daqui a instantes.
           </p>
+
         </div>
 
       </section>
     </main>
+
   </div>
 
   <script src="script.js" defer></script>

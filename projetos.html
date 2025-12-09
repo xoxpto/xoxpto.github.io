@@ -12,78 +12,60 @@
 </head>
 <body>
   <div class="layout">
-    <!-- SIDEBAR (igual à do index) -->
     <aside class="sidebar">
-  <div class="sidebar-top">
-    <div class="avatar-wrapper">
-      <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" class="avatar-img" />
-    </div>
-    <div class="sidebar-name">André Abrantes</div>
-    <p class="sidebar-quote">
-      Automate what you repeat. Improve what you automate.
-    </p>
+      <div class="sidebar-top">
+        <div class="avatar-wrapper">
+          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
+        </div>
+        <div>
+          <div class="sidebar-name">André Abrantes</div>
+          <p class="sidebar-quote">
+            Automate what you repeat. Improve what you automate.
+          </p>
+        </div>
 
-    <nav class="sidebar-nav">
-      <a href="index.html" class="nav-item">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-label">Home</span>
-      </a>
-      <a href="projetos.html" class="nav-item">
-        <span class="nav-icon">💻</span>
-        <span class="nav-label">Projetos</span>
-      </a>
-      <a href="archives.html" class="nav-item">
-        <span class="nav-icon">🗂️</span>
-        <span class="nav-label">Arquivo</span>
-      </a>
-      <a href="sobre.html" class="nav-item">
-        <span class="nav-icon">👤</span>
-        <span class="nav-label">Sobre</span>
-      </a>
-      <a href="contactos.html" class="nav-item">
-        <span class="nav-icon">✉️</span>
-        <span class="nav-label">Contactos</span>
-      </a>
-    </nav>
-  </div>
+        <nav class="sidebar-nav">
+          <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+          </a>
+          <a href="projetos.html" class="nav-item">
+            <span class="nav-icon">💻</span>
+            <span class="nav-label">Projetos</span>
+          </a>
+          <a href="sobre.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Sobre</span>
+          </a>
+          <a href="archives.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Arquivo</span>
+          </a>
+          <a href="contactos.html" class="nav-item">
+            <span class="nav-icon">✉️</span>
+            <span class="nav-label">Contactos</span>
+          </a>
+        </nav>
+      </div>
 
-  <div class="sidebar-bottom">
-    <div class="sidebar-socials">
-      <button
-        id="theme-toggle"
-        class="social-pill"
-        type="button"
-        aria-label="Alternar modo claro/escuro">
-        ◐
-      </button>
-      <a
-        href="https://github.com/xoxpto"
-        target="_blank"
-        rel="noreferrer"
-        class="social-pill">
-        GH
-      </a>
-      <a
-        href="https://www.linkedin.com"
-        target="_blank"
-        rel="noreferrer"
-        class="social-pill">
-        in
-      </a>
-    </div>
-    <div class="sidebar-footer">
-      © <span id="year"></span> AA
-    </div>
-  </div>
-</aside>
+      <div class="sidebar-bottom">
+        <div class="sidebar-socials">
+          <button class="social-pill theme-toggle" type="button">◐</button>
+          <a href="https://github.com/xoxpto" target="_blank" rel="noreferrer" class="social-pill">GH</a>
+          <!-- <a href="https://linkedin.com/in/teu-perfil" target="_blank" rel="noreferrer" class="social-pill">in</a> -->
+        </div>
+        <div class="sidebar-footer">
+          © <span id="year"></span> AA
+        </div>
+      </div>
+    </aside>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
       <section class="page-section">
         <h1 class="page-title">Projetos</h1>
         <p class="page-intro">
-          Alguns dos projetos que tenho desenvolvido e mantido no meu GitHub.  
-          Focados em automação, programação e exploração de diferentes áreas.
+          Alguns dos projetos que tenho desenvolvido e mantido no meu GitHub, focados em automação,
+          scripting, programação e exploração criativa.
         </p>
 
         <div class="projects-grid">
@@ -107,7 +89,8 @@
               <span class="tag">Python</span>
             </div>
             <p>
-              Script em Python para organizar documentos e pastas, automatizando o processo de classificação e arrumação de ficheiros.
+              Script em Python para organizar documentos e pastas, automatizando a classificação
+              e arrumação de ficheiros.
             </p>
             <a href="https://github.com/xoxpto/python-docsorter-automation" target="_blank" rel="noreferrer" class="project-link">
               Ver no GitHub →
@@ -120,7 +103,8 @@
               <span class="tag">Python</span>
             </div>
             <p>
-              Projeto orientado à criação de pipelines e automatização de processos com Python, explorando boas práticas de estruturação de código.
+              Projeto orientado à criação de pipelines e automatização de processos com Python,
+              explorando boas práticas de estruturação de código.
             </p>
             <a href="https://github.com/xoxpto/python-pipeline-automation" target="_blank" rel="noreferrer" class="project-link">
               Ver no GitHub →
@@ -133,7 +117,8 @@
               <span class="tag">Python</span>
             </div>
             <p>
-              Projeto académico para planeamento de viagens, com gestão de destinos, orçamentos e organização de informação relevante.
+              Projeto académico para planeamento de viagens, com gestão de destinos, orçamentos
+              e organização de informação relevante.
             </p>
             <a href="https://github.com/xoxpto/travelbuddy-python-project" target="_blank" rel="noreferrer" class="project-link">
               Ver no GitHub →
@@ -146,7 +131,8 @@
               <span class="tag">JavaScript</span>
             </div>
             <p>
-              Projeto criativo em JavaScript que explora lógica de jogo e interface, combinando front-end com mecânicas simples.
+              Projeto criativo em JavaScript que explora lógica de jogo e interface, combinando front-end
+              com mecânicas simples.
             </p>
             <a href="https://github.com/xoxpto/js-clash-of-kingdoms-game" target="_blank" rel="noreferrer" class="project-link">
               Ver no GitHub →

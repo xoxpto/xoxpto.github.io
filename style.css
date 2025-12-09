@@ -1,4 +1,4 @@
-/* ----- RESET ----- */
+/* ---------- RESET ---------- */
 *,
 *::before,
 *::after {
@@ -7,51 +7,69 @@
   padding: 0;
 }
 
-/* ----- TEMA & CORES ----- */
+/* ---------- TEMA / CORES ---------- */
 :root {
-  --bg-main: #0a0a0a;
-  --bg-secondary: #111111;
-  --text-primary: #e6e6e6;
-  --text-secondary: #a3a3a3;
+  --bg-main: #050507;
+  --bg-secondary: #0c0c0f;
+  --bg-alt: #0f0f12;
+
+  --text-primary: #e5e5ea;
+  --text-secondary: #a3a3b3;
 
   --rubi: #d64045;
   --neon: #ff4655;
 
-  --card-bg: #141414;
-  --card-border: #1f1f1f;
+  --card-bg: #141418;
+  --card-border: #22222a;
 
-  --glow: rgba(255, 70, 85, 0.28);
+  --glow: rgba(255, 70, 85, 0.22);
 }
 
-/* ----- BODY ----- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(160deg, #0a0a0a 0%, #111111 60%);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #17171c 0%, var(--bg-main) 55%);
   color: var(--text-primary);
   line-height: 1.6;
 }
 
-/* ----- PAGE WRAPPER ----- */
+/* ---------- LAYOUT GERAL ---------- */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* ----- SECTIONS ----- */
+/* Secções */
 .section {
   padding: 4rem 1.5rem;
   max-width: 1120px;
-  margin: auto;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Linha rubi discreta no topo das secções (efeito premium) */
+.section::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 0 auto 1.8rem auto;
+  background: linear-gradient(90deg, var(--neon), var(--rubi));
+  border-radius: 999px;
+  opacity: 0.8;
 }
 
 .section-alt {
-  background: #0f0f0f;
-  border-top: 1px solid #1b1b1b;
-  border-bottom: 1px solid #1b1b1b;
+  background: var(--bg-alt);
+  border-top: 1px solid #181820;
+  border-bottom: 1px solid #181820;
 }
 
-/* Section headers */
 .section-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -59,19 +77,26 @@ body {
 
 .section-header h2 {
   font-size: 2rem;
-  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 .section-header p {
   color: var(--text-secondary);
 }
 
-/* ----- NAVBAR ----- */
+/* ---------- HERO / HEADER ---------- */
+.hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.8rem 1.5rem 4rem;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .logo {
@@ -83,12 +108,14 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #050505;
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 1.6rem;
-  list-style: none;
 }
 
 .nav-links a {
@@ -97,11 +124,7 @@ body {
   font-size: 0.95rem;
   position: relative;
   padding-bottom: 2px;
-  transition: 0.2s ease-in-out;
-}
-
-.nav-links a:hover {
-  color: var(--text-primary);
+  transition: color 0.2s ease-out;
 }
 
 .nav-links a::after {
@@ -109,31 +132,58 @@ body {
   position: absolute;
   bottom: -3px;
   left: 0;
-  height: 2px;
   width: 0;
+  height: 2px;
   background: linear-gradient(90deg, var(--neon), var(--rubi));
-  transition: 0.25s ease;
+  transition: width 0.22s ease-out;
 }
 
+/* Hover e ativo na navbar */
+.nav-links a:hover {
+  color: var(--text-primary);
+}
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* ----- HERO ----- */
-.hero {
-  padding: 2rem 1.5rem 4rem;
+.nav-links a.active {
+  color: var(--neon);
+}
+.nav-links a.active::after {
+  width: 100%;
 }
 
-.hero-text h1 {
+/* Conteúdo do hero */
+.hero-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
+  color: var(--text-secondary);
+  margin-bottom: 0.7rem;
+}
+
+.hero h1 {
   font-size: clamp(2.4rem, 4vw, 3.3rem);
-  background: linear-gradient(90deg, var(--neon), var(--rubi));
+  margin-bottom: 0.7rem;
+  background: linear-gradient(120deg, var(--neon), var(--rubi));
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
+  margin-bottom: 0.7rem;
 }
 
 .highlight {
@@ -141,120 +191,222 @@ body {
 }
 
 .hero-description {
-  margin-top: 0.8rem;
-  color: #bbbbbb;
+  max-width: 540px;
+  color: #c0c0cc;
+  margin-bottom: 1.5rem;
 }
 
-/* ----- BUTTONS ----- */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ---------- BOTÕES ---------- */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.75rem 1.8rem;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
   font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
   border: 1px solid transparent;
-  transition: 0.25s ease-out;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
+    background 0.18s ease-out, border-color 0.18s ease-out, color 0.18s ease-out;
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--neon), var(--rubi));
-  color: white;
-  box-shadow: 0 0 18px var(--glow);
+  background: radial-gradient(circle at top left, var(--neon), var(--rubi));
+  color: #f9fafb;
+  box-shadow: 0 10px 28px var(--glow);
 }
 
 .btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 28px var(--glow);
+  box-shadow: 0 15px 40px var(--glow);
 }
 
 .btn.secondary {
-  border: 1px solid var(--text-secondary);
+  background: transparent;
   color: var(--text-primary);
+  border-color: #3b3b45;
 }
 
 .btn.secondary:hover {
   border-color: var(--neon);
+  background: #121218;
 }
 
-/* ----- ABOUT ----- */
+/* ---------- ABOUT ---------- */
 .about-grid {
   display: grid;
   gap: 2rem;
 }
 
+.about-text p + p {
+  margin-top: 0.75rem;
+}
+
+.about-cards {
+  display: grid;
+  gap: 1rem;
+}
+
 .about-card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  padding: 1.2rem;
   border-radius: 1rem;
-  transition: 0.25s ease-out;
+  padding: 1.15rem 1.3rem;
+  border: 1px solid var(--card-border);
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out,
+    transform 0.2s ease-out;
+}
+
+.about-card h3 {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.about-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
 .about-card:hover {
   border-color: var(--neon);
-  box-shadow: 0 0 18px var(--glow);
+  box-shadow: 0 0 20px var(--glow);
+  transform: translateY(-3px);
 }
 
-/* ----- CARDS (GENÉRICOS) ----- */
+/* ---------- CARDS GENÉRICOS ---------- */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .card {
   background: var(--card-bg);
-  border-radius: 1rem;
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.5rem;
   border: 1px solid var(--card-border);
-  padding: 1.4rem;
-  transition: 0.25s ease-out;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out,
+    transform 0.2s ease-out, background 0.2s ease-out;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #d0d0dd;
 }
 
 .card:hover {
   border-color: var(--neon);
+  background: #15151c;
   transform: translateY(-4px);
-  box-shadow: 0 0 22px var(--glow);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
 }
 
-/* ----- PROJECTS GRID ----- */
+/* ---------- PROJETOS ---------- */
 .projects-grid {
-  display: grid;
-  gap: 1.4rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.project-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-header h3 {
+  font-size: 1rem;
+}
+
 .tag {
-  padding: 2px 10px;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
   border: 1px solid var(--neon);
-  font-size: 0.75rem;
   color: var(--neon);
 }
 
-.project-link {
-  color: var(--neon);
-  text-decoration: none;
+.project-card p {
   font-size: 0.9rem;
+  color: #c6c6e0;
+  margin-bottom: 0.7rem;
+}
+
+.project-link {
+  margin-top: auto;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--neon);
 }
 
 .project-link:hover {
   text-decoration: underline;
 }
 
-/* ----- CONTACTS ----- */
+/* ---------- CONTACTOS ---------- */
+.contacts ul {
+  list-style: none;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.contacts li {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.contacts span {
+  color: var(--text-secondary);
+}
+
 .contacts a {
   color: var(--neon);
   text-decoration: none;
 }
 
-/* ----- FOOTER ----- */
+.contacts a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
 .footer {
+  padding: 1.6rem 1.2rem;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
   color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: auto;
+  border-top: 1px solid #181822;
+  background: #050507;
 }
 
-/* ----- ANIMAÇÕES SUAVES ----- */
+/* ---------- ANIMAÇÕES ---------- */
 .fade-in {
-  animation: fadeUp 0.7s ease-out both;
+  animation: fadeInUp 0.7s ease-out both;
 }
 
-@keyframes fadeUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -262,5 +414,46 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-top: 1.2rem;
+  }
+
+  .section {
+    padding: 3.2rem 1.25rem;
   }
 }

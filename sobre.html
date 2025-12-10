@@ -1,118 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Mim | André Abrantes</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<!-- ========================================================= -->
-<!-- SIDEBAR -->
-<!-- ========================================================= -->
-<aside class="sidebar">
+<div class="layout">
 
-    <div class="profile-section">
-        <img src="assets/pfp.png" alt="Foto" class="profile-img">
-        <h2 class="profile-name">André Abrantes</h2>
-        <p class="profile-bio">Automate what you repeat.<br>Improve what you automate.</p>
-    </div>
+    <!-- =================== SIDEBAR =================== -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="avatar-wrapper">
+                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+            </div>
 
-    <nav class="menu">
-        <a href="index.html" class="nav-item"><span>🏠</span> Home</a>
-        <a href="projetos.html" class="nav-item"><span>💻</span> Projetos</a>
-        <a href="sobre.html" class="nav-item"><span>👤</span> Sobre</a>
-        <a href="archives.html" class="nav-item"><span>🗂</span> Arquivo</a>
-        <a href="tags.html" class="nav-item"><span>🏷</span> Tags</a>
-        <a href="resume.html" class="nav-item"><span>📄</span> Resume</a>
-        <a href="contact.html" class="nav-item"><span>✉️</span> Contact Me</a>
-    </nav>
-
-    <div class="sidebar-footer">
-        <button class="theme-toggle"></button>
-
-        <div class="social-links">
-            <a href="https://github.com/xoxpto" target="_blank">
-                <img src="assets/github.svg" class="icon">
-            </a>
-            <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">
-                <img src="assets/linkedin.svg" class="icon">
-            </a>
+            <h1 class="sidebar-name">André Abrantes</h1>
+            <p class="sidebar-quote">
+                Automate what you repeat.<br>
+                Improve what you automate.
+            </p>
         </div>
 
-        <p class="footer-copy">© 2025 AA</p>
-    </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="projetos.html" class="nav-item">
+                <span class="nav-icon">💻</span>
+                <span class="nav-label">Projetos</span>
+            </a>
+            <a href="sobre.html" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Sobre</span>
+            </a>
+            <a href="archives.html" class="nav-item">
+                <span class="nav-icon">🗂</span>
+                <span class="nav-label">Arquivo</span>
+            </a>
+            <a href="tags.html" class="nav-item">
+                <span class="nav-icon">🏷</span>
+                <span class="nav-label">Tags</span>
+            </a>
+            <a href="resume.html" class="nav-item">
+                <span class="nav-icon">📄</span>
+                <span class="nav-label">Resume</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                <span class="nav-icon">✉️</span>
+                <span class="nav-label">Contact Me</span>
+            </a>
+        </nav>
 
-</aside>
+        <div class="sidebar-bottom">
+            <div class="sidebar-socials">
+                <button class="social-pill theme-toggle">D</button>
+                <a class="social-pill" href="https://github.com/xoxpto" target="_blank">GH</a>
+                <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">in</a>
+            </div>
 
+            <p class="sidebar-footer">© 2025 AA</p>
+        </div>
+    </aside>
 
+    <!-- =================== MAIN CONTENT =================== -->
+    <main class="main-content">
 
-<!-- ========================================================= -->
-<!-- MAIN CONTENT -->
-<!-- ========================================================= -->
-<main class="content">
+        <section class="page-section">
+            <h1 class="page-title">Sobre Mim</h1>
 
-    <h1>Sobre Mim</h1>
-    <p class="page-intro">
-        Sou estudante de Engenharia Informática e estou a construir o meu caminho dentro do mundo da tecnologia.
-        Tenho especial interesse em <strong>DevOps</strong>, automação, <strong>PowerShell</strong>, scripting,
-        e áreas criativas como <strong>GameDev</strong> e <strong>3D</strong>.  
-        O meu objetivo é juntar estas áreas de forma prática e orientada a projetos reais.
-    </p>
+            <p>
+                Estou a tirar <strong>Engenharia Informática</strong> e ando a construir um percurso nas áreas que mais me fazem sentido:
+                <strong>DevOps</strong>, automação, scripting, jogos e, aos poucos, <strong>CyberSecurity</strong>.
+            </p>
 
-    <!-- SECÇÃO: Quem Sou -->
-    <section class="card">
-        <h2>Quem sou eu?</h2>
-        <p>
-            Tenho curiosidade natural por tudo o que envolve sistemas, automação, cloud e formas de simplificar processos.
-            Venho explorando diferentes áreas à medida que evoluo na universidade e nos meus projetos pessoais.
-            Gosto de perceber como as coisas funcionam “por dentro” e criar soluções que realmente resolvem problemas.
-        </p>
-    </section>
+            <h2 class="section-title">Um pouco sobre mim</h2>
 
-    <!-- SECÇÃO: Skills -->
-    <section class="card">
-        <h2>Competências Técnicas</h2>
-        <ul>
-            <li><strong>PowerShell</strong> — automação, scripts de inventário, integração com Azure</li>
-            <li><strong>Python</strong> — tratamento de dados, APIs, automação</li>
-            <li><strong>HTML / CSS / JS</strong> — criação de websites e interfaces</li>
-            <li><strong>C</strong> — sistemas, sockets e bases de programação de baixo nível</li>
-            <li><strong>Git / GitHub</strong> — versionamento e organização de projetos</li>
-        </ul>
-    </section>
+            <p>
+                Sempre gostei de perceber como as coisas funcionam e de tentar simplificar tarefas repetitivas.
+                A informática tornou-se o espaço ideal onde consigo juntar lógica, criatividade e uma vontade constante
+                de aprender mais coisas. Gosto de aprender a partir de projetos: pego numa ideia, faço algo prático e vou
+                melhorando à medida que descubro novas ferramentas.
+            </p>
 
-    <!-- SECÇÃO: Interesses -->
-    <section class="card">
-        <h2>Interesses</h2>
-        <ul>
-            <li>DevOps, CI/CD e pipelines</li>
-            <li>Automação e gestão de infraestrutura</li>
-            <li>Cybersecurity (lado defensivo por agora)</li>
-            <li>Game Development e sistemas de jogo</li>
-            <li>3D modelling e ambientes visuais</li>
-        </ul>
-    </section>
+            <h2 class="section-title">Competências principais</h2>
 
-    <!-- SECÇÃO: Objetivos -->
-    <section class="card">
-        <h2>Para onde quero ir?</h2>
-        <p>
-            Ainda estou a definir qual área quero seguir a longo prazo, mas neste momento estou focado em:
-        </p>
-        <ul>
-            <li>Aprofundar DevOps e automação</li>
-            <li>Trabalhar em projetos que me obriguem a aprender mais rápido</li>
-            <li>Construir um portefólio sólido e bem organizado</li>
-            <li>Ganhar experiência prática que me prepare para o mercado</li>
-        </ul>
-    </section>
+            <ul class="bullet-list">
+                <li>Automação com PowerShell e Python</li>
+                <li>Fundamentos de DevOps e CI/CD</li>
+                <li>Modelação e design 3D</li>
+                <li>Desenvolvimento de pequenos jogos</li>
+                <li>Interesse crescente em CyberSecurity</li>
+            </ul>
 
-</main>
+            <a href="projetos.html" class="btn-primary">Ver Projetos</a>
+        </section>
+
+    </main>
+
+</div>
 
 </body>
 </html>

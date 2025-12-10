@@ -6,7 +6,7 @@
   <title>André Abrantes | Contactos</title>
 
   <meta name="description"
-    content="Contactos profissionais de André Abrantes — email, LinkedIn e GitHub." />
+    content="Contactos de André Abrantes — email, LinkedIn e GitHub para questões profissionais ou colaborações." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,17 +14,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
-
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
+          <img src="assets/avatar.png" alt="Avatar digital" />
         </div>
 
         <div>
@@ -35,96 +36,83 @@
           </p>
         </div>
 
-        <!-- MENU ATUALIZADO -->
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
-            <span>🏠</span>
+            <i data-lucide="home"></i>
             <span class="nav-label">Home</span>
           </a>
-
           <a href="projetos.html" class="nav-item">
-            <span>💻</span>
+            <i data-lucide="laptop"></i>
             <span class="nav-label">Projetos</span>
           </a>
-
           <a href="sobre.html" class="nav-item">
-            <span>👤</span>
+            <i data-lucide="user"></i>
             <span class="nav-label">Sobre</span>
           </a>
-
           <a href="archives.html" class="nav-item">
-            <span>📚</span>
+            <i data-lucide="archive"></i>
             <span class="nav-label">Arquivo</span>
           </a>
-
           <a href="tags.html" class="nav-item">
-            <span>🏷️</span>
+            <i data-lucide="tags"></i>
             <span class="nav-label">Tags</span>
           </a>
-
           <a href="contactos.html" class="nav-item">
-            <span>✉️</span>
+            <i data-lucide="mail"></i>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
-
       </div>
 
-      <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
-
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">◐</button>
-
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <button class="social-pill theme-toggle" type="button">
+            <i data-lucide="moon"></i>
+          </button>
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+            <i data-lucide="github"></i>
+          </a>
           <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">in</a>
+             class="social-pill" target="_blank">
+            <i data-lucide="linkedin"></i>
+          </a>
         </div>
-
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
-
       </div>
-
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main class="main-content">
       <section class="page-section">
 
         <h1 class="page-title">Contactos</h1>
 
         <p class="page-intro">
-          Se quiseres entrar em contacto comigo para questões profissionais,
-          colaborações ou apenas trocar ideias, aqui estão as minhas formas oficiais de contacto.
+          Se quiseres falar comigo sobre projetos, trabalho, estudos ou simplesmente trocar ideias,
+          estas são as formas mais simples de chegar a mim.
         </p>
 
         <ul class="contacts-list">
-
           <li>
             <span class="contacts-label">Email</span>
             <a href="mailto:andrebrranteswork@hotmail.com">andrebrranteswork@hotmail.com</a>
           </li>
-
           <li>
             <span class="contacts-label">LinkedIn</span>
             <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
                target="_blank">linkedin.com/in/andré-abrantes-04022129b/</a>
           </li>
-
           <li>
             <span class="contacts-label">GitHub</span>
             <a href="https://github.com/xoxpto" target="_blank">github.com/xoxpto</a>
           </li>
-
         </ul>
 
       </section>
     </main>
 
   </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>

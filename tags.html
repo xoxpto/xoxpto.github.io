@@ -2,9 +2,9 @@
 <html lang="pt-PT">
   <head>
     <meta charset="UTF-8" />
-    <title>André Abrantes | Arquivo</title>
+    <title>André Abrantes | Tags</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
@@ -34,11 +34,11 @@
                 <i data-lucide="user" class="nav-icon"></i>
                 <span>Sobre</span>
               </a>
-              <a href="archives.html" class="nav-item active">
+              <a href="archives.html" class="nav-item">
                 <i data-lucide="archive" class="nav-icon"></i>
                 <span>Arquivo</span>
               </a>
-              <a href="tags.html" class="nav-item">
+              <a href="tags.html" class="nav-item active">
                 <i data-lucide="tags" class="nav-icon"></i>
                 <span>Tags</span>
               </a>
@@ -89,31 +89,23 @@
           <header class="page-header">
             <div class="breadcrumb-pill">
               <i data-lucide="file"></i>
-              <span>André Abrantes | Arquivo</span>
+              <span>André Abrantes | Tags</span>
             </div>
-            <h1>Arquivo</h1>
+            <h1>Tags</h1>
             <p class="page-intro">
-              Aqui encontras todos os meus repositórios do GitHub organizados
-              por área. Esta secção é atualizada automaticamente conforme vou
-              criando novos projetos.
+              Explora os meus projetos por tecnologia ou área. Seleciona uma
+              tag para veres todos os repositórios relacionados.
             </p>
           </header>
 
-          <div class="archive-filters">
-            <button class="filter-btn active" data-area="all">Todos</button>
-            <button class="filter-btn" data-area="DevOps">DevOps</button>
-            <button class="filter-btn" data-area="GameDev">GameDev</button>
-            <button class="filter-btn" data-area="3D &amp; Design">
-              3D &amp; Design
-            </button>
-            <button class="filter-btn" data-area="CyberSecurity">
-              CyberSecurity
-            </button>
-            <button class="filter-btn" data-area="Outros">Outros</button>
+          <div id="tags-cloud">
+            <!-- tags criadas via JS -->
           </div>
 
-          <div id="repos-archive" class="archive-grid">
-            <!-- preenchido via JS -->
+          <p class="muted">Escolhe uma tag para começar.</p>
+
+          <div id="tag-results" class="tag-results">
+            <!-- resultados criados via JS -->
           </div>
         </section>
       </main>

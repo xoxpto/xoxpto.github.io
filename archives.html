@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Arquivo</title>
-
-  <meta name="description"
-    content="Arquivo de projetos de André Abrantes — repositórios públicos do GitHub organizados automaticamente por categoria." />
+  <title>Arquivo | André Abrantes</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
@@ -29,7 +26,7 @@
       <div class="sidebar-top">
 
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" />
+          <img src="assets/avatar.png" alt="Avatar digital" class="avatar-img" />
         </div>
 
         <div>
@@ -44,27 +41,37 @@
 
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
-            <span class="nav-label">Home</span>
+            <span>Home</span>
           </a>
 
           <a href="projetos.html" class="nav-item">
             <i data-lucide="laptop"></i>
-            <span class="nav-label">Projetos</span>
+            <span>Projetos</span>
           </a>
 
           <a href="sobre.html" class="nav-item">
             <i data-lucide="user"></i>
-            <span class="nav-label">Sobre</span>
+            <span>Sobre</span>
           </a>
 
-          <a href="archives.html" class="nav-item">
+          <a href="archives.html" class="nav-item active">
             <i data-lucide="archive"></i>
-            <span class="nav-label">Arquivo</span>
+            <span>Arquivo</span>
           </a>
 
           <a href="tags.html" class="nav-item">
             <i data-lucide="tags"></i>
-            <span class="nav-label">Tags</span>
+            <span>Tags</span>
+          </a>
+
+          <a href="resume.html" class="nav-item">
+            <i data-lucide="file-text"></i>
+            <span>Resume</span>
+          </a>
+
+          <a href="contact.html" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Contact Me</span>
           </a>
 
         </nav>
@@ -72,72 +79,63 @@
 
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">
+
+          <button class="social-pill theme-toggle">
             <i data-lucide="moon"></i>
           </button>
 
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+          <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
             <i data-lucide="github"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
             <i data-lucide="linkedin"></i>
           </a>
+
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
 
-    <!-- MAIN -->
+
+    <!-- MAIN CONTENT -->
     <main class="main-content">
+
       <section class="page-section">
 
-        <div class="page-header-row">
-          <h1 class="page-title">Arquivo</h1>
-          <div class="archives-search-wrapper">
-            <input
-              type="search"
-              id="archives-search"
-              class="archives-search-input"
-              placeholder="Procurar repositórios..."
-              autocomplete="off"
-            />
-          </div>
-        </div>
+        <h1 class="page-title">Arquivo</h1>
 
         <p class="page-intro">
-          Esta página mostra automaticamente todos os meus repositórios públicos do GitHub,
-          organizados por categoria e sempre atualizados.
+          Aqui encontras todos os meus repositórios do GitHub organizados por área.
+          Esta secção é atualizada automaticamente conforme vou criando novos projetos.
         </p>
 
-        <div id="archives-root">
-
-          <div id="archives-tabs" class="archives-tabs">
-            <!-- Tabs inseridas via JS -->
-          </div>
-
-          <div id="archives-grid" class="archives-grid">
-            <!-- Cards inseridos via JS -->
-          </div>
-
-          <p id="archives-empty" class="archives-empty-message" hidden>
-            Nenhum projeto encontrado nesta categoria.
-          </p>
-
-          <p id="archives-error" class="archives-error-message" hidden>
-            Não foi possível carregar os repositórios.  
-            Tenta voltar a carregar esta página dentro de alguns minutos.
-          </p>
-
+        <!-- CATEGORY FILTERS -->
+        <div class="archive-filters">
+          <button class="filter-btn" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="DevOps">DevOps</button>
+          <button class="filter-btn" data-filter="GameDev">GameDev</button>
+          <button class="filter-btn" data-filter="3D">3D & Design</button>
+          <button class="filter-btn" data-filter="CyberSecurity">CyberSecurity</button>
         </div>
 
-      </section>
-    </main>
+        <!-- GITHUB PROJECT LIST (AUTOMATICALLY LOADED BY JS) -->
+        <div id="archive-projects" class="projects-grid">
+          <!-- Projetos gerados automaticamente pelo script.js -->
+        </div>
 
+        <p id="archive-empty" class="empty-message" hidden>
+          Nenhum projeto encontrado para esta categoria.
+        </p>
+
+      </section>
+
+    </main>
   </div>
+
 </body>
 </html>

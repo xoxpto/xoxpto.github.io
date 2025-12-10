@@ -5,79 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tags | André Abrantes</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<!-- ========================================================= -->
-<!-- SIDEBAR -->
-<!-- ========================================================= -->
-<aside class="sidebar">
+<div class="layout">
 
-    <div class="profile-section">
-        <img src="assets/pfp.png" alt="Foto" class="profile-img">
-        <h2 class="profile-name">André Abrantes</h2>
-        <p class="profile-bio">Automate what you repeat.<br>Improve what you automate.</p>
-    </div>
+    <!-- =================== SIDEBAR =================== -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="avatar-wrapper">
+                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+            </div>
 
-    <nav class="menu">
-        <a href="index.html" class="nav-item"><span>🏠</span> Home</a>
-        <a href="projetos.html" class="nav-item"><span>💻</span> Projetos</a>
-        <a href="sobre.html" class="nav-item"><span>👤</span> Sobre</a>
-        <a href="archives.html" class="nav-item"><span>🗂</span> Arquivo</a>
-        <a href="tags.html" class="nav-item"><span>🏷</span> Tags</a>
-        <a href="resume.html" class="nav-item"><span>📄</span> Resume</a>
-        <a href="contact.html" class="nav-item"><span>✉️</span> Contact Me</a>
-    </nav>
-
-    <div class="sidebar-footer">
-        <button class="theme-toggle"></button>
-
-        <div class="social-links">
-            <a href="https://github.com/xoxpto" target="_blank">
-                <img src="assets/github.svg" class="icon">
-            </a>
-            <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">
-                <img src="assets/linkedin.svg" class="icon">
-            </a>
+            <h1 class="sidebar-name">André Abrantes</h1>
+            <p class="sidebar-quote">
+                Automate what you repeat.<br>
+                Improve what you automate.
+            </p>
         </div>
 
-        <p class="footer-copy">© 2025 AA</p>
-    </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="projetos.html" class="nav-item">
+                <span class="nav-icon">💻</span>
+                <span class="nav-label">Projetos</span>
+            </a>
+            <a href="sobre.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Sobre</span>
+            </a>
+            <a href="archives.html" class="nav-item">
+                <span class="nav-icon">🗂</span>
+                <span class="nav-label">Arquivo</span>
+            </a>
+            <a href="tags.html" class="nav-item active">
+                <span class="nav-icon">🏷</span>
+                <span class="nav-label">Tags</span>
+            </a>
+            <a href="resume.html" class="nav-item">
+                <span class="nav-icon">📄</span>
+                <span class="nav-label">Resume</span>
+            </a>
+            <a href="contact.html" class="nav-item">
+                <span class="nav-icon">✉️</span>
+                <span class="nav-label">Contact Me</span>
+            </a>
+        </nav>
 
-</aside>
+        <div class="sidebar-bottom">
+            <div class="sidebar-socials">
+                <button class="social-pill theme-toggle">D</button>
+                <a class="social-pill" href="https://github.com/xoxpto" target="_blank">GH</a>
+                <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">in</a>
+            </div>
 
+            <p class="sidebar-footer">© 2025 AA</p>
+        </div>
+    </aside>
 
+    <!-- =================== MAIN CONTENT =================== -->
+    <main class="main-content">
+        
+        <section class="page-section">
+            <h1 class="page-title">Tags</h1>
 
-<!-- ========================================================= -->
-<!-- MAIN CONTENT -->
-<!-- ========================================================= -->
-<main class="content">
+            <p class="page-description">
+                Explora os meus projetos por tecnologia ou área. Seleciona uma tag para veres os repositórios relacionados.
+            </p>
 
-    <h1>Tags</h1>
-    <p class="page-intro">
-        Clica numa tag para veres todos os projetos relacionados.
-        Os dados são gerados automaticamente através da GitHub API.
-    </p>
+            <!-- TAG CLOUD (preenchido dinamicamente pelo script.js) -->
+            <div id="tag-container" class="tag-cloud"></div>
 
-    <!-- TAG CLOUD -->
-    <div id="tags-cloud"></div>
+            <p class="tag-hint">Escolhe uma tag para começar.</p>
 
-    <!-- HINT -->
-    <p id="tags-hint">Escolhe uma tag para começar.</p>
+            <!-- LIST OF PROJECTS MATCHING TAG -->
+            <div id="tag-results" class="repo-list"></div>
+        </section>
 
-    <!-- ERROR MESSAGE -->
-    <p id="tags-error" hidden>Erro ao carregar tags. Tenta novamente mais tarde.</p>
-
-    <!-- EMPTY MESSAGE -->
-    <p id="tags-empty" hidden>Nenhum projeto encontrado para esta tag.</p>
-
-    <!-- PROJECT RESULTS -->
-    <section id="tag-results" class="projects-grid"></section>
-
-</main>
+    </main>
+</div>
 
 </body>
 </html>

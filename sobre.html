@@ -6,7 +6,7 @@
   <title>André Abrantes | Sobre</title>
 
   <meta name="description"
-    content="Informações sobre André Abrantes — estudante de Engenharia Informática interessado em DevOps, automação, segurança, GameDev e 3D." />
+    content="Sobre André Abrantes — estudante de Engenharia Informática interessado em DevOps, automação, scripting, GameDev, 3D e CyberSecurity." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,17 +14,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
-
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital de André Abrantes" />
+          <img src="assets/avatar.png" alt="Avatar digital" />
         </div>
 
         <div>
@@ -35,84 +36,77 @@
           </p>
         </div>
 
-        <!-- MENU ATUALIZADO -->
         <nav class="sidebar-nav">
           <a href="index.html" class="nav-item">
-            <span>🏠</span>
+            <i data-lucide="home"></i>
             <span class="nav-label">Home</span>
           </a>
-
           <a href="projetos.html" class="nav-item">
-            <span>💻</span>
+            <i data-lucide="laptop"></i>
             <span class="nav-label">Projetos</span>
           </a>
-
           <a href="sobre.html" class="nav-item">
-            <span>👤</span>
+            <i data-lucide="user"></i>
             <span class="nav-label">Sobre</span>
           </a>
-
           <a href="archives.html" class="nav-item">
-            <span>📚</span>
+            <i data-lucide="archive"></i>
             <span class="nav-label">Arquivo</span>
           </a>
-
           <a href="tags.html" class="nav-item">
-            <span>🏷️</span>
+            <i data-lucide="tags"></i>
             <span class="nav-label">Tags</span>
           </a>
-
           <a href="contactos.html" class="nav-item">
-            <span>✉️</span>
+            <i data-lucide="mail"></i>
             <span class="nav-label">Contactos</span>
           </a>
         </nav>
-
       </div>
 
-      <!-- SOCIALS + FOOTER -->
       <div class="sidebar-bottom">
-
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">◐</button>
-
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">GH</a>
+          <button class="social-pill theme-toggle" type="button">
+            <i data-lucide="moon"></i>
+          </button>
+          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+            <i data-lucide="github"></i>
+          </a>
           <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">in</a>
+             class="social-pill" target="_blank">
+            <i data-lucide="linkedin"></i>
+          </a>
         </div>
-
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
-
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main class="main-content">
       <section class="page-section">
 
         <h1 class="page-title">Sobre Mim</h1>
 
         <p class="page-intro">
-          Sou estudante de <strong>Engenharia Informática</strong> e estou a construir um percurso nas áreas que mais me
-          despertam interesse: <strong>DevOps</strong>, automação, segurança, programação, GameDev e 3D.
+          Estou a tirar <strong>Engenharia Informática</strong> e ando a construir o meu percurso em áreas que me
+          fazem sentido: <strong>DevOps</strong>, automação, scripting, 3D, pequenos jogos e, aos poucos,
+          <strong>CyberSecurity</strong>.
         </p>
 
-        <!-- SOBRE MIM GRID -->
         <div class="about-grid">
 
           <div>
             <h2 class="subheading">Um pouco sobre mim</h2>
             <p>
-              Sempre gostei de resolver problemas, otimizar tarefas e criar coisas novas.
-              A informática acabou por ser o espaço ideal onde posso unir lógica, criatividade e
-              a vontade de aprender constantemente.
+              Sempre gostei de perceber como as coisas funcionam e de tentar simplificar tarefas repetitivas.
+              A informática acabou por ser o sítio onde consigo juntar lógica, criatividade e aquela vontade
+              constante de aprender mais qualquer coisa.
             </p>
-
             <p class="about-extra">
-              Atualmente estou focado em melhorar as minhas bases e criar projetos em todas as áreas que me
-              interessam — desde automação com scripts até experiências mais visuais como jogos e 3D.
+              Gosto de aprender a partir de projetos: pego num tema, faço algo prático e vou ajustando
+              à medida que descubro novas ferramentas e formas de trabalhar melhor.
             </p>
           </div>
 
@@ -120,7 +114,7 @@
             <h2 class="subheading">Competências principais</h2>
             <ul class="skills-list">
               <li>Automação com PowerShell e Python</li>
-              <li>Fundamentos de DevOps</li>
+              <li>Fundamentos de DevOps e CI/CD</li>
               <li>Modelação e design 3D</li>
               <li>Desenvolvimento de pequenos jogos</li>
               <li>Interesse crescente em CyberSecurity</li>
@@ -135,7 +129,5 @@
     </main>
 
   </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>

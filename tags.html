@@ -9,6 +9,7 @@
     content="Explora os projetos de André Abrantes por tags como DevOps, Python, JavaScript, GameDev, 3D ou CyberSecurity." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,8 +23,11 @@
 <body>
   <div class="layout">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
+
       <div class="sidebar-top">
+
         <div class="avatar-wrapper">
           <img src="assets/avatar.png" alt="Avatar digital" />
         </div>
@@ -37,30 +41,32 @@
         </div>
 
         <nav class="sidebar-nav">
+
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
             <span class="nav-label">Home</span>
           </a>
+
           <a href="projetos.html" class="nav-item">
             <i data-lucide="laptop"></i>
             <span class="nav-label">Projetos</span>
           </a>
+
           <a href="sobre.html" class="nav-item">
             <i data-lucide="user"></i>
             <span class="nav-label">Sobre</span>
           </a>
+
           <a href="archives.html" class="nav-item">
             <i data-lucide="archive"></i>
             <span class="nav-label">Arquivo</span>
           </a>
+
           <a href="tags.html" class="nav-item">
             <i data-lucide="tags"></i>
             <span class="nav-label">Tags</span>
           </a>
-          <a href="contactos.html" class="nav-item">
-            <i data-lucide="mail"></i>
-            <span class="nav-label">Contactos</span>
-          </a>
+
         </nav>
       </div>
 
@@ -69,21 +75,24 @@
           <button class="social-pill theme-toggle" type="button">
             <i data-lucide="moon"></i>
           </button>
+
           <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
             <i data-lucide="github"></i>
           </a>
+
           <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
              class="social-pill" target="_blank">
             <i data-lucide="linkedin"></i>
           </a>
         </div>
+
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
     </aside>
 
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <main class="main-content">
       <section class="page-section">
 
@@ -91,15 +100,15 @@
 
         <p class="page-intro">
           Explora os meus projetos por tecnologia ou área.  
-          Cada tag agrupa repositórios com algo em comum — por exemplo <strong>DevOps</strong>,
-          <strong>Python</strong>, <strong>JavaScript</strong>, <strong>GameDev</strong>, <strong>3D</strong> ou
-          <strong>CyberSecurity</strong>.
+          Cada tag agrupa repositórios com algo em comum — por exemplo
+          <strong>DevOps</strong>, <strong>Python</strong>, <strong>JavaScript</strong>,
+          <strong>GameDev</strong>, <strong>3D</strong> ou <strong>CyberSecurity</strong>.
         </p>
 
         <div id="tags-root" class="tags-root">
 
           <div id="tags-cloud" class="tags-cloud">
-            <!-- JS injects tags -->
+            <!-- Tags geradas via JS -->
           </div>
 
           <p id="tags-hint" class="tags-hint">
@@ -107,7 +116,7 @@
           </p>
 
           <div id="tags-results" class="tags-results">
-            <!-- JS injects project cards -->
+            <!-- Cards gerados via JS -->
           </div>
 
           <p id="tags-empty" class="tags-empty-message" hidden>

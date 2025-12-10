@@ -1,40 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Contact Me</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | André Abrantes</title>
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="layout">
 
-    <!-- SIDEBAR -->
-    <!-- outra vez, mesma sidebar nova -->
-    <aside class="sidebar">
-      <!-- (mesma sidebar dos outros ficheiros) -->
-    </aside>
+<!-- ========================================================= -->
+<!-- SIDEBAR -->
+<!-- ========================================================= -->
+<aside class="sidebar">
 
-    <!-- MAIN -->
-    <main class="main-content">
-      <section class="page-section">
-        <h1 class="page-title">Contact Me</h1>
-        <p class="page-intro">
-          Esta página vai ter um formulário simples para entrarem em contacto comigo.
-          Por agora está em construção.
+    <div class="profile-section">
+        <img src="assets/pfp.png" alt="Foto" class="profile-img">
+        <h2 class="profile-name">André Abrantes</h2>
+        <p class="profile-bio">Automate what you repeat.<br>Improve what you automate.</p>
+    </div>
+
+    <nav class="menu">
+        <a href="index.html" class="nav-item"><span>🏠</span> Home</a>
+        <a href="projetos.html" class="nav-item"><span>💻</span> Projetos</a>
+        <a href="sobre.html" class="nav-item"><span>👤</span> Sobre</a>
+        <a href="archives.html" class="nav-item"><span>🗂</span> Arquivo</a>
+        <a href="tags.html" class="nav-item"><span>🏷</span> Tags</a>
+        <a href="resume.html" class="nav-item"><span>📄</span> Resume</a>
+        <a href="contact.html" class="nav-item"><span>✉️</span> Contact Me</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <button class="theme-toggle"></button>
+
+        <div class="social-links">
+            <a href="https://github.com/xoxpto" target="_blank">
+                <img src="assets/github.svg" class="icon">
+            </a>
+            <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">
+                <img src="assets/linkedin.svg" class="icon">
+            </a>
+        </div>
+
+        <p class="footer-copy">© 2025 AA</p>
+    </div>
+
+</aside>
+
+
+
+<!-- ========================================================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================================================= -->
+<main class="content">
+
+    <h1>Contact Me</h1>
+    <p class="page-intro">
+        Queres entrar em contacto comigo?  
+        Envia uma mensagem pelo formulário ou usa qualquer um dos links diretos.
+    </p>
+
+    <!-- CONTACT FORM -->
+    <section class="card">
+        <h2>Enviar Mensagem</h2>
+
+        <form class="contact-form">
+            <label>
+                Nome:
+                <input type="text" placeholder="O teu nome" required>
+            </label>
+
+            <label>
+                Email:
+                <input type="email" placeholder="exemplo@email.com" required>
+            </label>
+
+            <label>
+                Mensagem:
+                <textarea placeholder="Escreve aqui a tua mensagem..." rows="5" required></textarea>
+            </label>
+
+            <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+
+        <p class="form-note">
+            * Ainda não configurado para envio real.  
+            Se quiseres, posso integrar com <strong>Formspree</strong>, <strong>Netlify Forms</strong>, Google Forms ou backend próprio.
         </p>
-      </section>
-    </main>
+    </section>
 
-  </div>
+    <!-- DIRECT LINKS -->
+    <section class="card">
+        <h2>Outros contactos</h2>
+        <ul>
+            <li><strong>Email:</strong> (opcional colocar aqui)</li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/xoxpto" target="_blank">github.com/xoxpto</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">linkedin.com/in/andre-abrantes</a></li>
+        </ul>
+    </section>
+
+</main>
+
 </body>
 </html>

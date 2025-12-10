@@ -1,41 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | André Abrantes</title>
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="layout">
 
-    <!-- SIDEBAR -->
-    <!-- cola aqui exatamente a sidebar nova -->
+<!-- ========================================================= -->
+<!-- SIDEBAR -->
+<!-- ========================================================= -->
+<aside class="sidebar">
 
-    <aside class="sidebar">
-      <!-- (mesma sidebar dos outros ficheiros) -->
-    </aside>
+    <div class="profile-section">
+        <img src="assets/pfp.png" alt="Foto" class="profile-img">
+        <h2 class="profile-name">André Abrantes</h2>
+        <p class="profile-bio">Automate what you repeat.<br>Improve what you automate.</p>
+    </div>
 
-    <!-- MAIN -->
-    <main class="main-content">
-      <section class="page-section">
-        <h1 class="page-title">Resume</h1>
-        <p class="page-intro">
-          Esta secção está em construção. Em breve vou adicionar aqui o meu percurso académico,
-          experiências de trabalho, skills e certificações.
-        </p>
-      </section>
-    </main>
+    <nav class="menu">
+        <a href="index.html" class="nav-item"><span>🏠</span> Home</a>
+        <a href="projetos.html" class="nav-item"><span>💻</span> Projetos</a>
+        <a href="sobre.html" class="nav-item"><span>👤</span> Sobre</a>
+        <a href="archives.html" class="nav-item"><span>🗂</span> Arquivo</a>
+        <a href="tags.html" class="nav-item"><span>🏷</span> Tags</a>
+        <a href="resume.html" class="nav-item"><span>📄</span> Resume</a>
+        <a href="contact.html" class="nav-item"><span>✉️</span> Contact Me</a>
+    </nav>
 
-  </div>
+    <div class="sidebar-footer">
+        <button class="theme-toggle"></button>
+
+        <div class="social-links">
+            <a href="https://github.com/xoxpto" target="_blank">
+                <img src="assets/github.svg" class="icon">
+            </a>
+            <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">
+                <img src="assets/linkedin.svg" class="icon">
+            </a>
+        </div>
+
+        <p class="footer-copy">© 2025 AA</p>
+    </div>
+
+</aside>
+
+
+
+
+<!-- ========================================================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================================================= -->
+<main class="content">
+
+    <h1>Resume</h1>
+    <p class="page-intro">
+        Uma visão geral do meu percurso académico, experiência, competências e objetivos profissionais.
+    </p>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: INFO GERAL -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Informação Geral</h2>
+        <ul>
+            <li><strong>Nome:</strong> André Abrantes</li>
+            <li><strong>Localização:</strong> Lisboa, Portugal</li>
+            <li><strong>Área:</strong> Engenharia Informática / DevOps / Automação</li>
+            <li><strong>Email:</strong> (opcional colocar aqui)</li>
+        </ul>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: FORMAÇÃO -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Formação Académica</h2>
+
+        <ul>
+            <li>
+                <strong>Licenciatura em Engenharia Informática</strong> — Universidade Autónoma de Lisboa  
+                <br><span class="text-muted">2023 – Presente</span>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: EXPERIÊNCIA -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Experiência Profissional</h2>
+
+        <p>Ainda no início de carreira, mas já com experiência real em:</p>
+
+        <ul>
+            <li>Automação de tarefas e pipelines internos</li>
+            <li>Recolha e processamento de inventário com PowerShell</li>
+            <li>Envio seguro de logs para Azure Log Analytics (via API / certificações)</li>
+            <li>Projetos colaborativos universitários (C, Python, Web, etc.)</li>
+        </ul>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: SKILLS TÉCNICAS -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Competências Técnicas</h2>
+
+        <ul>
+            <li><strong>PowerShell</strong> — automação, scripts avançados, APIs</li>
+            <li><strong>Python</strong> — Web APIs, automação, tratamento de dados</li>
+            <li><strong>C</strong> — redes, sockets, low-level</li>
+            <li><strong>Git / GitHub</strong> — versionamento, workflows</li>
+            <li><strong>HTML / CSS / JavaScript</strong> — criação de websites</li>
+        </ul>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: CERTIFICAÇÕES -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Certificações</h2>
+        <p>(Em construção — quando tiveres alguma, adicionamos aqui.)</p>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECÇÃO: OBJETIVOS -->
+    <!-- ========================================================= -->
+    <section class="card">
+        <h2>Objetivos Profissionais</h2>
+
+        <ul>
+            <li>Evoluir na área de DevOps e automação</li>
+            <li>Trabalhar com pipelines CI/CD</li>
+            <li>Atuar em equipas técnicas de alto desempenho</li>
+            <li>Desenvolver um portefólio forte e bem estruturado</li>
+            <li>Aprendizagem contínua e especialização</li>
+        </ul>
+    </section>
+
+</main>
+
 </body>
 </html>

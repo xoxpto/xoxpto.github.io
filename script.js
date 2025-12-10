@@ -1,14 +1,32 @@
-//------------------------------------------------------
-// 1. Dark / Light Mode Toggle
-//------------------------------------------------------
-const themeToggle = document.querySelector('.theme-toggle');
-const savedTheme = localStorage.getItem('theme');
+// =====================================================
+// 0. Arranque geral quando o DOM estiver pronto
+// =====================================================
+window.addEventListener('DOMContentLoaded', () => {
+  // Ativar ícones Lucide
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
 
-if (savedTheme === 'light') {
-  document.body.classList.add('light');
-}
+  initThemeToggle();
+  updateYear();
+  setActiveNav();
+  initArchives();
+  initTags();
+});
 
-if (themeToggle) {
+// =====================================================
+// 1. Dark / Light Mode
+// =====================================================
+function initThemeToggle() {
+  const themeToggle = document.querySelector('.theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    document.body.classList.add('light');
+  }
+
+  if (!themeToggle) return;
+
   themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('light');
     localStorage.setItem(
@@ -18,244 +36,296 @@ if (themeToggle) {
   });
 }
 
-//------------------------------------------------------
-// 2. Atualizar ano no rodapé
-//------------------------------------------------------
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
+// =====================================================
+// 2. Atualizar ano no footer
+// =====================================================
+function updateYear() {
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 }
 
-//------------------------------------------------------
-// 3. Sidebar Active State
-//------------------------------------------------------
-const setActiveNav = () => {
-  const path = window.location.pathname.split('/').pop();
+// =====================================================
+// 3. Sidebar: marcar página ativa
+// =====================================================
+function setActiveNav() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
 
-  document.querySelectorAll('.nav-item').forEach(item => {
+  document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
     const href = item.getAttribute('href');
     item.classList.toggle('active', href === path);
   });
-};
-setActiveNav();
+}
 
-//------------------------------------------------------
-// 4. GitHub API — Obter Repositórios
-//------------------------------------------------------
-const GITHUB_USER = "xoxpto";
+// =====================================================
+// 4. GitHub API – obter repositórios
+// =====================================================
+const GITHUB_USER = 'xoxpto';
 let cachedRepos = null;
 
 async function fetchRepos() {
   if (cachedRepos) return cachedRepos;
 
   try {
-    const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos`);
-    if (!res.ok) throw new Error("GitHub API error");
+    const res = await fetch(
+      `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`,
+      {
+        headers: {
+          Accept: 'application/vnd.github+json'
+        }
+      }
+    );
+
+    if (!res.ok) throw new Error('GitHub API error');
+
     const data = await res.json();
 
     cachedRepos = data.map(repo => ({
       name: repo.name,
-      description: repo.description || "Sem descrição.",
+      description: repo.description || 'Sem descrição.',
       url: repo.html_url,
-      language: repo.language || "Outro",
+      language: repo.language || 'Outro',
       topics: repo.topics || [],
       pushed_at: repo.pushed_at
     }));
 
-    cachedRepos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+    // Ordenar por atividade recente
+    cachedRepos.sort(
+      (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)
+    );
 
     return cachedRepos;
-
   } catch (err) {
-    console.error(err);
+    console.error('Erro ao obter repositórios do GitHub:', err);
     return null;
   }
 }
 
-//------------------------------------------------------
-// 5. Categoria Automática (A → B → C → …)
-//------------------------------------------------------
+// =====================================================
+// 5. Categorizar repositórios (para Arquivo)
+// =====================================================
 function categorizeRepo(repo) {
   const name = repo.name.toLowerCase();
-  const topics = repo.topics.map(t => t.toLowerCase());
+  const topics = (repo.topics || []).map(t => t.toLowerCase());
+  const lang = repo.language ? repo.language.toLowerCase() : '';
 
-  if (topics.includes("devops") || topics.includes("automation"))
-    return "DevOps";
+  // DevOps / automação
+  if (
+    topics.includes('devops') ||
+    topics.includes('automation') ||
+    topics.includes('powershell') ||
+    name.includes('devops') ||
+    name.includes('automation')
+  ) {
+    return 'DevOps';
+  }
 
-  if (topics.includes("game") || topics.includes("unity") || topics.includes("godot"))
-    return "GameDev";
+  // GameDev
+  if (
+    topics.includes('gamedev') ||
+    topics.includes('game') ||
+    topics.includes('unity') ||
+    topics.includes('godot') ||
+    name.includes('game')
+  ) {
+    return 'GameDev';
+  }
 
-  if (topics.includes("3d") || topics.includes("design") || topics.includes("blender"))
-    return "3D & Design";
+  // 3D & Design
+  if (
+    topics.includes('3d') ||
+    topics.includes('design') ||
+    topics.includes('blender') ||
+    lang === 'glsl'
+  ) {
+    return '3D';
+  }
 
-  if (topics.includes("cyber") || topics.includes("security"))
-    return "CyberSecurity";
+  // CyberSecurity
+  if (
+    topics.includes('cyber') ||
+    topics.includes('security') ||
+    topics.includes('pentest') ||
+    name.includes('security')
+  ) {
+    return 'CyberSecurity';
+  }
 
-  return "Outros";
+  return 'Outros';
 }
 
-//------------------------------------------------------
-// 6. Renderizar Cards de Repositórios
-//------------------------------------------------------
+// =====================================================
+// 6. Renderizar card de repositório (markup comum)
+// =====================================================
 function renderRepoCard(repo) {
   return `
-    <article class="card project-card">
+    <article class="project-card">
       <div class="project-header">
         <h2>${repo.name}</h2>
         <span class="tag">${repo.language}</span>
       </div>
-
       <p>${repo.description}</p>
-
-      <a href="${repo.url}" target="_blank"
-         class="project-link">Ver no GitHub →</a>
+      <a href="${repo.url}" target="_blank" class="project-link">
+        Ver no GitHub →
+      </a>
     </article>
   `;
 }
 
-//------------------------------------------------------
-// 7. PAGE: Arquivo (archives.html)
-//------------------------------------------------------
+// =====================================================
+// 7. Página: Arquivo (archives.html)
+// =====================================================
 async function initArchives() {
-  const tabsContainer = document.getElementById("archives-tabs");
-  const grid = document.getElementById("archives-grid");
-  const emptyMessage = document.getElementById("archives-empty");
-  const errorMessage = document.getElementById("archives-error");
-  const searchInput = document.getElementById("archives-search");
+  const grid = document.getElementById('archive-projects');
+  if (!grid) return; // não estamos na página certa
 
-  if (!tabsContainer) return; // Página errada
+  const emptyMsg = document.getElementById('archive-empty');
+  const filterButtons = document.querySelectorAll('.archive-filters .filter-btn');
 
   const repos = await fetchRepos();
   if (!repos) {
-    errorMessage.hidden = false;
+    if (emptyMsg) {
+      emptyMsg.hidden = false;
+      emptyMsg.textContent =
+        'Não foi possível carregar os repositórios. Tenta novamente mais tarde.';
+    }
     return;
   }
 
-  // Criar categorias
-  const categories = {
-    "Todos": repos,
-    "DevOps": repos.filter(r => categorizeRepo(r) === "DevOps"),
-    "GameDev": repos.filter(r => categorizeRepo(r) === "GameDev"),
-    "3D & Design": repos.filter(r => categorizeRepo(r) === "3D & Design"),
-    "CyberSecurity": repos.filter(r => categorizeRepo(r) === "CyberSecurity"),
-    "Outros": repos.filter(r => categorizeRepo(r) === "Outros")
-  };
+  function applyFilter(filter) {
+    let filtered = repos;
 
-  // Criar abas
-  Object.keys(categories).forEach((cat, index) => {
-    const tab = document.createElement("button");
-    tab.className = "archives-tab";
-    tab.textContent = cat;
-    if (index === 0) tab.classList.add("active");
-    tabsContainer.appendChild(tab);
+    if (filter && filter !== 'all') {
+      filtered = repos.filter(r => categorizeRepo(r) === filter);
+    }
 
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".archives-tab")
-        .forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
+    grid.innerHTML = '';
 
-      renderCategory(cat);
-    });
-  });
-
-  function renderCategory(category) {
-    grid.innerHTML = "";
-    const active = categories[category];
-
-    if (!active || active.length === 0) {
-      emptyMessage.hidden = false;
+    if (!filtered.length) {
+      if (emptyMsg) emptyMsg.hidden = false;
       return;
     }
 
-    emptyMessage.hidden = true;
-    active.forEach(repo => {
-      grid.innerHTML += renderRepoCard(repo);
+    if (emptyMsg) emptyMsg.hidden = true;
+
+    filtered.forEach(repo => {
+      grid.insertAdjacentHTML('beforeend', renderRepoCard(repo));
     });
   }
 
-  // Pesquisa
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    const filtered = repos.filter(r =>
-      r.name.toLowerCase().includes(query) ||
-      (r.description && r.description.toLowerCase().includes(query))
-    );
+  // Listeners dos botões de filtro
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
 
-    grid.innerHTML = "";
-    if (filtered.length === 0) {
-      emptyMessage.hidden = false;
-    } else {
-      emptyMessage.hidden = true;
-      filtered.forEach(repo => grid.innerHTML += renderRepoCard(repo));
-    }
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      applyFilter(filter);
+    });
   });
 
-  renderCategory("Todos");
+  // Ativar "Todos" inicialmente
+  const defaultBtn = document.querySelector(
+    '.archive-filters .filter-btn[data-filter="all"]'
+  );
+  if (defaultBtn) {
+    defaultBtn.classList.add('active');
+  }
+
+  applyFilter('all');
 }
 
-//------------------------------------------------------
-// 8. PAGE: Tags (tags.html)
-//------------------------------------------------------
+// =====================================================
+// 8. Página: Tags (tags.html)
+// =====================================================
 async function initTags() {
-  const cloud = document.getElementById("tags-cloud");
-  const results = document.getElementById("tags-results");
-  const emptyMessage = document.getElementById("tags-empty");
-  const errorMessage = document.getElementById("tags-error");
+  const cloud = document.getElementById('tags-cloud');
+  const results = document.getElementById('tags-results');
+  if (!cloud || !results) return; // não é a página de tags
 
-  if (!cloud) return; // Página errada
+  const hint = document.getElementById('tags-hint');
+  const emptyMsg = document.getElementById('tags-empty');
+  const errorMsg = document.getElementById('tags-error');
 
   const repos = await fetchRepos();
   if (!repos) {
-    errorMessage.hidden = false;
+    if (errorMsg) errorMsg.hidden = false;
     return;
   }
 
-  // Juntar todas as tags únicas
-  const allTags = new Set();
-  repos.forEach(r => r.topics.forEach(t => allTags.add(t)));
+  // Construir lista de tags (topics + fallback em linguagem)
+  const tagsSet = new Set();
 
-  // Renderizar cloud de tags
-  allTags.forEach(tag => {
-    const chip = document.createElement("button");
-    chip.className = "tag-chip";
+  repos.forEach(r => {
+    if (r.topics && r.topics.length) {
+      r.topics.forEach(t => tagsSet.add(t.toLowerCase()));
+    } else if (r.language) {
+      tagsSet.add(r.language.toLowerCase());
+    }
+  });
+
+  if (!tagsSet.size) {
+    if (hint) {
+      hint.textContent =
+        'Ainda não há tags associadas. Em breve vou organizar isto melhor.';
+    }
+    return;
+  }
+
+  function renderTagResults(tag) {
+    const selected = tag.toLowerCase();
+
+    const filtered = repos.filter(r => {
+      const topics = (r.topics || []).map(t => t.toLowerCase());
+      const lang = r.language ? r.language.toLowerCase() : null;
+      return topics.includes(selected) || lang === selected;
+    });
+
+    results.innerHTML = '';
+
+    if (!filtered.length) {
+      if (emptyMsg) emptyMsg.hidden = false;
+      return;
+    }
+
+    if (emptyMsg) emptyMsg.hidden = true;
+
+    filtered.forEach(repo => {
+      results.insertAdjacentHTML('beforeend', renderRepoCard(repo));
+    });
+  }
+
+  // Criar chips de tags
+  tagsSet.forEach(tag => {
+    const chip = document.createElement('button');
+    chip.className = 'tag-chip';
     chip.textContent = tag;
 
-    cloud.appendChild(chip);
+    chip.addEventListener('click', () => {
+      document
+        .querySelectorAll('.tag-chip')
+        .forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
 
-    chip.addEventListener("click", () => {
-      document.querySelectorAll(".tag-chip")
-        .forEach(c => c.classList.remove("active"));
-      chip.classList.add("active");
-
-      renderTag(tag);
+      if (hint) hint.style.display = 'none';
+      renderTagResults(tag);
     });
+
+    cloud.appendChild(chip);
   });
 
-  function renderTag(tag) {
-    const filtered = repos.filter(r => r.topics.includes(tag));
-
-    results.innerHTML = "";
-    if (filtered.length === 0) {
-      emptyMessage.hidden = false;
+  // Suporte a ?tag= na URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlTag = urlParams.get('tag');
+  if (urlTag && tagsSet.has(urlTag.toLowerCase())) {
+    const targetChip = [...document.querySelectorAll('.tag-chip')].find(
+      c => c.textContent.toLowerCase() === urlTag.toLowerCase()
+    );
+    if (targetChip) {
+      targetChip.click();
       return;
     }
-
-    emptyMessage.hidden = true;
-    filtered.forEach(repo => {
-      results.innerHTML += renderRepoCard(repo);
-    });
-  }
-
-  // Se tiver ?tag= na URL
-  const urlTag = new URLSearchParams(window.location.search).get("tag");
-  if (urlTag && allTags.has(urlTag)) {
-    const targetChip = [...cloud.children].find(c => c.textContent === urlTag);
-    if (targetChip) targetChip.click();
   }
 }
-
-//------------------------------------------------------
-// 9. Inicialização global
-//------------------------------------------------------
-initArchives();
-initTags();

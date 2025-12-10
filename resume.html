@@ -1,154 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume | André Abrantes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Resume</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-
 <div class="layout">
 
-    <!-- =================== SIDEBAR =================== -->
-    <aside class="sidebar">
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
-            </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+      </div>
+      <h1 class="sidebar-name">André Abrantes</h1>
+      <p class="sidebar-quote">
+        Automate what you repeat.<br>
+        Improve what you automate.
+      </p>
+    </div>
 
-            <h1 class="sidebar-name">André Abrantes</h1>
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">
+        <i class="lucide lucide-home nav-icon"></i><span class="nav-label">Home</span>
+      </a>
+      <a href="projetos.html" class="nav-item">
+        <i class="lucide lucide-monitor nav-icon"></i><span class="nav-label">Projetos</span>
+      </a>
+      <a href="sobre.html" class="nav-item">
+        <i class="lucide lucide-user-2 nav-icon"></i><span class="nav-label">Sobre</span>
+      </a>
+      <a href="archives.html" class="nav-item">
+        <i class="lucide lucide-folders nav-icon"></i><span class="nav-label">Arquivo</span>
+      </a>
+      <a href="tags.html" class="nav-item">
+        <i class="lucide lucide-tags nav-icon"></i><span class="nav-label">Tags</span>
+      </a>
+      <a href="resume.html" class="nav-item active">
+        <i class="lucide lucide-file-badge nav-icon"></i><span class="nav-label">Resume</span>
+      </a>
+      <a href="contact.html" class="nav-item">
+        <i class="lucide lucide-mail nav-icon"></i><span class="nav-label">Contact Me</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <button class="social-pill theme-toggle" aria-label="Alternar tema">
+          <i class="lucide lucide-moon"></i>
+        </button>
+        <a class="social-pill" href="https://github.com/xoxpto" target="_blank" aria-label="GitHub">
+          <i class="lucide lucide-github"></i>
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" aria-label="LinkedIn">
+          <i class="lucide lucide-linkedin"></i>
+        </a>
+      </div>
+      <p class="sidebar-footer">© 2025 AA</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <section class="page-section">
+      <h1 class="page-title">Resume</h1>
+      <p class="page-intro">
+        Visão rápida da minha formação e experiência. Esta página é um resumo do meu CV
+        e pode ser atualizada à medida que o meu percurso evolui.
+      </p>
+
+      <div class="card">
+        <h2>Formação</h2>
+        <ul class="bullet-list">
+          <li>Licenciatura em Engenharia Informática — (em curso)</li>
+          <li>Projetos académicos focados em DevOps, automação e desenvolvimento</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Experiência & Projetos</h2>
+        <ul class="bullet-list">
+          <li>Scripts de automação com PowerShell e Python</li>
+          <li>Projetos pessoais em DevOps, GameDev, 3D e CyberSecurity</li>
+          <li>Exploração de pipelines CI/CD e monitorização</li>
+        </ul>
+        <div style="margin-top: 1rem;">
+          <a href="archives.html" class="btn secondary">Ver Arquivo GitHub</a>
+          <a href="contact.html" class="btn primary">Falar comigo</a>
         </div>
-
-        <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="projetos.html" class="nav-item">
-                <span class="nav-icon">💻</span>
-                <span class="nav-label">Projetos</span>
-            </a>
-            <a href="sobre.html" class="nav-item">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Sobre</span>
-            </a>
-            <a href="archives.html" class="nav-item">
-                <span class="nav-icon">🗂</span>
-                <span class="nav-label">Arquivo</span>
-            </a>
-            <a href="tags.html" class="nav-item">
-                <span class="nav-icon">🏷</span>
-                <span class="nav-label">Tags</span>
-            </a>
-            <a href="resume.html" class="nav-item active">
-                <span class="nav-icon">📄</span>
-                <span class="nav-label">Resume</span>
-            </a>
-            <a href="contact.html" class="nav-item">
-                <span class="nav-icon">✉️</span>
-                <span class="nav-label">Contact Me</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <button class="social-pill theme-toggle">D</button>
-                <a class="social-pill" href="https://github.com/xoxpto" target="_blank">GH</a>
-                <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">in</a>
-            </div>
-
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-    </aside>
-
-
-    <!-- =================== MAIN CONTENT =================== -->
-    <main class="main-content">
-
-        <section class="page-section">
-            
-            <h1 class="page-title">Resume</h1>
-            <p class="page-intro">
-                Uma visão geral do meu percurso, competências e objetivos profissionais.
-            </p>
-
-            <!-- =================== SECÇÃO: INFO GERAL =================== -->
-            <div class="card">
-                <h2>Informação Geral</h2>
-                <ul>
-                    <li><strong>Nome:</strong> André Abrantes</li>
-                    <li><strong>Localização:</strong> Lisboa, Portugal</li>
-                    <li><strong>Área de interesse:</strong> DevOps, Automação, Cybersecurity, GameDev</li>
-                </ul>
-            </div>
-
-            <!-- =================== SECÇÃO: FORMAÇÃO =================== -->
-            <div class="card">
-                <h2>Formação Académica</h2>
-                <ul>
-                    <li>
-                        <strong>Licenciatura em Engenharia Informática</strong> — Universidade Autónoma de Lisboa  
-                        <br><span class="text-muted">2023 – Presente</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- =================== SECÇÃO: EXPERIÊNCIA =================== -->
-            <div class="card">
-                <h2>Experiência</h2>
-                <p>Ainda em início de carreira, mas com experiência prática em:</p>
-
-                <ul>
-                    <li>Automação com PowerShell e Python</li>
-                    <li>Recolha e envio seguro de logs para Azure Log Analytics</li>
-                    <li>Projetos universitários em C, Python e Web</li>
-                    <li>Exploração e prática de Blender (3D) e GameDev</li>
-                </ul>
-            </div>
-
-            <!-- =================== SECÇÃO: SKILLS =================== -->
-            <div class="card">
-                <h2>Competências Técnicas</h2>
-                <ul>
-                    <li><strong>PowerShell</strong> — automação, APIs, gestão de sistemas</li>
-                    <li><strong>Python</strong> — scripts, automação, web</li>
-                    <li><strong>C</strong> — redes, sockets, baixo nível</li>
-                    <li><strong>Git</strong> — versionamento, GitHub Projects</li>
-                    <li><strong>Web</strong> — HTML, CSS, JavaScript</li>
-                    <li><strong>Cloud</strong> — primeiros passos em Azure</li>
-                </ul>
-            </div>
-
-            <!-- =================== CERTIFICAÇÕES =================== -->
-            <div class="card">
-                <h2>Certificações</h2>
-                <p>(Nenhuma ainda — quando tirares alguma, adiciono aqui.)</p>
-            </div>
-
-            <!-- =================== OBJETIVOS =================== -->
-            <div class="card">
-                <h2>Objetivos Profissionais</h2>
-                <ul>
-                    <li>Aprofundar DevOps e CI/CD</li>
-                    <li>Ganhar experiência em Cloud e automação avançada</li>
-                    <li>Trabalhar em equipas técnicas modernas</li>
-                    <li>Desenvolver projetos multidisciplinares</li>
-                </ul>
-            </div>
-
-        </section>
-
-    </main>
+      </div>
+    </section>
+  </main>
 
 </div>
-
 </body>
 </html>

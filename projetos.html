@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Projetos</title>
-
-  <meta name="description"
-    content="Projetos em destaque de André Abrantes — DevOps, automação, scripting, ferramentas em Python, 3D e pequenos jogos." />
+  <title>Projetos | André Abrantes</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
@@ -29,7 +26,7 @@
       <div class="sidebar-top">
 
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" />
+          <img src="assets/avatar.png" alt="Avatar digital" class="avatar-img" />
         </div>
 
         <div>
@@ -44,27 +41,37 @@
 
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
-            <span class="nav-label">Home</span>
+            <span>Home</span>
           </a>
 
-          <a href="projetos.html" class="nav-item">
+          <a href="projetos.html" class="nav-item active">
             <i data-lucide="laptop"></i>
-            <span class="nav-label">Projetos</span>
+            <span>Projetos</span>
           </a>
 
           <a href="sobre.html" class="nav-item">
             <i data-lucide="user"></i>
-            <span class="nav-label">Sobre</span>
+            <span>Sobre</span>
           </a>
 
           <a href="archives.html" class="nav-item">
             <i data-lucide="archive"></i>
-            <span class="nav-label">Arquivo</span>
+            <span>Arquivo</span>
           </a>
 
           <a href="tags.html" class="nav-item">
             <i data-lucide="tags"></i>
-            <span class="nav-label">Tags</span>
+            <span>Tags</span>
+          </a>
+
+          <a href="resume.html" class="nav-item">
+            <i data-lucide="file-text"></i>
+            <span>Resume</span>
+          </a>
+
+          <a href="contact.html" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Contact Me</span>
           </a>
 
         </nav>
@@ -72,74 +79,75 @@
 
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">
+
+          <button class="social-pill theme-toggle">
             <i data-lucide="moon"></i>
           </button>
 
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+          <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
             <i data-lucide="github"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
             <i data-lucide="linkedin"></i>
           </a>
+
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
 
-    <!-- MAIN -->
+
+    <!-- MAIN CONTENT -->
     <main class="main-content">
+
       <section class="page-section">
 
         <h1 class="page-title">Projetos em Destaque</h1>
 
         <p class="page-intro">
-          Aqui junto alguns projetos que quero destacar.  
-          Para ver todos os repositórios que tenho públicos, passa pelo <a href="archives.html">Arquivo</a>.
+          Aqui apresento alguns dos meus projetos que quero destacar.  
+          Para veres todos os repositórios de forma automática, visita o <a href="archives.html">Arquivo</a>.
         </p>
 
         <div class="projects-grid">
 
-          <article class="card project-card">
-            <div class="project-header">
-              <h2>Script de Automação PowerShell</h2>
-              <span class="tag">DevOps</span>
-            </div>
-            <p>
-              Automação de tarefas administrativas e de gestão de sistemas usando PowerShell.
+          <!-- PROJECT 1 -->
+          <article class="project-card">
+            <h2 class="project-title">Script de Automação PowerShell</h2>
+            <div class="project-tag">DevOps</div>
+            <p class="project-desc">
+              Projeto focado em automatizar tarefas administrativas e operações usando PowerShell.
             </p>
-            <a href="https://github.com/xoxpto" class="project-link" target="_blank">
+            <a href="https://github.com/xoxpto/powershell-automation" target="_blank" class="project-link">
               Ver no GitHub →
             </a>
           </article>
 
-          <article class="card project-card">
-            <div class="project-header">
-              <h2>Ferramenta Python</h2>
-              <span class="tag">Python</span>
-            </div>
-            <p>
-              Pequena ferramenta criada para praticar organização de dados e automação simples.
+          <!-- PROJECT 2 -->
+          <article class="project-card">
+            <h2 class="project-title">Ferramenta Python</h2>
+            <div class="project-tag">Python</div>
+            <p class="project-desc">
+              Uma ferramenta simples criada para praticar automação, scripts e organização de dados.
             </p>
-            <a href="https://github.com/xoxpto" class="project-link" target="_blank">
+            <a href="https://github.com/xoxpto/python-tools" target="_blank" class="project-link">
               Ver no GitHub →
             </a>
           </article>
 
-          <article class="card project-card">
-            <div class="project-header">
-              <h2>Experiência 3D</h2>
-              <span class="tag">3D</span>
-            </div>
-            <p>
-              Um projeto onde explorei modelação e renderização em Blender, focado no visual.
+          <!-- PROJECT 3 -->
+          <article class="project-card">
+            <h2 class="project-title">Experiência 3D</h2>
+            <div class="project-tag">3D</div>
+            <p class="project-desc">
+              Projeto visual onde explorei modelação em Blender, focado em luz, materiais e composição.
             </p>
-            <a href="https://github.com/xoxpto" class="project-link" target="_blank">
+            <a href="https://github.com/xoxpto/Blender-3D-Projects" target="_blank" class="project-link">
               Ver no GitHub →
             </a>
           </article>
@@ -147,8 +155,9 @@
         </div>
 
       </section>
-    </main>
 
+    </main>
   </div>
+
 </body>
 </html>

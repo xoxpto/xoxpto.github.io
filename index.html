@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>André Abrantes — Portefólio</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
     <script defer src="script.js"></script>
 </head>
 
@@ -24,6 +32,11 @@
     <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-top">
+          <div class="avatar-wrapper">
+            <img src="assets/avatar.png" alt="Foto" class="avatar-img" />
+          </div>
+          <div>
+            <div class="sidebar-name">André Abrantes</div>
 
             <div class="avatar-wrapper">
                 <img src="assets/avatar.jpg" alt="Foto de Perfil" class="avatar-img">
@@ -32,11 +45,41 @@
             <h2 class="sidebar-name">André Abrantes</h2>
 
             <p class="sidebar-quote">
+              Automate what you repeat.<br />
+              Improve what you automate.
                 You can't keep it a secret.
             </p>
 
             <!-- NAV -->
             <nav class="sidebar-nav">
+              <a href="index.html" class="nav-item active">
+                <i data-lucide="home" class="nav-icon"></i>
+                <span>Home</span>
+              </a>
+              <a href="projetos.html" class="nav-item">
+                <i data-lucide="laptop" class="nav-icon"></i>
+                <span>Projetos</span>
+              </a>
+              <a href="sobre.html" class="nav-item">
+                <i data-lucide="user" class="nav-icon"></i>
+                <span>Sobre</span>
+              </a>
+              <a href="archives.html" class="nav-item">
+                <i data-lucide="archive" class="nav-icon"></i>
+                <span>Arquivo</span>
+              </a>
+              <a href="tags.html" class="nav-item">
+                <i data-lucide="tags" class="nav-icon"></i>
+                <span>Tags</span>
+              </a>
+              <a href="resume.html" class="nav-item">
+                <i data-lucide="file-text" class="nav-icon"></i>
+                <span>Resume</span>
+              </a>
+              <a href="contact.html" class="nav-item">
+                <i data-lucide="mail" class="nav-icon"></i>
+                <span>Contact Me</span>
+              </a>
                 <a href="index.html" class="nav-item">
                     <i>🏠</i><span>Home</span>
                 </a>
@@ -59,11 +102,38 @@
                     <i>📨</i><span>Contactos</span>
                 </a>
             </nav>
+          </div>
 
         </div>
 
         <!-- SOCIAL E FOOTER -->
         <div class="sidebar-bottom">
+          <div class="sidebar-socials">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Alternar tema"
+            >
+              <i data-lucide="moon" class="theme-icon"></i>
+            </button>
+            <a
+              href="https://github.com/xoxpto"
+              target="_blank"
+              class="social-pill"
+              aria-label="GitHub"
+            >
+              <i data-lucide="github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+              target="_blank"
+              class="social-pill"
+              aria-label="LinkedIn"
+            >
+              <i data-lucide="linkedin"></i>
+            </a>
+          </div>
+          <p class="sidebar-footer">© 2025 AA</p>
             <div class="sidebar-socials">
                 <a href="#" class="social-pill">🌐</a>
                 <a href="#" class="social-pill">💼</a>
@@ -71,13 +141,17 @@
             </div>
             <p class="sidebar-footer">© 2025 André Abrantes</p>
         </div>
+      </aside>
 
+      <main class="main-content">
     </aside>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="main-content">
 
         <section class="page-section">
+          <header class="page-header">
+            <div class="breadcrumb-pill">
 
             <header class="page-header">
                 <div class="breadcrumb-pill">
@@ -117,6 +191,48 @@
                 </div>
 
             </div>
+            <h1>Bem-vindo 👋</h1>
+            <p class="page-intro">
+              Sou estudante de <strong>Engenharia Informática</strong> e tenho
+              vindo a explorar <strong>DevOps</strong>, automação, scripting,
+              programação e áreas mais visuais como <strong>GameDev</strong> e
+              <strong>3D</strong>. Este site é o sítio onde junto o que vou
+              aprendendo e os projetos que vou criando.
+            </p>
+          </header>
+
+          <div class="home-grid">
+            <article class="home-card">
+              <h2>O que ando a fazer agora</h2>
+              <ul>
+                <li>
+                  Automação com <strong>PowerShell</strong> e
+                  <strong>Python</strong>
+                </li>
+                <li>Organização do meu portefólio técnico</li>
+                <li>
+                  Primeiros passos a sério em <strong>DevOps</strong> e CI/CD
+                </li>
+              </ul>
+            </article>
+
+            <article class="home-card">
+              <h2>Objetivos próximos</h2>
+              <ul>
+                <li>Criar pipelines CI/CD simples, mas úteis</li>
+                <li>Aprofundar conhecimentos de Cloud e automação</li>
+                <li>
+                  Desenvolver projetos em várias áreas (DevOps, Cyber, GameDev,
+                  3D)
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="home-cta">
+            <a href="projetos.html" class="btn primary">Ver Projetos</a>
+            <a href="sobre.html" class="btn secondary">Sobre Mim</a>
+          </div>
 
             <div class="home-cta">
                 <a href="projetos.html" class="btn primary">Ver Projetos</a>
@@ -124,7 +240,11 @@
             </div>
 
         </section>
+      </main>
+    </div>
 
+    <script src="script.js"></script>
+  </body>
     </main>
 
 </div>

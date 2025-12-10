@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tags | André Abrantes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Tags</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-
 <div class="layout">
 
-    <!-- =================== SIDEBAR =================== -->
-    <aside class="sidebar">
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
-            </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+      </div>
+      <h1 class="sidebar-name">André Abrantes</h1>
+      <p class="sidebar-quote">
+        Automate what you repeat.<br>
+        Improve what you automate.
+      </p>
+    </div>
 
-            <h1 class="sidebar-name">André Abrantes</h1>
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
-        </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">
+        <i class="lucide lucide-home nav-icon"></i><span class="nav-label">Home</span>
+      </a>
+      <a href="projetos.html" class="nav-item">
+        <i class="lucide lucide-monitor nav-icon"></i><span class="nav-label">Projetos</span>
+      </a>
+      <a href="sobre.html" class="nav-item">
+        <i class="lucide lucide-user-2 nav-icon"></i><span class="nav-label">Sobre</span>
+      </a>
+      <a href="archives.html" class="nav-item">
+        <i class="lucide lucide-folders nav-icon"></i><span class="nav-label">Arquivo</span>
+      </a>
+      <a href="tags.html" class="nav-item active">
+        <i class="lucide lucide-tags nav-icon"></i><span class="nav-label">Tags</span>
+      </a>
+      <a href="resume.html" class="nav-item">
+        <i class="lucide lucide-file-badge nav-icon"></i><span class="nav-label">Resume</span>
+      </a>
+      <a href="contact.html" class="nav-item">
+        <i class="lucide lucide-mail nav-icon"></i><span class="nav-label">Contact Me</span>
+      </a>
+    </nav>
 
-        <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="projetos.html" class="nav-item">
-                <span class="nav-icon">💻</span>
-                <span class="nav-label">Projetos</span>
-            </a>
-            <a href="sobre.html" class="nav-item">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Sobre</span>
-            </a>
-            <a href="archives.html" class="nav-item">
-                <span class="nav-icon">🗂</span>
-                <span class="nav-label">Arquivo</span>
-            </a>
-            <a href="tags.html" class="nav-item active">
-                <span class="nav-icon">🏷</span>
-                <span class="nav-label">Tags</span>
-            </a>
-            <a href="resume.html" class="nav-item">
-                <span class="nav-icon">📄</span>
-                <span class="nav-label">Resume</span>
-            </a>
-            <a href="contact.html" class="nav-item">
-                <span class="nav-icon">✉️</span>
-                <span class="nav-label">Contact Me</span>
-            </a>
-        </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <button class="social-pill theme-toggle" aria-label="Alternar tema">
+          <i class="lucide lucide-moon"></i>
+        </button>
+        <a class="social-pill" href="https://github.com/xoxpto" target="_blank" aria-label="GitHub">
+          <i class="lucide lucide-github"></i>
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" aria-label="LinkedIn">
+          <i class="lucide lucide-linkedin"></i>
+        </a>
+      </div>
+      <p class="sidebar-footer">© 2025 AA</p>
+    </div>
+  </aside>
 
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <button class="social-pill theme-toggle">D</button>
-                <a class="social-pill" href="https://github.com/xoxpto" target="_blank">GH</a>
-                <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">in</a>
-            </div>
+  <!-- MAIN -->
+  <main class="main-content">
+    <section class="page-section">
+      <h1 class="page-title">Tags</h1>
+      <p class="page-intro">
+        Explora os meus projetos por tecnologia ou área. Cada tag agrupa repositórios
+        com algo em comum — por exemplo <strong>DevOps</strong>, <strong>Python</strong>,
+        <strong>JavaScript</strong>, <strong>GameDev</strong>, <strong>3D</strong> ou
+        <strong>CyberSecurity</strong>.
+      </p>
 
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-    </aside>
+      <div id="tag-cloud" class="tag-cloud"></div>
+      <p class="tag-hint">Escolhe uma tag para começar.</p>
 
-    <!-- =================== MAIN CONTENT =================== -->
-    <main class="main-content">
-        
-        <section class="page-section">
-            <h1 class="page-title">Tags</h1>
+      <div id="tag-results" class="repo-list"></div>
+    </section>
+  </main>
 
-            <p class="page-description">
-                Explora os meus projetos por tecnologia ou área. Seleciona uma tag para veres os repositórios relacionados.
-            </p>
-
-            <!-- TAG CLOUD (preenchido dinamicamente pelo script.js) -->
-            <div id="tag-container" class="tag-cloud"></div>
-
-            <p class="tag-hint">Escolhe uma tag para começar.</p>
-
-            <!-- LIST OF PROJECTS MATCHING TAG -->
-            <div id="tag-results" class="repo-list"></div>
-        </section>
-
-    </main>
 </div>
-
 </body>
 </html>

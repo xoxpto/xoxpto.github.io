@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Tags</title>
-
-  <meta name="description"
-    content="Explora os projetos de André Abrantes por tags como DevOps, Python, JavaScript, GameDev, 3D ou CyberSecurity." />
+  <title>Tags | André Abrantes</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
@@ -29,7 +26,7 @@
       <div class="sidebar-top">
 
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" />
+          <img src="assets/avatar.png" alt="Avatar digital" class="avatar-img" />
         </div>
 
         <div>
@@ -44,27 +41,37 @@
 
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
-            <span class="nav-label">Home</span>
+            <span>Home</span>
           </a>
 
           <a href="projetos.html" class="nav-item">
             <i data-lucide="laptop"></i>
-            <span class="nav-label">Projetos</span>
+            <span>Projetos</span>
           </a>
 
           <a href="sobre.html" class="nav-item">
             <i data-lucide="user"></i>
-            <span class="nav-label">Sobre</span>
+            <span>Sobre</span>
           </a>
 
           <a href="archives.html" class="nav-item">
             <i data-lucide="archive"></i>
-            <span class="nav-label">Arquivo</span>
+            <span>Arquivo</span>
           </a>
 
-          <a href="tags.html" class="nav-item">
+          <a href="tags.html" class="nav-item active">
             <i data-lucide="tags"></i>
-            <span class="nav-label">Tags</span>
+            <span>Tags</span>
+          </a>
+
+          <a href="resume.html" class="nav-item">
+            <i data-lucide="file-text"></i>
+            <span>Resume</span>
+          </a>
+
+          <a href="contact.html" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Contact Me</span>
           </a>
 
         </nav>
@@ -72,67 +79,67 @@
 
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">
+
+          <button class="social-pill theme-toggle">
             <i data-lucide="moon"></i>
           </button>
 
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+          <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
             <i data-lucide="github"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
             <i data-lucide="linkedin"></i>
           </a>
+
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
+
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
+
       <section class="page-section">
 
         <h1 class="page-title">Tags</h1>
 
         <p class="page-intro">
           Explora os meus projetos por tecnologia ou área.  
-          Cada tag agrupa repositórios com algo em comum — por exemplo
-          <strong>DevOps</strong>, <strong>Python</strong>, <strong>JavaScript</strong>,
-          <strong>GameDev</strong>, <strong>3D</strong> ou <strong>CyberSecurity</strong>.
+          Seleciona uma tag para veres todos os repositórios relacionados.
         </p>
 
-        <div id="tags-root" class="tags-root">
-
-          <div id="tags-cloud" class="tags-cloud">
-            <!-- Tags geradas via JS -->
-          </div>
-
-          <p id="tags-hint" class="tags-hint">
-            Seleciona uma tag para ver os projetos relacionados.
-          </p>
-
-          <div id="tags-results" class="tags-results">
-            <!-- Cards gerados via JS -->
-          </div>
-
-          <p id="tags-empty" class="tags-empty-message" hidden>
-            Não existem projetos associados a esta tag.
-          </p>
-
-          <p id="tags-error" class="tags-error-message" hidden>
-            Não foi possível carregar os projetos.  
-            Se o problema continuar, tenta voltar mais tarde.
-          </p>
-
+        <!-- TAG CLOUD -->
+        <div id="tags-cloud" class="tags-cloud">
+          <!-- Populado automaticamente pelo script.js -->
         </div>
 
-      </section>
-    </main>
+        <p id="tags-hint" class="tags-hint">
+          Escolhe uma tag para começar.
+        </p>
 
+        <!-- PROJECT RESULTS BY TAG -->
+        <div id="tags-results" class="projects-grid">
+          <!-- Projetos filtrados aparecem aqui -->
+        </div>
+
+        <p id="tags-empty" class="empty-message" hidden>
+          Não existem projetos associados a esta tag.
+        </p>
+
+        <p id="tags-error" class="error-message" hidden>
+          Não foi possível carregar os projetos. Tenta novamente mais tarde.
+        </p>
+
+      </section>
+
+    </main>
   </div>
+
 </body>
 </html>

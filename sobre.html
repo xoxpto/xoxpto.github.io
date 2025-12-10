@@ -1,110 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre Mim | André Abrantes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Sobre</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-
 <div class="layout">
 
-    <!-- =================== SIDEBAR =================== -->
-    <aside class="sidebar">
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
-            </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+      </div>
+      <h1 class="sidebar-name">André Abrantes</h1>
+      <p class="sidebar-quote">
+        Automate what you repeat.<br>
+        Improve what you automate.
+      </p>
+    </div>
 
-            <h1 class="sidebar-name">André Abrantes</h1>
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">
+        <i class="lucide lucide-home nav-icon"></i><span class="nav-label">Home</span>
+      </a>
+      <a href="projetos.html" class="nav-item">
+        <i class="lucide lucide-monitor nav-icon"></i><span class="nav-label">Projetos</span>
+      </a>
+      <a href="sobre.html" class="nav-item active">
+        <i class="lucide lucide-user-2 nav-icon"></i><span class="nav-label">Sobre</span>
+      </a>
+      <a href="archives.html" class="nav-item">
+        <i class="lucide lucide-folders nav-icon"></i><span class="nav-label">Arquivo</span>
+      </a>
+      <a href="tags.html" class="nav-item">
+        <i class="lucide lucide-tags nav-icon"></i><span class="nav-label">Tags</span>
+      </a>
+      <a href="resume.html" class="nav-item">
+        <i class="lucide lucide-file-badge nav-icon"></i><span class="nav-label">Resume</span>
+      </a>
+      <a href="contact.html" class="nav-item">
+        <i class="lucide lucide-mail nav-icon"></i><span class="nav-label">Contact Me</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <button class="social-pill theme-toggle" aria-label="Alternar tema">
+          <i class="lucide lucide-moon"></i>
+        </button>
+        <a class="social-pill" href="https://github.com/xoxpto" target="_blank" aria-label="GitHub">
+          <i class="lucide lucide-github"></i>
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" aria-label="LinkedIn">
+          <i class="lucide lucide-linkedin"></i>
+        </a>
+      </div>
+      <p class="sidebar-footer">© 2025 AA</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <section class="page-section">
+      <h1 class="page-title">Sobre Mim</h1>
+      <p class="page-intro">
+        Estou a tirar <strong>Engenharia Informática</strong> e ando a construir o meu percurso
+        em áreas que me fazem sentido: <strong>DevOps</strong>, automação, scripting,
+        3D, pequenos jogos e, aos poucos, <strong>CyberSecurity</strong>.
+      </p>
+
+      <div class="card">
+        <h2>Um pouco sobre mim</h2>
+        <p>
+          Sempre gostei de perceber como as coisas funcionam e de tentar simplificar tarefas repetitivas.
+          A informática acabou por ser o sítio onde consigo juntar lógica, criatividade e aquela vontade
+          constante de aprender mais qualquer coisa.
+        </p>
+        <p>
+          Gosto de aprender a partir de projetos: pego num tema, faço algo prático e vou ajustando à medida
+          que descubro novas ferramentas e formas de trabalhar melhor.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Competências principais</h2>
+        <ul class="bullet-list">
+          <li>Automação com PowerShell e Python</li>
+          <li>Fundamentos de DevOps e CI/CD</li>
+          <li>Modelação e design 3D</li>
+          <li>Desenvolvimento de pequenos jogos</li>
+          <li>Interesse crescente em CyberSecurity</li>
+        </ul>
+        <div style="margin-top: 1rem;">
+          <a href="projetos.html" class="btn primary">Ver Projetos</a>
         </div>
-
-        <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="projetos.html" class="nav-item">
-                <span class="nav-icon">💻</span>
-                <span class="nav-label">Projetos</span>
-            </a>
-            <a href="sobre.html" class="nav-item active">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Sobre</span>
-            </a>
-            <a href="archives.html" class="nav-item">
-                <span class="nav-icon">🗂</span>
-                <span class="nav-label">Arquivo</span>
-            </a>
-            <a href="tags.html" class="nav-item">
-                <span class="nav-icon">🏷</span>
-                <span class="nav-label">Tags</span>
-            </a>
-            <a href="resume.html" class="nav-item">
-                <span class="nav-icon">📄</span>
-                <span class="nav-label">Resume</span>
-            </a>
-            <a href="contact.html" class="nav-item">
-                <span class="nav-icon">✉️</span>
-                <span class="nav-label">Contact Me</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <button class="social-pill theme-toggle">D</button>
-                <a class="social-pill" href="https://github.com/xoxpto" target="_blank">GH</a>
-                <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">in</a>
-            </div>
-
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-    </aside>
-
-    <!-- =================== MAIN CONTENT =================== -->
-    <main class="main-content">
-
-        <section class="page-section">
-            <h1 class="page-title">Sobre Mim</h1>
-
-            <p>
-                Estou a tirar <strong>Engenharia Informática</strong> e ando a construir um percurso nas áreas que mais me fazem sentido:
-                <strong>DevOps</strong>, automação, scripting, jogos e, aos poucos, <strong>CyberSecurity</strong>.
-            </p>
-
-            <h2 class="section-title">Um pouco sobre mim</h2>
-
-            <p>
-                Sempre gostei de perceber como as coisas funcionam e de tentar simplificar tarefas repetitivas.
-                A informática tornou-se o espaço ideal onde consigo juntar lógica, criatividade e uma vontade constante
-                de aprender mais coisas. Gosto de aprender a partir de projetos: pego numa ideia, faço algo prático e vou
-                melhorando à medida que descubro novas ferramentas.
-            </p>
-
-            <h2 class="section-title">Competências principais</h2>
-
-            <ul class="bullet-list">
-                <li>Automação com PowerShell e Python</li>
-                <li>Fundamentos de DevOps e CI/CD</li>
-                <li>Modelação e design 3D</li>
-                <li>Desenvolvimento de pequenos jogos</li>
-                <li>Interesse crescente em CyberSecurity</li>
-            </ul>
-
-            <a href="projetos.html" class="btn-primary">Ver Projetos</a>
-        </section>
-
-    </main>
+      </div>
+    </section>
+  </main>
 
 </div>
-
 </body>
 </html>

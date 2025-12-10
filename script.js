@@ -1,213 +1,238 @@
-// =========================
-// CONFIG
-// =========================
-const GITHUB_USERNAME = "xoxpto";
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
+  initGitHubSections();
 
-// Palavras-chave para categorizar repositórios
-const CATEGORY_RULES = {
-  DevOps: ["devops", "cicd", "ci/cd", "ci-cd", "pipeline", "automation", "powershell", "azure"],
-  GameDev: ["game", "unity", "godot"],
-  "3D & Design": ["3d", "blender", "render"],
-  CyberSecurity: ["cyber", "security", "hacking", "ctf", "tryhackme"],
-};
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+});
 
-// Cache de repositórios em memória
-let reposCache = null;
+/* ================= THEME TOGGLE ================== */
+function initThemeToggle() {
+  const body = document.body;
+  const toggle = document.getElementById("theme-toggle");
 
-// =========================
-// TEMA (dark / light)
-// =========================
-function updateThemeIcon(btn) {
-  const icon = btn.querySelector("i");
-  if (!icon) return;
-  const isLight = document.body.classList.contains("light");
-  icon.className = isLight ? "lucide lucide-sun" : "lucide lucide-moon";
-}
-
-function setupThemeToggle() {
-  const btn = document.querySelector(".theme-toggle");
-  if (!btn) return;
-
-  // Carregar preferência guardada
   const saved = localStorage.getItem("theme");
   if (saved === "light") {
-    document.body.classList.add("light");
+    body.classList.add("light");
   }
-  updateThemeIcon(btn);
 
-  btn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-    const isLight = document.body.classList.contains("light");
-    localStorage.setItem("theme", isLight ? "light" : "dark");
-    updateThemeIcon(btn);
-  });
-}
+  updateToggleIcon();
 
-// =========================
- // GITHUB API
-// =========================
-async function fetchRepos() {
-  if (reposCache) return reposCache;
+  if (!toggle) return;
 
-  const url = `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    console.error("Falha ao obter repositórios:", res.status);
-    return [];
-  }
-  const data = await res.json();
-  reposCache = data;
-  return data;
-}
-
-function getCategoryForRepo(repo) {
-  const text = `${repo.name ?? ""} ${repo.description ?? ""}`.toLowerCase();
-
-  for (const [category, keywords] of Object.entries(CATEGORY_RULES)) {
-    if (keywords.some((kw) => text.includes(kw))) {
-      return category;
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("light");
+    localStorage.setItem(
+      "theme",
+      body.classList.contains("light") ? "light" : "dark"
+    );
+    updateToggleIcon();
+    if (window.lucide) {
+      lucide.createIcons();
     }
+  });
+
+  function updateToggleIcon() {
+    if (!toggle) return;
+    const icon = toggle.querySelector("i");
+    if (!icon) return;
+    const isLight = body.classList.contains("light");
+    icon.setAttribute("data-lucide", isLight ? "sun" : "moon");
+  }
+}
+
+/* ================= GITHUB (ARCHIVE + TAGS) ================== */
+function initGitHubSections() {
+  const archiveContainer = document.getElementById("repos-archive");
+  const filters = document.querySelectorAll(".filter-btn");
+  const tagsCloud = document.getElementById("tags-cloud");
+  const tagResults = document.getElementById("tag-results");
+
+  if (!archiveContainer && !tagsCloud) return;
+
+  fetch("https://api.github.com/users/xoxpto/repos?per_page=100&sort=updated")
+    .then((res) => res.json())
+    .then((repos) => {
+      const enriched = repos.map((r) => ({
+        raw: r,
+        area: classifyRepo(r),
+        tags: buildTags(r),
+      }));
+
+      if (archiveContainer) {
+        setupArchive(archiveContainer, filters, enriched);
+      }
+      if (tagsCloud && tagResults) {
+        setupTags(tagsCloud, tagResults, enriched);
+      }
+    })
+    .catch((err) => {
+      console.error("Erro ao carregar repositórios do GitHub", err);
+      if (archiveContainer) {
+        archiveContainer.innerHTML =
+          '<p class="muted">Não foi possível carregar os repositórios de momento.</p>';
+      }
+    });
+}
+
+function classifyRepo(repo) {
+  const name = (repo.name || "").toLowerCase();
+  const desc = (repo.description || "").toLowerCase();
+
+  if (name.includes("pipeline") || name.includes("devops") || desc.includes("devops")) {
+    return "DevOps";
+  }
+  if (name.includes("game") || desc.includes("game")) {
+    return "GameDev";
+  }
+  if (name.includes("3d") || name.includes("blender") || desc.includes("3d")) {
+    return "3D & Design";
+  }
+  if (name.includes("cyber") || desc.includes("security") || desc.includes("ctf")) {
+    return "CyberSecurity";
   }
   return "Outros";
 }
 
-function getTagsForRepo(repo) {
-  const tags = [];
-  if (repo.language) tags.push(repo.language);
+function buildTags(repo) {
+  const tags = new Set();
+  const name = (repo.name || "").toLowerCase();
+  const desc = (repo.description || "").toLowerCase();
 
-  const text = `${repo.name ?? ""} ${repo.description ?? ""}`.toLowerCase();
+  if (repo.language) tags.add(repo.language);
 
-  if (text.includes("powershell")) tags.push("PowerShell");
-  if (text.includes("python")) tags.push("Python");
-  if (text.includes("javascript") || text.includes("js")) tags.push("JavaScript");
-  if (text.includes("blender") || text.includes("3d")) tags.push("3D");
-  if (text.includes("game")) tags.push("GameDev");
-  if (text.includes("autom") || text.includes("script")) tags.push("Automation");
-  if (text.includes("devops") || text.includes("cicd") || text.includes("ci/cd")) tags.push("DevOps");
+  if (name.includes("python") || desc.includes("python")) tags.add("Python");
+  if (name.includes("powershell") || desc.includes("powershell"))
+    tags.add("PowerShell");
+  if (name.includes("script")) tags.add("Automation");
+  if (name.includes("js") || name.includes("javascript")) tags.add("JavaScript");
+  if (name.includes("blender")) tags.add("3D");
+  if (name.includes("game")) tags.add("GameDev");
 
-  // Tag genérica
-  tags.push("Project");
-
-  // Remover duplicados
-  return [...new Set(tags)];
+  return Array.from(tags);
 }
 
-function createRepoCard(repo, extraBadge) {
-  const category = getCategoryForRepo(repo);
-  const language = repo.language || category || "Repo";
+/* --------------- Archive --------------- */
+function setupArchive(container, filters, repos) {
+  function render(area) {
+    const list =
+      area && area !== "all"
+        ? repos.filter((r) => r.area === area)
+        : repos;
 
-  const card = document.createElement("article");
-  card.className = "project-card";
-  card.dataset.category = category;
+    if (!list.length) {
+      container.innerHTML =
+        '<p class="muted">Ainda não tenho repositórios nesta categoria.</p>';
+      return;
+    }
 
-  card.innerHTML = `
-    <div class="project-header">
-      <h2 class="project-title">${repo.name}</h2>
-      <span class="project-tag">${extraBadge || language}</span>
-    </div>
-    <p class="project-desc">
-      ${repo.description || "Sem descrição."}
-    </p>
-    <a href="${repo.html_url}" target="_blank" class="project-link">Ver no GitHub →</a>
-  `;
-  return card;
-}
+    container.innerHTML = list
+      .map((r) => {
+        const repo = r.raw;
+        const updated = repo.updated_at
+          ? new Date(repo.updated_at).toLocaleDateString("pt-PT")
+          : "";
+        return `
+          <article class="repo-card">
+            <header class="repo-header">
+              <h2>${repo.name}</h2>
+              <span class="badge">${r.area}</span>
+            </header>
+            <p class="repo-description">${
+              repo.description || "Sem descrição."
+            }</p>
+            <footer class="repo-footer">
+              <a href="${repo.html_url}" target="_blank" class="project-link">
+                Ver no GitHub →
+              </a>
+              <span class="repo-date">${updated}</span>
+            </footer>
+          </article>
+        `;
+      })
+      .join("");
+  }
 
-// =========================
-// ARQUIVO
-// =========================
-async function initArchivePage() {
-  const listEl = document.getElementById("repo-list");
-  if (!listEl) return;
+  render("all");
 
-  const repos = await fetchRepos();
-  listEl.innerHTML = "";
-
-  repos.forEach((repo) => {
-    const card = createRepoCard(repo);
-    listEl.appendChild(card);
-  });
-
-  // Filtros
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      const filter = btn.dataset.filter;
-
-      const cards = listEl.querySelectorAll(".project-card");
-      cards.forEach((card) => {
-        const cat = card.dataset.category;
-        if (filter === "all" || filter === cat) {
-          card.style.display = "";
-        } else {
-          card.style.display = "none";
-        }
+  if (filters && filters.length) {
+    filters.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filters.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        render(btn.dataset.area || "all");
       });
     });
-  });
-}
-
-// =========================
-// TAGS
-// =========================
-async function initTagsPage() {
-  const cloudEl = document.getElementById("tag-cloud");
-  const resultsEl = document.getElementById("tag-results");
-  if (!cloudEl || !resultsEl) return;
-
-  const repos = await fetchRepos();
-
-  const tagMap = new Map(); // tag -> [repos]
-
-  repos.forEach((repo) => {
-    const repoTags = getTagsForRepo(repo);
-    repoTags.forEach((tag) => {
-      if (!tagMap.has(tag)) tagMap.set(tag, []);
-      tagMap.get(tag).push(repo);
-    });
-  });
-
-  cloudEl.innerHTML = "";
-  resultsEl.innerHTML = "";
-
-  // Criar chips de tags
-  tagMap.forEach((repoList, tag) => {
-    const chip = document.createElement("button");
-    chip.type = "button";
-    chip.className = "tag-chip";
-    chip.textContent = tag;
-    chip.dataset.tag = tag;
-
-    chip.addEventListener("click", () => {
-      // estado active
-      cloudEl.querySelectorAll(".tag-chip").forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-
-      // render resultados
-      resultsEl.innerHTML = "";
-      repoList.forEach((repo) => {
-        const card = createRepoCard(repo, tag);
-        resultsEl.appendChild(card);
-      });
-    });
-
-    cloudEl.appendChild(chip);
-  });
-
-  // Dica / texto inicial
-  const hint = document.querySelector(".tag-hint");
-  if (hint) {
-    hint.textContent = "Seleciona uma tag para ver os projetos relacionados.";
   }
 }
 
-// =========================
-// DOM ready
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-  setupThemeToggle();
-  initArchivePage();
-  initTagsPage();
-});
+/* --------------- Tags --------------- */
+function setupTags(cloud, results, repos) {
+  const tagMap = new Map(); // tag -> repos[]
+  repos.forEach((r) => {
+    r.tags.forEach((t) => {
+      if (!tagMap.has(t)) tagMap.set(t, []);
+      tagMap.get(t).push(r);
+    });
+  });
+
+  if (!tagMap.size) {
+    cloud.innerHTML = '<p class="muted">Ainda não tenho tags definidas.</p>';
+    return;
+  }
+
+  const allTags = Array.from(tagMap.keys()).sort((a, b) =>
+    a.localeCompare(b)
+  );
+
+  cloud.innerHTML = allTags
+    .map(
+      (t) => `<button class="tag-chip" data-tag="${t}">
+        ${t}
+      </button>`
+    )
+    .join("");
+
+  const chips = cloud.querySelectorAll(".tag-chip");
+
+  function renderTag(tag) {
+    const list = tagMap.get(tag) || [];
+    if (!list.length) {
+      results.innerHTML =
+        '<p class="muted">Não há projetos com esta tag.</p>';
+      return;
+    }
+
+    results.innerHTML = list
+      .map((r) => {
+        const repo = r.raw;
+        return `
+          <article class="repo-item">
+            <h3>${repo.name}</h3>
+            <p class="repo-description">${
+              repo.description || "Sem descrição."
+            }</p>
+            <p class="repo-meta">
+              <span class="badge badge-small">${r.area}</span>
+              ${r.tags
+                .map((t) => `<span class="chip-mini">${t}</span>`)
+                .join("")}
+            </p>
+            <a href="${repo.html_url}" target="_blank" class="project-link">
+              Ver no GitHub →
+            </a>
+          </article>
+        `;
+      })
+      .join("");
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderTag(chip.dataset.tag);
+    });
+  });
+}

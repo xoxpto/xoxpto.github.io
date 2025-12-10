@@ -1,141 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arquivo | André Abrantes</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquivo | André Abrantes</title>
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+<!-- ========================================================= -->
+<!-- SIDEBAR -->
+<!-- ========================================================= -->
+<aside class="sidebar">
 
-      <div class="sidebar-top">
+    <div class="profile-section">
+        <img src="assets/pfp.png" alt="Foto" class="profile-img">
+        <h2 class="profile-name">André Abrantes</h2>
+        <p class="profile-bio">Automate what you repeat.<br>Improve what you automate.</p>
+    </div>
 
-        <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" class="avatar-img" />
+    <nav class="menu">
+        <a href="index.html" class="nav-item"><span>🏠</span> Home</a>
+        <a href="projetos.html" class="nav-item"><span>💻</span> Projetos</a>
+        <a href="sobre.html" class="nav-item"><span>👤</span> Sobre</a>
+        <a href="archives.html" class="nav-item"><span>🗂</span> Arquivo</a>
+        <a href="tags.html" class="nav-item"><span>🏷</span> Tags</a>
+        <a href="resume.html" class="nav-item"><span>📄</span> Resume</a>
+        <a href="contact.html" class="nav-item"><span>✉️</span> Contact Me</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <button class="theme-toggle"></button>
+
+        <div class="social-links">
+            <a href="https://github.com/xoxpto" target="_blank">
+                <img src="assets/github.svg" class="icon">
+            </a>
+            <a href="https://linkedin.com/in/andre-abrantes-04022129b" target="_blank">
+                <img src="assets/linkedin.svg" class="icon">
+            </a>
         </div>
 
-        <div>
-          <div class="sidebar-name">André Abrantes</div>
-          <p class="sidebar-quote">
-            Automate what you repeat.<br>
-            Improve what you automate.
-          </p>
-        </div>
+        <p class="footer-copy">© 2025 AA</p>
+    </div>
 
-        <nav class="sidebar-nav">
-
-          <a href="index.html" class="nav-item">
-            <i data-lucide="home"></i>
-            <span>Home</span>
-          </a>
-
-          <a href="projetos.html" class="nav-item">
-            <i data-lucide="laptop"></i>
-            <span>Projetos</span>
-          </a>
-
-          <a href="sobre.html" class="nav-item">
-            <i data-lucide="user"></i>
-            <span>Sobre</span>
-          </a>
-
-          <a href="archives.html" class="nav-item active">
-            <i data-lucide="archive"></i>
-            <span>Arquivo</span>
-          </a>
-
-          <a href="tags.html" class="nav-item">
-            <i data-lucide="tags"></i>
-            <span>Tags</span>
-          </a>
-
-          <a href="resume.html" class="nav-item">
-            <i data-lucide="file-text"></i>
-            <span>Resume</span>
-          </a>
-
-          <a href="contact.html" class="nav-item">
-            <i data-lucide="mail"></i>
-            <span>Contact Me</span>
-          </a>
-
-        </nav>
-      </div>
-
-      <div class="sidebar-bottom">
-        <div class="sidebar-socials">
-
-          <button class="social-pill theme-toggle">
-            <i data-lucide="moon"></i>
-          </button>
-
-          <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
-            <i data-lucide="github"></i>
-          </a>
-
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
-            <i data-lucide="linkedin"></i>
-          </a>
-
-        </div>
-
-        <div class="sidebar-footer">
-          © <span id="year"></span> AA
-        </div>
-      </div>
-
-    </aside>
+</aside>
 
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
 
-      <section class="page-section">
+<!-- ========================================================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================================================= -->
+<main class="content">
 
-        <h1 class="page-title">Arquivo</h1>
+    <h1>Arquivo</h1>
+    <p class="page-intro">
+        Esta página lista automaticamente todos os meus repositórios públicos,
+        organizados por categoria através da GitHub API.
+    </p>
 
-        <p class="page-intro">
-          Aqui encontras todos os meus repositórios do GitHub organizados por área.
-          Esta secção é atualizada automaticamente conforme vou criando novos projetos.
-        </p>
+    <!-- FILTER BUTTONS -->
+    <div class="archive-filters">
+        <button class="filter-btn active" data-category="all">Todos</button>
+        <button class="filter-btn" data-category="DevOps">DevOps</button>
+        <button class="filter-btn" data-category="GameDev">GameDev</button>
+        <button class="filter-btn" data-category="3D & Design">3D & Design</button>
+        <button class="filter-btn" data-category="CyberSecurity">CyberSecurity</button>
+        <button class="filter-btn" data-category="Outros">Outros</button>
+    </div>
 
-        <!-- CATEGORY FILTERS -->
-        <div class="archive-filters">
-          <button class="filter-btn" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="DevOps">DevOps</button>
-          <button class="filter-btn" data-filter="GameDev">GameDev</button>
-          <button class="filter-btn" data-filter="3D">3D & Design</button>
-          <button class="filter-btn" data-filter="CyberSecurity">CyberSecurity</button>
-        </div>
+    <!-- PROJECTS WILL BE INJECTED HERE BY JS -->
+    <section id="archive-list" class="projects-grid"></section>
 
-        <!-- GITHUB PROJECT LIST (AUTOMATICALLY LOADED BY JS) -->
-        <div id="archive-projects" class="projects-grid">
-          <!-- Projetos gerados automaticamente pelo script.js -->
-        </div>
-
-        <p id="archive-empty" class="empty-message" hidden>
-          Nenhum projeto encontrado para esta categoria.
-        </p>
-
-      </section>
-
-    </main>
-  </div>
+</main>
 
 </body>
 </html>

@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
   initYear();
   initNavActive();
   initThemeToggle();
@@ -6,14 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initTagsPage();
 });
 
-/* Atualizar ano no footer */
+/* YEAR FOOTER */
 function initYear() {
   document.querySelectorAll("#year").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
 }
 
-/* Sidebar ativa conforme a página */
+/* NAV ACTIVE */
 function initNavActive() {
   const path = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".sidebar-nav .nav-item").forEach((link) => {
@@ -25,35 +29,40 @@ function initNavActive() {
   });
 }
 
-/* Tema dark/light */
+/* THEME TOGGLE (icon-based) */
 function initThemeToggle() {
   const body = document.body;
-  const themeToggleBtn = document.querySelector(".theme-toggle");
-  if (!themeToggleBtn) return;
+  const btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
 
-  function updateToggleLabel() {
-    if (body.classList.contains("theme-light")) {
-      themeToggleBtn.textContent = "☾";
-      themeToggleBtn.setAttribute("aria-label", "Mudar para tema escuro");
-    } else {
-      themeToggleBtn.textContent = "◐";
-      themeToggleBtn.setAttribute("aria-label", "Mudar para tema claro");
+  const icon = btn.querySelector("i");
+
+  function setIcon() {
+    const isLight = body.classList.contains("theme-light");
+    if (icon) {
+      icon.setAttribute("data-lucide", isLight ? "sun" : "moon");
+      if (window.lucide) lucide.createIcons();
     }
+    btn.setAttribute(
+      "aria-label",
+      isLight ? "Mudar para tema escuro" : "Mudar para tema claro"
+    );
   }
 
   const saved = localStorage.getItem("theme");
   if (saved === "light") body.classList.add("theme-light");
-  updateToggleLabel();
 
-  themeToggleBtn.addEventListener("click", () => {
+  setIcon();
+
+  btn.addEventListener("click", () => {
     body.classList.toggle("theme-light");
     const isLight = body.classList.contains("theme-light");
     localStorage.setItem("theme", isLight ? "light" : "dark");
-    updateToggleLabel();
+    setIcon();
   });
 }
 
-/* ARCHIVES automáticos via GitHub API */
+/* ARCHIVES - GitHub API + Tabs + Search */
 function initArchives() {
   const root = document.getElementById("archives-root");
   if (!root) return;
@@ -128,7 +137,7 @@ function initArchives() {
     repos: [],
     byCategory: {},
     currentCategory: "all",
-    searchQuery: "",
+    searchTerm: "",
   };
 
   async function fetchRepos() {
@@ -144,13 +153,9 @@ function initArchives() {
       const repos = await response.json();
       state.repos = repos.filter((r) => !r.fork);
 
-      // Inicializar categorias
       CATEGORIES.forEach((cat) => (state.byCategory[cat.key] = []));
-
-      // "Todos" recebe tudo
       state.byCategory["all"] = [...state.repos];
 
-      // Classificar por categorias específicas
       state.repos.forEach((repo) => {
         Object.keys(categoryMatchers).forEach((key) => {
           if (categoryMatchers[key](repo)) {
@@ -159,7 +164,6 @@ function initArchives() {
         });
       });
 
-      // Ordenar por data em todas as categorias
       Object.keys(state.byCategory).forEach((key) => {
         state.byCategory[key].sort(
           (a, b) => new Date(b.created_at) - new Date(a.created_at)
@@ -167,8 +171,8 @@ function initArchives() {
       });
 
       createTabs();
-      setupSearch();
       renderCategory();
+      initSearch();
     } catch (err) {
       console.error("Erro ao carregar repositórios (archives):", err);
       if (errorMsg) errorMsg.hidden = false;
@@ -178,27 +182,26 @@ function initArchives() {
   function createTabs() {
     tabsContainer.innerHTML = "";
 
-    CATEGORIES.forEach((cat) => {
+    CATEGORIES.forEach((cat, index) => {
       const btn = document.createElement("button");
       btn.className = "tab-button";
       btn.dataset.category = cat.key;
 
-      const count =
-        cat.key === "all"
-          ? state.repos.length
-          : (state.byCategory[cat.key] || []).length;
+      const count = state.byCategory[cat.key]
+        ? state.byCategory[cat.key].length
+        : 0;
 
-      btn.textContent =
-        count > 0 ? `${cat.label} (${count})` : `${cat.label} (0)`;
+      btn.textContent = `${cat.label} (${count})`;
 
-      if (cat.key === state.currentCategory) {
+      if (index === 0) {
         btn.classList.add("active");
+        state.currentCategory = cat.key;
       }
 
       btn.addEventListener("click", () => {
-        document.querySelectorAll(".tab-button").forEach((b) =>
-          b.classList.remove("active")
-        );
+        document
+          .querySelectorAll(".tab-button")
+          .forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         state.currentCategory = cat.key;
         renderCategory();
@@ -208,43 +211,38 @@ function initArchives() {
     });
   }
 
-  function setupSearch() {
+  function initSearch() {
     if (!searchInput) return;
-
-    searchInput.addEventListener("input", () => {
-      state.searchQuery = searchInput.value.trim().toLowerCase();
+    searchInput.addEventListener("input", (e) => {
+      state.searchTerm = e.target.value.trim().toLowerCase();
       renderCategory();
     });
   }
 
   function renderCategory() {
-    grid.innerHTML = "";
+    if (!grid) return;
 
-    const baseRepos =
-      state.currentCategory === "all"
-        ? state.repos
-        : state.byCategory[state.currentCategory] || [];
+    const key = state.currentCategory;
+    let repos = state.byCategory[key] || [];
 
-    let filtered = baseRepos;
-
-    if (state.searchQuery) {
-      filtered = baseRepos.filter((repo) => {
+    const term = state.searchTerm;
+    if (term) {
+      repos = repos.filter((repo) => {
         const name = repo.name.toLowerCase();
         const desc = (repo.description || "").toLowerCase();
-        return (
-          name.includes(state.searchQuery) ||
-          desc.includes(state.searchQuery)
-        );
+        return name.includes(term) || desc.includes(term);
       });
     }
 
-    if (!filtered.length) {
+    grid.innerHTML = "";
+
+    if (!repos.length) {
       if (emptyMsg) emptyMsg.hidden = false;
       return;
     }
     if (emptyMsg) emptyMsg.hidden = true;
 
-    filtered.forEach((repo) => {
+    repos.forEach((repo) => {
       const created = new Date(repo.created_at);
       const dateStr = created.toLocaleDateString("pt-PT", {
         year: "numeric",
@@ -264,9 +262,7 @@ function initArchives() {
           <span class="archive-date">${dateStr}</span>
         </div>
         <p class="archive-desc">${desc}</p>
-        <a href="${repo.html_url}" target="_blank" class="archive-link">
-          Ver no GitHub →
-        </a>
+        <a href="${repo.html_url}" target="_blank" class="archive-link">Ver no GitHub →</a>
       `;
 
       grid.appendChild(card);
@@ -276,7 +272,7 @@ function initArchives() {
   fetchRepos();
 }
 
-/* TAGS — página de tags com cloud neon + filtro */
+/* TAGS PAGE */
 function initTagsPage() {
   const root = document.getElementById("tags-root");
   if (!root) return;
@@ -308,7 +304,7 @@ function initTagsPage() {
 
   const state = {
     repos: [],
-    tagsData: {},
+    tagsData: {}, // key -> { label, repos: [] }
     currentTag: null,
   };
 
@@ -360,7 +356,6 @@ function initTagsPage() {
         });
       });
 
-      // Remover tags sem repos
       Object.keys(state.tagsData).forEach((key) => {
         if (state.tagsData[key].repos.length === 0) {
           const btn = cloudEl.querySelector(`[data-tag="${key}"]`);
@@ -465,7 +460,7 @@ function initTagsPage() {
     const repos = data.repos || [];
 
     if (!repos.length) {
-      if (emptyMsg) emptyMsg.hidden = false;
+      if (emptyMsg) emptyMsg.hidden = true;
       return;
     }
     if (emptyMsg) emptyMsg.hidden = true;

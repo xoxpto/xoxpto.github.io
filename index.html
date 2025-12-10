@@ -1,121 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>André Abrantes | Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>André Abrantes | Home</title>
 
-    <!-- CSS CERTO -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- JS -->
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-
 <div class="layout">
-    <!-- ========================================================= -->
-    <!-- SIDEBAR -->
-    <!-- ========================================================= -->
-    <aside class="sidebar">
 
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img" />
-            </div>
-            <h1 class="sidebar-name">André Abrantes</h1>
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
-        </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img">
+      </div>
 
-        <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item active">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="projetos.html" class="nav-item">
-                <span class="nav-icon">💻</span>
-                <span class="nav-label">Projetos</span>
-            </a>
-            <a href="sobre.html" class="nav-item">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Sobre</span>
-            </a>
-            <a href="archives.html" class="nav-item">
-                <span class="nav-icon">🗂</span>
-                <span class="nav-label">Arquivo</span>
-            </a>
-            <a href="tags.html" class="nav-item">
-                <span class="nav-icon">🏷</span>
-                <span class="nav-label">Tags</span>
-            </a>
-            <a href="resume.html" class="nav-item">
-                <span class="nav-icon">📄</span>
-                <span class="nav-label">Resume</span>
-            </a>
-            <a href="contact.html" class="nav-item">
-                <span class="nav-icon">✉️</span>
-                <span class="nav-label">Contact Me</span>
-            </a>
-        </nav>
+      <h1 class="sidebar-name">André Abrantes</h1>
+      <p class="sidebar-quote">
+        Automate what you repeat.<br>
+        Improve what you automate.
+      </p>
+    </div>
 
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <!-- Botão de tema (D de Dark/Light) -->
-                <button type="button" class="social-pill theme-toggle">D</button>
-                <!-- GitHub -->
-                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">GH</a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">in</a>
-            </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item active">
+        <i class="lucide lucide-home nav-icon"></i>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="projetos.html" class="nav-item">
+        <i class="lucide lucide-monitor nav-icon"></i>
+        <span class="nav-label">Projetos</span>
+      </a>
+      <a href="sobre.html" class="nav-item">
+        <i class="lucide lucide-user-2 nav-icon"></i>
+        <span class="nav-label">Sobre</span>
+      </a>
+      <a href="archives.html" class="nav-item">
+        <i class="lucide lucide-folders nav-icon"></i>
+        <span class="nav-label">Arquivo</span>
+      </a>
+      <a href="tags.html" class="nav-item">
+        <i class="lucide lucide-tags nav-icon"></i>
+        <span class="nav-label">Tags</span>
+      </a>
+      <a href="resume.html" class="nav-item">
+        <i class="lucide lucide-file-badge nav-icon"></i>
+        <span class="nav-label">Resume</span>
+      </a>
+      <a href="contact.html" class="nav-item">
+        <i class="lucide lucide-mail nav-icon"></i>
+        <span class="nav-label">Contact Me</span>
+      </a>
+    </nav>
 
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <button class="social-pill theme-toggle" aria-label="Alternar tema">
+          <i class="lucide lucide-moon"></i>
+        </button>
+        <a class="social-pill" href="https://github.com/xoxpto" target="_blank" aria-label="GitHub">
+          <i class="lucide lucide-github"></i>
+        </a>
+        <a class="social-pill" href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" aria-label="LinkedIn">
+          <i class="lucide lucide-linkedin"></i>
+        </a>
+      </div>
+      <p class="sidebar-footer">© 2025 AA</p>
+    </div>
+  </aside>
 
-    </aside>
+  <!-- MAIN -->
+  <main class="main-content">
+    <section class="page-section">
+      <h1 class="page-title">Bem-vindo 👋</h1>
+      <p class="page-intro">
+        Sou estudante de <strong>Engenharia Informática</strong> e tenho vindo a explorar
+        <strong>DevOps</strong>, automação, scripting, programação e áreas mais visuais
+        como <strong>GameDev</strong> e <strong>3D</strong>. Este site é o sítio onde junto o que vou
+        aprendendo e os projetos que vou criando.
+      </p>
 
-    <!-- ========================================================= -->
-    <!-- CONTEÚDO PRINCIPAL -->
-    <!-- ========================================================= -->
-    <main class="main-content">
-        <section class="page-section">
-            <h1 class="page-title">Bem-vindo 👋</h1>
+      <div class="home-grid">
+        <article class="home-card">
+          <h2>O que ando a fazer agora</h2>
+          <ul>
+            <li>Automação com <strong>PowerShell</strong> e <strong>Python</strong></li>
+            <li>Organização do meu portefólio técnico</li>
+            <li>Primeiros passos a sério em <strong>DevOps</strong> e CI/CD</li>
+          </ul>
+        </article>
 
-            <p class="page-intro">
-                Sou estudante de <strong>Engenharia Informática</strong> e tenho vindo a explorar
-                <strong>DevOps</strong>, automação, scripting, programação e áreas mais visuais
-                como <strong>GameDev</strong> e <strong>3D</strong>. Este site é o sítio onde junto
-                o que vou aprendendo e os projetos que vou criando.
-            </p>
+        <article class="home-card">
+          <h2>Objetivos próximos</h2>
+          <ul>
+            <li>Construir pipelines CI/CD simples, mas úteis</li>
+            <li>Aprofundar conceitos de Cloud e automação</li>
+            <li>Criar projetos em várias áreas (DevOps, Cyber, GameDev, 3D)</li>
+          </ul>
+        </article>
+      </div>
 
-            <div class="home-grid">
-                <article class="home-card">
-                    <h2>O que ando a fazer agora</h2>
-                    <ul>
-                        <li>Automação com <strong>PowerShell</strong> e <strong>Python</strong></li>
-                        <li>Organização do meu portefólio técnico</li>
-                        <li>Primeiros passos a sério em <strong>DevOps</strong> e CI/CD</li>
-                    </ul>
-                </article>
+      <div class="home-cta">
+        <a href="projetos.html" class="btn primary">Ver Projetos</a>
+        <a href="sobre.html" class="btn secondary">Sobre Mim</a>
+        <a href="archives.html" class="btn secondary">Arquivo GitHub</a>
+      </div>
+    </section>
+  </main>
 
-                <article class="home-card">
-                    <h2>Objetivos próximos</h2>
-                    <ul>
-                        <li>Criar pipelines CI/CD simples e úteis</li>
-                        <li>Aprofundar conhecimentos de Cloud e automação</li>
-                        <li>Desenvolver projetos em várias áreas (DevOps, Cyber, GameDev, 3D)</li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="home-cta">
-                <a href="projetos.html" class="btn primary">Ver Projetos</a>
-                <a href="sobre.html" class="btn secondary">Sobre Mim</a>
-            </div>
-        </section>
-    </main>
 </div>
-
 </body>
 </html>

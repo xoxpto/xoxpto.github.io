@@ -6,9 +6,10 @@
   <title>André Abrantes | Arquivo</title>
 
   <meta name="description"
-    content="Arquivo de projetos de André Abrantes — repositórios públicos do GitHub organizados por área, carregados automaticamente." />
+    content="Arquivo de projetos de André Abrantes — repositórios públicos do GitHub organizados automaticamente por categoria." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,8 +23,11 @@
 <body>
   <div class="layout">
 
+    <!-- SIDEBAR -->
     <aside class="sidebar">
+
       <div class="sidebar-top">
+
         <div class="avatar-wrapper">
           <img src="assets/avatar.png" alt="Avatar digital" />
         </div>
@@ -37,30 +41,32 @@
         </div>
 
         <nav class="sidebar-nav">
+
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
             <span class="nav-label">Home</span>
           </a>
+
           <a href="projetos.html" class="nav-item">
             <i data-lucide="laptop"></i>
             <span class="nav-label">Projetos</span>
           </a>
+
           <a href="sobre.html" class="nav-item">
             <i data-lucide="user"></i>
             <span class="nav-label">Sobre</span>
           </a>
+
           <a href="archives.html" class="nav-item">
             <i data-lucide="archive"></i>
             <span class="nav-label">Arquivo</span>
           </a>
+
           <a href="tags.html" class="nav-item">
             <i data-lucide="tags"></i>
             <span class="nav-label">Tags</span>
           </a>
-          <a href="contactos.html" class="nav-item">
-            <i data-lucide="mail"></i>
-            <span class="nav-label">Contactos</span>
-          </a>
+
         </nav>
       </div>
 
@@ -69,14 +75,17 @@
           <button class="social-pill theme-toggle" type="button">
             <i data-lucide="moon"></i>
           </button>
+
           <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
             <i data-lucide="github"></i>
           </a>
+
           <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
              class="social-pill" target="_blank">
             <i data-lucide="linkedin"></i>
           </a>
         </div>
+
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
@@ -89,7 +98,6 @@
 
         <div class="page-header-row">
           <h1 class="page-title">Arquivo</h1>
-
           <div class="archives-search-wrapper">
             <input
               type="search"
@@ -102,18 +110,18 @@
         </div>
 
         <p class="page-intro">
-          Esta página mostra os meus projetos do GitHub. A lista é gerada automaticamente
-          e organiza cada repositório por área.
+          Esta página mostra automaticamente todos os meus repositórios públicos do GitHub,
+          organizados por categoria e sempre atualizados.
         </p>
 
         <div id="archives-root">
 
           <div id="archives-tabs" class="archives-tabs">
-            <!-- JS injects the tab buttons -->
+            <!-- Tabs inseridas via JS -->
           </div>
 
           <div id="archives-grid" class="archives-grid">
-            <!-- JS injects the cards -->
+            <!-- Cards inseridos via JS -->
           </div>
 
           <p id="archives-empty" class="archives-empty-message" hidden>
@@ -121,8 +129,8 @@
           </p>
 
           <p id="archives-error" class="archives-error-message" hidden>
-            Não foi possível carregar os repositórios a partir do GitHub.  
-            Tenta voltar a carregar esta página daqui a pouco.
+            Não foi possível carregar os repositórios.  
+            Tenta voltar a carregar esta página dentro de alguns minutos.
           </p>
 
         </div>

@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Sobre</title>
-
-  <meta name="description"
-    content="Sobre André Abrantes — estudante de Engenharia Informática interessado em DevOps, automação, scripting, GameDev, 3D e CyberSecurity." />
+  <title>Sobre Mim | André Abrantes</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -28,7 +26,7 @@
       <div class="sidebar-top">
 
         <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" />
+          <img src="assets/avatar.png" alt="Avatar digital" class="avatar-img" />
         </div>
 
         <div>
@@ -43,27 +41,37 @@
 
           <a href="index.html" class="nav-item">
             <i data-lucide="home"></i>
-            <span class="nav-label">Home</span>
+            <span>Home</span>
           </a>
 
           <a href="projetos.html" class="nav-item">
             <i data-lucide="laptop"></i>
-            <span class="nav-label">Projetos</span>
+            <span>Projetos</span>
           </a>
 
-          <a href="sobre.html" class="nav-item">
+          <a href="sobre.html" class="nav-item active">
             <i data-lucide="user"></i>
-            <span class="nav-label">Sobre</span>
+            <span>Sobre</span>
           </a>
 
           <a href="archives.html" class="nav-item">
             <i data-lucide="archive"></i>
-            <span class="nav-label">Arquivo</span>
+            <span>Arquivo</span>
           </a>
 
           <a href="tags.html" class="nav-item">
             <i data-lucide="tags"></i>
-            <span class="nav-label">Tags</span>
+            <span>Tags</span>
+          </a>
+
+          <a href="resume.html" class="nav-item">
+            <i data-lucide="file-text"></i>
+            <span>Resume</span>
+          </a>
+
+          <a href="contact.html" class="nav-item">
+            <i data-lucide="mail"></i>
+            <span>Contact Me</span>
           </a>
 
         </nav>
@@ -71,68 +79,64 @@
 
       <div class="sidebar-bottom">
         <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">
+
+          <button class="social-pill theme-toggle">
             <i data-lucide="moon"></i>
           </button>
 
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
+          <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
             <i data-lucide="github"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">
+          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
             <i data-lucide="linkedin"></i>
           </a>
+
         </div>
 
         <div class="sidebar-footer">
           © <span id="year"></span> AA
         </div>
       </div>
+
     </aside>
+
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      <section class="page-section">
 
+      <section class="page-section">
         <h1 class="page-title">Sobre Mim</h1>
 
         <p class="page-intro">
-          Estou a tirar <strong>Engenharia Informática</strong> e ando a construir o meu percurso em áreas que me fazem sentido:
+          Estou a tirar <strong>Engenharia Informática</strong> e estou a construir um percurso nas áreas que mais me fazem sentido:
           <strong>DevOps</strong>, automação, scripting, 3D, pequenos jogos e, aos poucos, <strong>CyberSecurity</strong>.
         </p>
 
-        <div class="about-grid">
+        <h2 class="section-title">Um pouco sobre mim</h2>
+        <p class="text-block">
+          Sempre gostei de perceber como as coisas funcionam e de tentar simplificar tarefas repetitivas.
+          A informática acabou por ser o sítio onde consigo juntar lógica, criatividade e aquela vontade constante de aprender mais qualquer coisa.
+          <br><br>
+          Gosto de aprender a partir de projetos: pego num tema, faço algo prático e vou ajustando à medida que descubro novas ferramentas e formas de trabalhar melhor.
+        </p>
 
-          <div>
-            <h2 class="subheading">Um pouco sobre mim</h2>
-            <p>
-              Sempre gostei de perceber como as coisas funcionam e de tornar processos mais simples.  
-              A informática acabou por ser o sítio onde consigo juntar lógica, criatividade e aquela vontade de aprender mais um pouco todos os dias.
-            </p>
-            <p class="about-extra">
-              Gosto de aprender através de projetos: pego num tema, construo algo prático e vou evoluindo à medida que descubro novas ferramentas.
-            </p>
-          </div>
+        <h2 class="section-title">Competências principais</h2>
 
-          <div>
-            <h2 class="subheading">Competências principais</h2>
-            <ul class="skills-list">
-              <li>Automação com PowerShell e Python</li>
-              <li>Fundamentos de DevOps e CI/CD</li>
-              <li>Modelação e design 3D</li>
-              <li>Desenvolvimento de pequenos jogos</li>
-              <li>Interesse crescente em CyberSecurity</li>
-            </ul>
-          </div>
+        <ul class="skills-list">
+          <li>Automação com PowerShell e Python</li>
+          <li>Fundamentos de DevOps e CI/CD</li>
+          <li>Modelação e design 3D</li>
+          <li>Desenvolvimento de pequenos jogos</li>
+          <li>Interesse crescente em CyberSecurity</li>
+        </ul>
 
-        </div>
-
-        <a href="projetos.html" class="btn primary">Ver Projetos</a>
+        <a href="projetos.html" class="btn-primary">Ver Projetos</a>
 
       </section>
-    </main>
 
+    </main>
   </div>
+
 </body>
 </html>

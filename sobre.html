@@ -12,6 +12,7 @@
 
 <body>
 
+<!-- BOTÃO HAMBÚRGUER -->
 <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
@@ -20,13 +21,13 @@
 
 <div class="layout">
 
-    <!-- SIDEBAR (IGUAL AO INDEX) -->
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-top">
 
             <div class="avatar-wrapper">
-                <img src="assets/avatar.png" class="avatar-img">
+                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
             </div>
 
             <div class="sidebar-name">André Abrantes</div>
@@ -43,7 +44,7 @@
                 <a href="projetos.html" class="nav-item">
                     <i data-lucide="laptop"></i><span>Projetos</span>
                 </a>
-                <a href="sobre.html" class="nav-item active">
+                <a href="sobre.html" class="nav-item">
                     <i data-lucide="user"></i><span>Sobre</span>
                 </a>
                 <a href="archives.html" class="nav-item">
@@ -64,9 +65,15 @@
 
         <div class="sidebar-bottom">
             <div class="sidebar-socials">
-                <button class="theme-toggle"><i data-lucide="moon"></i></button>
-                <a href="https://github.com/xoxpto" class="social-pill"><i data-lucide="github"></i></a>
-                <a href="https://linkedin.com" class="social-pill"><i data-lucide="linkedin"></i></a>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-pill">
+                    <i data-lucide="linkedin"></i>
+                </a>
             </div>
             <p class="sidebar-footer">© 2025 AA</p>
         </div>
@@ -107,10 +114,6 @@
     </main>
 
 </div>
-
-<script>
-    lucide.createIcons();
-</script>
 
 </body>
 </html>

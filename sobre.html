@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim — André Abrantes</title>
+    <title>André Abrantes | About</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,6 +12,7 @@
 
 <body>
 
+<!-- BOTÃO HAMBÚRGUER -->
 <div class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
@@ -26,7 +27,7 @@
         <div class="sidebar-top">
 
             <div class="avatar-wrapper">
-                <img src="assets/avatar.png" class="avatar-img">
+                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
             </div>
 
             <div class="sidebar-name">André Abrantes</div>
@@ -38,25 +39,32 @@
 
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-item">
-                    <i data-lucide="home"></i><span>Home</span>
+                    <i data-lucide="home" class="nav-icon"></i>
+                    <span>Home</span>
                 </a>
                 <a href="projetos.html" class="nav-item">
-                    <i data-lucide="laptop"></i><span>Projetos</span>
+                    <i data-lucide="laptop" class="nav-icon"></i>
+                    <span>Projetos</span>
                 </a>
-                <a href="sobre.html" class="nav-item active">
-                    <i data-lucide="user"></i><span>Sobre</span>
+                <a href="sobre.html" class="nav-item">
+                    <i data-lucide="user" class="nav-icon"></i>
+                    <span>Sobre</span>
                 </a>
                 <a href="archives.html" class="nav-item">
-                    <i data-lucide="archive"></i><span>Arquivo</span>
+                    <i data-lucide="archive" class="nav-icon"></i>
+                    <span>Arquivo</span>
                 </a>
                 <a href="tags.html" class="nav-item">
-                    <i data-lucide="tags"></i><span>Tags</span>
+                    <i data-lucide="tags" class="nav-icon"></i>
+                    <span>Tags</span>
                 </a>
                 <a href="resume.html" class="nav-item">
-                    <i data-lucide="file-text"></i><span>Resume</span>
+                    <i data-lucide="file-text" class="nav-icon"></i>
+                    <span>Resume</span>
                 </a>
                 <a href="contact.html" class="nav-item">
-                    <i data-lucide="mail"></i><span>Contact Me</span>
+                    <i data-lucide="mail" class="nav-icon"></i>
+                    <span>Contactos</span>
                 </a>
             </nav>
 
@@ -64,16 +72,27 @@
 
         <div class="sidebar-bottom">
             <div class="sidebar-socials">
+
                 <button class="theme-toggle" id="theme-toggle">
-                    <i data-lucide="moon"></i>
+                    <i data-lucide="moon" class="theme-icon"></i>
                 </button>
-                <a href="https://github.com/xoxpto" class="social-pill">
+
+                <button class="social-pill lang-toggle" id="lang-toggle" title="Change language">
+                    🇬🇧
+                </button>
+
+                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
                     <i data-lucide="github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" class="social-pill">
+
+                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+                   target="_blank"
+                   class="social-pill">
                     <i data-lucide="linkedin"></i>
                 </a>
+
             </div>
+
             <p class="sidebar-footer">© 2025 AA</p>
         </div>
 
@@ -84,39 +103,28 @@
         <section class="page-section">
 
             <header class="page-header">
-                <div class="breadcrumb-pill">
-                    <i data-lucide="user"></i>
-                    <span>Sobre Mim</span>
-                </div>
-
-                <h1>Sobre Mim</h1>
-                <p class="page-intro">
-                    Aqui encontras informações sobre quem sou, o que faço e quais os meus objetivos.
-                </p>
+                <h1 data-i18n="about.title"></h1>
+                <p class="page-intro" data-i18n="about.intro"></p>
             </header>
 
-            <h2 class="subheading">Introdução</h2>
-            <p>
-                Sou estudante de Engenharia Informática com interesse especial em automação,
-                DevOps, cloud computing, scripting e desenvolvimento de projetos criativos.
-            </p>
+            <h2 class="subheading" data-i18n="about.profile.title"></h2>
+            <p data-i18n="about.profile.text"></p>
 
-            <h2 class="subheading">Competências</h2>
+            <h2 class="subheading" data-i18n="about.skills.title"></h2>
             <ul class="skills-list">
-                <li>PowerShell & Python</li>
-                <li>Active Directory & Azure AD</li>
-                <li>Monitorização & Logs Ingestion API</li>
-                <li>Web Dev — HTML, CSS, JS</li>
+                <li data-i18n="about.skills.1"></li>
+                <li data-i18n="about.skills.2"></li>
+                <li data-i18n="about.skills.3"></li>
+                <li data-i18n="about.skills.4"></li>
             </ul>
+
+            <h2 class="subheading" data-i18n="about.goals.title"></h2>
+            <p data-i18n="about.goals.text"></p>
 
         </section>
     </main>
 
 </div>
-
-<script>
-    lucide.createIcons();
-</script>
 
 </body>
 </html>

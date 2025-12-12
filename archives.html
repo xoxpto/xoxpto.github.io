@@ -1,122 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>André Abrantes | Arquivo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside class="sidebar">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- BOTÃO HAMBÚRGUER -->
+<div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
         <div class="sidebar-top">
-          <div class="avatar-wrapper">
-            <img src="assets/avatar.png" alt="Foto" class="avatar-img" />
-          </div>
-          <div>
+            <div class="avatar-wrapper">
+                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
+            </div>
+
             <div class="sidebar-name">André Abrantes</div>
+
             <p class="sidebar-quote">
-              Automate what you repeat.<br />
-              Improve what you automate.
+                Automate what you repeat.<br>
+                Improve what you automate.
             </p>
 
             <nav class="sidebar-nav">
-              <a href="index.html" class="nav-item">
-                <i data-lucide="home" class="nav-icon"></i>
-                <span>Home</span>
-              </a>
-              <a href="projetos.html" class="nav-item">
-                <i data-lucide="laptop" class="nav-icon"></i>
-                <span>Projetos</span>
-              </a>
-              <a href="sobre.html" class="nav-item">
-                <i data-lucide="user" class="nav-icon"></i>
-                <span>Sobre</span>
-              </a>
-              <a href="archives.html" class="nav-item active">
-                <i data-lucide="archive" class="nav-icon"></i>
-                <span>Arquivo</span>
-              </a>
-              <a href="tags.html" class="nav-item">
-                <i data-lucide="tags" class="nav-icon"></i>
-                <span>Tags</span>
-              </a>
-              <a href="resume.html" class="nav-item">
-                <i data-lucide="file-text" class="nav-icon"></i>
-                <span>Resume</span>
-              </a>
-              <a href="contact.html" class="nav-item">
-                <i data-lucide="mail" class="nav-icon"></i>
-                <span>Contact Me</span>
-              </a>
+                <a href="index.html" class="nav-item">
+                    <i data-lucide="home" class="nav-icon"></i>
+                    <span>Home</span>
+                </a>
+                <a href="projetos.html" class="nav-item">
+                    <i data-lucide="laptop" class="nav-icon"></i>
+                    <span>Projetos</span>
+                </a>
+                <a href="sobre.html" class="nav-item">
+                    <i data-lucide="user" class="nav-icon"></i>
+                    <span>Sobre</span>
+                </a>
+                <a href="archives.html" class="nav-item">
+                    <i data-lucide="archive" class="nav-icon"></i>
+                    <span>Arquivo</span>
+                </a>
+                <a href="tags.html" class="nav-item">
+                    <i data-lucide="tags" class="nav-icon"></i>
+                    <span>Tags</span>
+                </a>
+                <a href="resume.html" class="nav-item">
+                    <i data-lucide="file-text" class="nav-icon"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i data-lucide="mail" class="nav-icon"></i>
+                    <span>Contact Me</span>
+                </a>
             </nav>
-          </div>
         </div>
 
         <div class="sidebar-bottom">
-          <div class="sidebar-socials">
-            <button
-              class="theme-toggle"
-              id="theme-toggle"
-              aria-label="Alternar tema"
-            >
-              <i data-lucide="moon" class="theme-icon"></i>
-            </button>
-            <a
-              href="https://github.com/xoxpto"
-              target="_blank"
-              class="social-pill"
-              aria-label="GitHub"
-            >
-              <i data-lucide="github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-              target="_blank"
-              class="social-pill"
-              aria-label="LinkedIn"
-            >
-              <i data-lucide="linkedin"></i>
-            </a>
-          </div>
-          <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-      </aside>
+            <div class="sidebar-socials">
+                <button
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Alternar tema"
+                >
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
 
-      <main class="main-content">
-        <section class="page-section">
-          <header class="page-header">
-            <div class="breadcrumb-pill">
+                <a
+                    href="https://github.com/xoxpto"
+                    target="_blank"
+                    class="social-pill"
+                    aria-label="GitHub"
+                >
+                    <i data-lucide="github"></i>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+                    target="_blank"
+                    class="social-pill"
+                    aria-label="LinkedIn"
+                >
+                    <i data-lucide="linkedin"></i>
+                </a>
             </div>
-            <h1>Arquivo</h1>
-            <p class="page-intro">
-              Aqui encontras todos os meus repositórios do GitHub organizados
-              por área. Esta secção é atualizada automaticamente conforme vou
-              criando novos projetos.
-            </p>
-          </header>
 
-          <div class="archive-filters">
-            <button class="filter-btn active" data-area="all">Todos</button>
-            <button class="filter-btn" data-area="DevOps">DevOps</button>
-            <button class="filter-btn" data-area="GameDev">GameDev</button>
-            <button class="filter-btn" data-area="3D &amp; Design">
-              3D &amp; Design
-            </button>
-            <button class="filter-btn" data-area="CyberSecurity">
-              CyberSecurity
-            </button>
-            <button class="filter-btn" data-area="Outros">Outros</button>
-          </div>
+            <p class="sidebar-footer">© 2025 AA</p>
+        </div>
+    </aside>
 
-          <div id="repos-archive" class="archive-grid">
-            <!-- preenchido via JS -->
-          </div>
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+        <section class="page-section">
+
+            <header class="page-header">
+                <div class="breadcrumb-pill">
+                    <i data-lucide="archive"></i>
+                    <span>Arquivo</span>
+                </div>
+
+                <h1>Arquivo</h1>
+                <p class="page-intro">
+                    Aqui encontras todos os meus repositórios do GitHub organizados
+                    por área. Esta secção é atualizada automaticamente conforme
+                    vou criando novos projetos.
+                </p>
+            </header>
+
+            <div class="archive-filters">
+                <button class="filter-btn active" data-area="all">Todos</button>
+                <button class="filter-btn" data-area="DevOps">DevOps</button>
+                <button class="filter-btn" data-area="GameDev">GameDev</button>
+                <button class="filter-btn" data-area="3D &amp; Design">
+                    3D &amp; Design
+                </button>
+                <button class="filter-btn" data-area="CyberSecurity">
+                    CyberSecurity
+                </button>
+                <button class="filter-btn" data-area="Outros">Outros</button>
+            </div>
+
+            <div id="repos-archive" class="archive-grid">
+                <!-- preenchido via JS -->
+            </div>
+
         </section>
-      </main>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
-  </body>
+</div>
+
+</body>
 </html>

@@ -19,7 +19,6 @@
     <span></span>
 </div>
 
-<!-- LAYOUT PRINCIPAL -->
 <div class="layout">
 
     <!-- SIDEBAR -->
@@ -38,41 +37,34 @@
                 Improve what you automate.
             </p>
 
-            <!-- NAV -->
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-item">
                     <i data-lucide="home" class="nav-icon"></i>
                     <span>Home</span>
                 </a>
-
                 <a href="projetos.html" class="nav-item">
                     <i data-lucide="laptop" class="nav-icon"></i>
                     <span>Projetos</span>
                 </a>
-
                 <a href="sobre.html" class="nav-item">
                     <i data-lucide="user" class="nav-icon"></i>
                     <span>Sobre</span>
                 </a>
-
                 <a href="archives.html" class="nav-item">
                     <i data-lucide="archive" class="nav-icon"></i>
                     <span>Arquivo</span>
                 </a>
-
                 <a href="tags.html" class="nav-item">
                     <i data-lucide="tags" class="nav-icon"></i>
                     <span>Tags</span>
                 </a>
-
                 <a href="resume.html" class="nav-item">
                     <i data-lucide="file-text" class="nav-icon"></i>
                     <span>Resume</span>
                 </a>
-
                 <a href="contact.html" class="nav-item">
                     <i data-lucide="mail" class="nav-icon"></i>
-                    <span>Contact Me</span>
+                    <span>Contactos</span>
                 </a>
             </nav>
 
@@ -83,8 +75,14 @@
 
             <div class="sidebar-socials">
 
+                <!-- DARK / LIGHT -->
                 <button class="theme-toggle" id="theme-toggle">
                     <i data-lucide="moon" class="theme-icon"></i>
+                </button>
+
+                <!-- 🌍 IDIOMA -->
+                <button class="social-pill lang-toggle" id="lang-toggle" title="Change language">
+                    🇬🇧
                 </button>
 
                 <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
@@ -92,7 +90,8 @@
                 </a>
 
                 <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-                   target="_blank" class="social-pill">
+                   target="_blank"
+                   class="social-pill">
                     <i data-lucide="linkedin"></i>
                 </a>
 
@@ -103,48 +102,14 @@
 
     </aside>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- CONTEÚDO -->
     <main class="main-content">
         <section class="page-section">
 
             <header class="page-header">
-                <h1>Portefólio Técnico</h1>
-
-                <p class="page-intro">
-                    Sou estudante de <strong>Engenharia Informática</strong> com foco em
-                    <strong>automação</strong>, <strong>DevOps</strong>, <strong>cloud</strong>
-                    e desenvolvimento de soluções técnicas.  
-                    Este portefólio reúne projetos práticos, experiências técnicas
-                    e áreas de interesse em constante evolução.
-                </p>
+                <h1 data-i18n="home.title"></h1>
+                <p class="page-intro" data-i18n="home.intro"></p>
             </header>
-
-            <div class="home-grid">
-
-                <article class="home-card">
-                    <h2>Atividade atual</h2>
-                    <ul>
-                        <li>Automação de processos com PowerShell e Python</li>
-                        <li>Organização e consolidação de projetos técnicos</li>
-                        <li>Estudo de DevOps, CI/CD e observabilidade</li>
-                    </ul>
-                </article>
-
-                <article class="home-card">
-                    <h2>Objetivos profissionais</h2>
-                    <ul>
-                        <li>Desenvolver pipelines CI/CD funcionais e escaláveis</li>
-                        <li>Aprofundar competências em cloud e automação</li>
-                        <li>Criar projetos em DevOps, CyberSecurity, GameDev e 3D</li>
-                    </ul>
-                </article>
-
-            </div>
-
-            <div class="home-cta">
-                <a href="projetos.html" class="btn primary">Ver Projetos</a>
-                <a href="sobre.html" class="btn secondary">Perfil</a>
-            </div>
 
         </section>
     </main>

@@ -1,141 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>André Abrantes | Contact Me</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside class="sidebar">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- BOTÃO HAMBÚRGUER -->
+<div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
         <div class="sidebar-top">
-          <div class="avatar-wrapper">
-            <img src="assets/avatar.png" alt="Foto" class="avatar-img" />
-          </div>
-          <div>
+            <div class="avatar-wrapper">
+                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
+            </div>
+
             <div class="sidebar-name">André Abrantes</div>
+
             <p class="sidebar-quote">
-              Automate what you repeat.<br />
-              Improve what you automate.
+                Automate what you repeat.<br>
+                Improve what you automate.
             </p>
 
             <nav class="sidebar-nav">
-              <a href="index.html" class="nav-item">
-                <i data-lucide="home" class="nav-icon"></i>
-                <span>Home</span>
-              </a>
-              <a href="projetos.html" class="nav-item">
-                <i data-lucide="laptop" class="nav-icon"></i>
-                <span>Projetos</span>
-              </a>
-              <a href="sobre.html" class="nav-item">
-                <i data-lucide="user" class="nav-icon"></i>
-                <span>Sobre</span>
-              </a>
-              <a href="archives.html" class="nav-item">
-                <i data-lucide="archive" class="nav-icon"></i>
-                <span>Arquivo</span>
-              </a>
-              <a href="tags.html" class="nav-item">
-                <i data-lucide="tags" class="nav-icon"></i>
-                <span>Tags</span>
-              </a>
-              <a href="resume.html" class="nav-item">
-                <i data-lucide="file-text" class="nav-icon"></i>
-                <span>Resume</span>
-              </a>
-              <a href="contact.html" class="nav-item active">
-                <i data-lucide="mail" class="nav-icon"></i>
-                <span>Contact Me</span>
-              </a>
+                <a href="index.html" class="nav-item">
+                    <i data-lucide="home" class="nav-icon"></i>
+                    <span>Home</span>
+                </a>
+                <a href="projetos.html" class="nav-item">
+                    <i data-lucide="laptop" class="nav-icon"></i>
+                    <span>Projetos</span>
+                </a>
+                <a href="sobre.html" class="nav-item">
+                    <i data-lucide="user" class="nav-icon"></i>
+                    <span>Sobre</span>
+                </a>
+                <a href="archives.html" class="nav-item">
+                    <i data-lucide="archive" class="nav-icon"></i>
+                    <span>Arquivo</span>
+                </a>
+                <a href="tags.html" class="nav-item">
+                    <i data-lucide="tags" class="nav-icon"></i>
+                    <span>Tags</span>
+                </a>
+                <a href="resume.html" class="nav-item">
+                    <i data-lucide="file-text" class="nav-icon"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i data-lucide="mail" class="nav-icon"></i>
+                    <span>Contact Me</span>
+                </a>
             </nav>
-          </div>
         </div>
 
         <div class="sidebar-bottom">
-          <div class="sidebar-socials">
-            <button
-              class="theme-toggle"
-              id="theme-toggle"
-              aria-label="Alternar tema"
-            >
-              <i data-lucide="moon" class="theme-icon"></i>
-            </button>
-            <a
-              href="https://github.com/xoxpto"
-              target="_blank"
-              class="social-pill"
-              aria-label="GitHub"
-            >
-              <i data-lucide="github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-              target="_blank"
-              class="social-pill"
-              aria-label="LinkedIn"
-            >
-              <i data-lucide="linkedin"></i>
-            </a>
-          </div>
-          <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-      </aside>
+            <div class="sidebar-socials">
+                <button
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Alternar tema"
+                >
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
 
-      <main class="main-content">
-        <section class="page-section">
-          <header class="page-header">
-            <h1>Contact Me</h1>
-            <p class="page-intro">
-              Se quiseres falar comigo sobre projetos, trabalho, estudos ou
-              simplesmente trocar ideias, estas são as formas mais simples de
-              chegar a mim.
-            </p>
-          </header>
+                <a
+                    href="https://github.com/xoxpto"
+                    target="_blank"
+                    class="social-pill"
+                    aria-label="GitHub"
+                >
+                    <i data-lucide="github"></i>
+                </a>
 
-          <div class="contact-grid">
-            <div class="contact-card">
-              <h2>Contactos diretos</h2>
-              <ul class="contacts-list">
-                <li>
-                  <span class="contacts-label">Email</span>
-                  <a href="mailto:andrebranteswork@hotmail.com"
-                    >andreabrantes.dev@gmail.com</a
-                  >
-                </li>
-                <li>
-                  <span class="contacts-label">LinkedIn</span>
-                  <a
+                <a
                     href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
                     target="_blank"
-                    >linkedin.com/in/andré-abrantes-04022129b/</a
-                  >
-                </li>
-                <li>
-                  <span class="contacts-label">GitHub</span>
-                  <a href="https://github.com/xoxpto" target="_blank"
-                    >github.com/xoxpto</a
-                  >
-                </li>
-              </ul>
+                    class="social-pill"
+                    aria-label="LinkedIn"
+                >
+                    <i data-lucide="linkedin"></i>
+                </a>
             </div>
 
-            <div class="contact-card">
-              <h2>Mensagens</h2>
-              <p class="muted">
-                Ainda não tenho um formulário ligado a backend neste site, por
-                isso para já a melhor forma de falar comigo é mesmo por
-                <strong>email</strong> ou <strong>LinkedIn</strong>. Respondo
-                sempre que consigo.
-              </p>
+            <p class="sidebar-footer">© 2025 AA</p>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+        <section class="page-section">
+
+            <header class="page-header">
+                <div class="breadcrumb-pill">
+                    <i data-lucide="mail"></i>
+                    <span>Contact Me</span>
+                </div>
+
+                <h1>Contact Me</h1>
+                <p class="page-intro">
+                    Se quiseres falar comigo sobre projetos, trabalho, estudos ou
+                    simplesmente trocar ideias, estas são as formas mais simples
+                    de chegar a mim.
+                </p>
+            </header>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <h2>Contactos diretos</h2>
+                    <ul class="contacts-list">
+                        <li>
+                            <span class="contacts-label">Email</span>
+                            <a href="mailto:andreabrantes.dev@gmail.com">
+                                andreabrantes.dev@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <span class="contacts-label">LinkedIn</span>
+                            <a
+                                href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+                                target="_blank"
+                            >
+                                linkedin.com/in/andré-abrantes-04022129b/
+                            </a>
+                        </li>
+                        <li>
+                            <span class="contacts-label">GitHub</span>
+                            <a href="https://github.com/xoxpto" target="_blank">
+                                github.com/xoxpto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-card">
+                    <h2>Mensagens</h2>
+                    <p class="muted">
+                        Ainda não tenho um formulário ligado a backend neste site,
+                        por isso para já a melhor forma de falar comigo é mesmo por
+                        <strong>email</strong> ou <strong>LinkedIn</strong>.
+                        Respondo sempre que consigo.
+                    </p>
+                </div>
+
             </div>
-          </div>
+
         </section>
-      </main>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
-  </body>
+</div>
+
+</body>
 </html>

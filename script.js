@@ -47,6 +47,17 @@ function initThemeToggle() {
 /* ================= LANGUAGE TOGGLE ================== */
 const translations = {
   en: {
+    /* SIDEBAR */
+    "nav.home": "Home",
+    "nav.projects": "Projects",
+    "nav.about": "About",
+    "nav.archive": "Archive",
+    "nav.tags": "Tags",
+    "nav.resume": "Resume",
+    "nav.contact": "Contact",
+    "sidebar.quote.1": "Automate what you repeat.",
+    "sidebar.quote.2": "Improve what you automate.",
+
     /* HOME */
     "home.title": "Technical Portfolio",
     "home.intro":
@@ -91,6 +102,17 @@ const translations = {
   },
 
   pt: {
+    /* SIDEBAR */
+    "nav.home": "Início",
+    "nav.projects": "Projetos",
+    "nav.about": "Sobre",
+    "nav.archive": "Arquivo",
+    "nav.tags": "Tags",
+    "nav.resume": "Currículo",
+    "nav.contact": "Contactos",
+    "sidebar.quote.1": "Automatiza o que repetes.",
+    "sidebar.quote.2": "Melhora o que automatizas.",
+
     /* HOME */
     "home.title": "Portefólio Técnico",
     "home.intro":
@@ -136,11 +158,13 @@ const translations = {
 };
 
 function initLanguageToggle() {
+  // ✅ aplica SEMPRE no load (mesmo que o botão não exista)
+  let lang = localStorage.getItem("lang") || "en";
+  applyLanguage(lang);
+
   const langBtn = document.getElementById("lang-toggle");
   if (!langBtn) return;
 
-  let lang = localStorage.getItem("lang") || "en";
-  applyLanguage(lang);
   langBtn.textContent = lang === "en" ? "🇬🇧" : "🇵🇹";
 
   langBtn.addEventListener("click", () => {
@@ -148,6 +172,7 @@ function initLanguageToggle() {
     localStorage.setItem("lang", lang);
     langBtn.textContent = lang === "en" ? "🇬🇧" : "🇵🇹";
     applyLanguage(lang);
+    if (window.lucide) lucide.createIcons();
   });
 }
 

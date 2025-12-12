@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>André Abrantes — Portefólio</title>
+    <title>André Abrantes — Technical Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -70,17 +70,13 @@
 
         </div>
 
-        <!-- FOOTER -->
         <div class="sidebar-bottom">
-
             <div class="sidebar-socials">
 
-                <!-- DARK / LIGHT -->
                 <button class="theme-toggle" id="theme-toggle">
                     <i data-lucide="moon" class="theme-icon"></i>
                 </button>
 
-                <!-- 🌍 IDIOMA -->
                 <button class="social-pill lang-toggle" id="lang-toggle" title="Change language">
                     🇬🇧
                 </button>
@@ -106,10 +102,49 @@
     <main class="main-content">
         <section class="page-section">
 
+            <!-- HEADER -->
             <header class="page-header">
                 <h1 data-i18n="home.title"></h1>
                 <p class="page-intro" data-i18n="home.intro"></p>
             </header>
+
+            <!-- CARDS -->
+            <div class="home-grid">
+
+                <article class="home-card">
+                    <h2 data-i18n="home.focus.title"></h2>
+                    <ul>
+                        <li data-i18n="home.focus.1"></li>
+                        <li data-i18n="home.focus.2"></li>
+                        <li data-i18n="home.focus.3"></li>
+                    </ul>
+                </article>
+
+                <article class="home-card">
+                    <h2 data-i18n="home.areas.title"></h2>
+                    <ul>
+                        <li data-i18n="home.areas.1"></li>
+                        <li data-i18n="home.areas.2"></li>
+                        <li data-i18n="home.areas.3"></li>
+                    </ul>
+                </article>
+
+                <article class="home-card">
+                    <h2 data-i18n="home.stack.title"></h2>
+                    <ul>
+                        <li data-i18n="home.stack.1"></li>
+                        <li data-i18n="home.stack.2"></li>
+                        <li data-i18n="home.stack.3"></li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="home-cta">
+                <a href="projetos.html" class="btn primary" data-i18n="home.cta.projects"></a>
+                <a href="sobre.html" class="btn secondary" data-i18n="home.cta.about"></a>
+            </div>
 
         </section>
     </main>

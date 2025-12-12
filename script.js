@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initGitHubSections();
   initHamburgerMenu();
   initActiveNav();
+  initLanguageToggle();
 
   if (window.lucide) {
     lucide.createIcons();
@@ -30,18 +31,56 @@ function initThemeToggle() {
       body.classList.contains("light") ? "light" : "dark"
     );
     updateToggleIcon();
-    if (window.lucide) {
-      lucide.createIcons();
-    }
+    if (window.lucide) lucide.createIcons();
   });
 
   function updateToggleIcon() {
-    if (!toggle) return;
     const icon = toggle.querySelector("i");
     if (!icon) return;
-    const isLight = body.classList.contains("light");
-    icon.setAttribute("data-lucide", isLight ? "sun" : "moon");
+    icon.setAttribute(
+      "data-lucide",
+      body.classList.contains("light") ? "sun" : "moon"
+    );
   }
+}
+
+/* ================= LANGUAGE TOGGLE ================== */
+const translations = {
+  en: {
+    "home.title": "Technical Portfolio",
+    "home.intro":
+      "Computer Engineering student focused on automation, DevOps, cloud computing and technical problem solving."
+  },
+  pt: {
+    "home.title": "Portefólio Técnico",
+    "home.intro":
+      "Estudante de Engenharia Informática com foco em automação, DevOps, cloud computing e resolução de problemas técnicos."
+  }
+};
+
+function initLanguageToggle() {
+  const langBtn = document.getElementById("lang-toggle");
+  if (!langBtn) return;
+
+  let lang = localStorage.getItem("lang") || "en";
+  applyLanguage(lang);
+  langBtn.textContent = lang === "en" ? "🇬🇧" : "🇵🇹";
+
+  langBtn.addEventListener("click", () => {
+    lang = lang === "en" ? "pt" : "en";
+    localStorage.setItem("lang", lang);
+    langBtn.textContent = lang === "en" ? "🇬🇧" : "🇵🇹";
+    applyLanguage(lang);
+  });
+}
+
+function applyLanguage(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
 }
 
 /* ================= HAMBURGER MENU ================== */
@@ -56,7 +95,6 @@ function initHamburgerMenu() {
     menuToggle.classList.toggle("active");
   });
 
-  // fechar ao clicar num item (mobile)
   document.querySelectorAll(".nav-item").forEach(item => {
     item.addEventListener("click", () => {
       if (window.innerWidth <= 880) {

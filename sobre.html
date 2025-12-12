@@ -1,128 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>André Abrantes | About</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="about.title">Sobre</title>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
 <!-- BOTÃO HAMBÚRGUER -->
 <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
 
-        <div class="sidebar-top">
+    <div class="sidebar-top">
 
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
-            </div>
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto" class="avatar-img">
+      </div>
 
-            <div class="sidebar-name">André Abrantes</div>
+      <div class="sidebar-name">André Abrantes</div>
 
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
+      <p class="sidebar-quote">
+        <span data-i18n="sidebar.quote.1">Automatiza o que repetes.</span><br>
+        <span data-i18n="sidebar.quote.2">Melhora o que automatizas.</span>
+      </p>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-item">
-                    <i data-lucide="home" class="nav-icon"></i>
-                    <span>Home</span>
-                </a>
-                <a href="projetos.html" class="nav-item">
-                    <i data-lucide="laptop" class="nav-icon"></i>
-                    <span>Projetos</span>
-                </a>
-                <a href="sobre.html" class="nav-item">
-                    <i data-lucide="user" class="nav-icon"></i>
-                    <span>Sobre</span>
-                </a>
-                <a href="archives.html" class="nav-item">
-                    <i data-lucide="archive" class="nav-icon"></i>
-                    <span>Arquivo</span>
-                </a>
-                <a href="tags.html" class="nav-item">
-                    <i data-lucide="tags" class="nav-icon"></i>
-                    <span>Tags</span>
-                </a>
-                <a href="resume.html" class="nav-item">
-                    <i data-lucide="file-text" class="nav-icon"></i>
-                    <span>Resume</span>
-                </a>
-                <a href="contact.html" class="nav-item">
-                    <i data-lucide="mail" class="nav-icon"></i>
-                    <span>Contactos</span>
-                </a>
-            </nav>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span data-i18n="nav.home">Início</span>
+        </a>
+        <a href="projetos.html" class="nav-item">
+          <i data-lucide="laptop"></i>
+          <span data-i18n="nav.projects">Projetos</span>
+        </a>
+        <a href="sobre.html" class="nav-item active">
+          <i data-lucide="user"></i>
+          <span data-i18n="nav.about">Sobre</span>
+        </a>
+        <a href="archives.html" class="nav-item">
+          <i data-lucide="archive"></i>
+          <span data-i18n="nav.archive">Arquivo</span>
+        </a>
+        <a href="tags.html" class="nav-item">
+          <i data-lucide="tags"></i>
+          <span data-i18n="nav.tags">Tags</span>
+        </a>
+        <a href="resume.html" class="nav-item">
+          <i data-lucide="file-text"></i>
+          <span data-i18n="nav.resume">Currículo</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+          <i data-lucide="mail"></i>
+          <span data-i18n="nav.contact">Contactos</span>
+        </a>
+      </nav>
 
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+
+        <button class="theme-toggle" id="theme-toggle">
+          <i data-lucide="moon"></i>
+        </button>
+
+        <button class="lang-toggle" id="lang-toggle" aria-label="Language toggle">
+          🇬🇧
+        </button>
+
+        <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
+          <i data-lucide="github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
+          <i data-lucide="linkedin"></i>
+        </a>
+
+      </div>
+      <p class="sidebar-footer">© 2025 André Abrantes</p>
+    </div>
+
+  </aside>
+
+  <!-- CONTEÚDO -->
+  <main class="main-content">
+    <section class="page-section">
+
+      <header class="page-header">
+        <div class="breadcrumb-pill">
+          <i data-lucide="user"></i>
+          <span data-i18n="about.title">Sobre</span>
         </div>
 
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
+        <h1 data-i18n="about.title">Sobre</h1>
+        <p class="page-intro" data-i18n="about.intro">
+          Resumo do meu percurso, interesses técnicos e objetivos profissionais.
+        </p>
+      </header>
 
-                <button class="theme-toggle" id="theme-toggle">
-                    <i data-lucide="moon" class="theme-icon"></i>
-                </button>
+      <section class="content-block">
+        <h2 data-i18n="about.profile.title">Perfil</h2>
+        <p data-i18n="about.profile.text">
+          Estudante de Engenharia Informática com forte interesse em automação,
+          práticas de DevOps e sistemas cloud. Focado no desenvolvimento de
+          soluções técnicas eficientes, escaláveis e sustentáveis.
+        </p>
+      </section>
 
-                <button class="social-pill lang-toggle" id="lang-toggle" title="Change language">
-                    🇬🇧
-                </button>
+      <section class="content-block">
+        <h2 data-i18n="about.skills.title">Competências Técnicas</h2>
+        <ul class="skills-list">
+          <li data-i18n="about.skills.1">Automação e scripting com PowerShell e Python</li>
+          <li data-i18n="about.skills.2">Active Directory, Azure AD e gestão de identidades</li>
+          <li data-i18n="about.skills.3">Serviços cloud, monitorização e ingestão de logs</li>
+          <li data-i18n="about.skills.4">Tecnologias web: HTML, CSS e JavaScript</li>
+        </ul>
+      </section>
 
-                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
-                    <i data-lucide="github"></i>
-                </a>
+      <section class="content-block">
+        <h2 data-i18n="about.goals.title">Objetivos Profissionais</h2>
+        <p data-i18n="about.goals.text">
+          Continuar a desenvolver competências em DevOps e engenharia cloud,
+          através da criação de projetos práticos que reforcem automação,
+          fiabilidade e boas práticas de segurança.
+        </p>
+      </section>
 
-                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-                   target="_blank"
-                   class="social-pill">
-                    <i data-lucide="linkedin"></i>
-                </a>
-
-            </div>
-
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-
-    </aside>
-
-    <!-- CONTEÚDO -->
-    <main class="main-content">
-        <section class="page-section">
-
-            <header class="page-header">
-                <h1 data-i18n="about.title"></h1>
-                <p class="page-intro" data-i18n="about.intro"></p>
-            </header>
-
-            <h2 class="subheading" data-i18n="about.profile.title"></h2>
-            <p data-i18n="about.profile.text"></p>
-
-            <h2 class="subheading" data-i18n="about.skills.title"></h2>
-            <ul class="skills-list">
-                <li data-i18n="about.skills.1"></li>
-                <li data-i18n="about.skills.2"></li>
-                <li data-i18n="about.skills.3"></li>
-                <li data-i18n="about.skills.4"></li>
-            </ul>
-
-            <h2 class="subheading" data-i18n="about.goals.title"></h2>
-            <p data-i18n="about.goals.text"></p>
-
-        </section>
-    </main>
+    </section>
+  </main>
 
 </div>
 

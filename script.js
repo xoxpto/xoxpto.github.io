@@ -68,7 +68,26 @@ const translations = {
     "home.stack.3": "Git, CI/CD pipelines and monitoring",
 
     "home.cta.projects": "View Projects",
-    "home.cta.about": "About Me"
+    "home.cta.about": "About Me",
+
+    /* ABOUT */
+    "about.title": "About",
+    "about.intro":
+      "Overview of my background, technical interests and professional goals.",
+
+    "about.profile.title": "Profile",
+    "about.profile.text":
+      "Computer Engineering student with a strong interest in automation, DevOps practices and cloud-based systems. Focused on building efficient, maintainable and scalable technical solutions.",
+
+    "about.skills.title": "Technical Skills",
+    "about.skills.1": "PowerShell and Python scripting for automation",
+    "about.skills.2": "Active Directory, Azure AD and identity management",
+    "about.skills.3": "Cloud services, monitoring and log ingestion",
+    "about.skills.4": "Web technologies: HTML, CSS and JavaScript",
+
+    "about.goals.title": "Professional Goals",
+    "about.goals.text":
+      "To continue developing technical expertise in DevOps and cloud engineering, while building real-world projects that reinforce automation, reliability and security best practices."
   },
 
   pt: {
@@ -93,7 +112,26 @@ const translations = {
     "home.stack.3": "Git, pipelines CI/CD e monitorização",
 
     "home.cta.projects": "Ver Projetos",
-    "home.cta.about": "Sobre Mim"
+    "home.cta.about": "Sobre Mim",
+
+    /* ABOUT */
+    "about.title": "Sobre",
+    "about.intro":
+      "Resumo do meu percurso, interesses técnicos e objetivos profissionais.",
+
+    "about.profile.title": "Perfil",
+    "about.profile.text":
+      "Estudante de Engenharia Informática com forte interesse em automação, práticas de DevOps e sistemas cloud. Focado no desenvolvimento de soluções técnicas eficientes, escaláveis e sustentáveis.",
+
+    "about.skills.title": "Competências Técnicas",
+    "about.skills.1": "Automação e scripting com PowerShell e Python",
+    "about.skills.2": "Active Directory, Azure AD e gestão de identidades",
+    "about.skills.3": "Serviços cloud, monitorização e ingestão de logs",
+    "about.skills.4": "Tecnologias web: HTML, CSS e JavaScript",
+
+    "about.goals.title": "Objetivos Profissionais",
+    "about.goals.text":
+      "Continuar a desenvolver competências em DevOps e engenharia cloud, através da criação de projetos práticos que reforcem automação, fiabilidade e boas práticas de segurança."
   }
 };
 

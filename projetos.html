@@ -1,160 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <title>André Abrantes | Projetos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>André Abrantes | Projetos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
 <!-- BOTÃO HAMBÚRGUER -->
 <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
 
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
-            </div>
+    <div class="sidebar-top">
 
-            <div class="sidebar-name">André Abrantes</div>
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img" />
+      </div>
 
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
+      <div class="sidebar-name">André Abrantes</div>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-item">
-                    <i data-lucide="home" class="nav-icon"></i>
-                    <span>Home</span>
-                </a>
-                <a href="projetos.html" class="nav-item">
-                    <i data-lucide="laptop" class="nav-icon"></i>
-                    <span>Projetos</span>
-                </a>
-                <a href="sobre.html" class="nav-item">
-                    <i data-lucide="user" class="nav-icon"></i>
-                    <span>Sobre</span>
-                </a>
-                <a href="archives.html" class="nav-item">
-                    <i data-lucide="archive" class="nav-icon"></i>
-                    <span>Arquivo</span>
-                </a>
-                <a href="tags.html" class="nav-item">
-                    <i data-lucide="tags" class="nav-icon"></i>
-                    <span>Tags</span>
-                </a>
-                <a href="resume.html" class="nav-item">
-                    <i data-lucide="file-text" class="nav-icon"></i>
-                    <span>Resume</span>
-                </a>
-                <a href="contact.html" class="nav-item">
-                    <i data-lucide="mail" class="nav-icon"></i>
-                    <span>Contact Me</span>
-                </a>
-            </nav>
-        </div>
+      <p class="sidebar-quote">
+        <span data-i18n="sidebar.quote.1"></span><br />
+        <span data-i18n="sidebar.quote.2"></span>
+      </p>
 
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i data-lucide="moon" class="theme-icon"></i>
-                </button>
-                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
-                    <i data-lucide="linkedin"></i>
-                </a>
-            </div>
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-    </aside>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <i data-lucide="home" class="nav-icon"></i>
+          <span data-i18n="nav.home"></span>
+        </a>
+        <a href="projetos.html" class="nav-item active">
+          <i data-lucide="laptop" class="nav-icon"></i>
+          <span data-i18n="nav.projects"></span>
+        </a>
+        <a href="sobre.html" class="nav-item">
+          <i data-lucide="user" class="nav-icon"></i>
+          <span data-i18n="nav.about"></span>
+        </a>
+        <a href="archives.html" class="nav-item">
+          <i data-lucide="archive" class="nav-icon"></i>
+          <span data-i18n="nav.archive"></span>
+        </a>
+        <a href="tags.html" class="nav-item">
+          <i data-lucide="tags" class="nav-icon"></i>
+          <span data-i18n="nav.tags"></span>
+        </a>
+        <a href="resume.html" class="nav-item">
+          <i data-lucide="file-text" class="nav-icon"></i>
+          <span data-i18n="nav.resume"></span>
+        </a>
+        <a href="contact.html" class="nav-item">
+          <i data-lucide="mail" class="nav-icon"></i>
+          <span data-i18n="nav.contact"></span>
+        </a>
+      </nav>
 
-    <!-- CONTEÚDO -->
-    <main class="main-content">
-        <section class="page-section">
+    </div>
 
-            <header class="page-header">
-                <h1>Projetos</h1>
-                <p class="page-intro">
-                    Seleção de projetos desenvolvidos com foco em automação,
-                    desenvolvimento técnico e experimentação prática.
-                    Para uma visão completa dos repositórios públicos,
-                    consulta o arquivo.
-                </p>
-            </header>
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
 
-            <div class="projects-grid">
+        <button class="theme-toggle" id="theme-toggle">
+          <i data-lucide="moon" class="theme-icon"></i>
+        </button>
 
-                <article class="project-card">
-                    <header class="project-header">
-                        <h2>Automação com PowerShell</h2>
-                        <span class="tag">DevOps</span>
-                    </header>
-                    <p>
-                        Conjunto de scripts orientados à automação de tarefas
-                        administrativas, gestão de sistemas e recolha de informação
-                        em ambientes Windows.
-                    </p>
-                    <a href="https://github.com/xoxpto/powershell-automation"
-                       target="_blank"
-                       class="project-link">
-                        Ver no GitHub →
-                    </a>
-                </article>
+        <button class="social-pill" id="lang-toggle" aria-label="Toggle language">
+          🇵🇹
+        </button>
 
-                <article class="project-card">
-                    <header class="project-header">
-                        <h2>Ferramentas em Python</h2>
-                        <span class="tag">Python</span>
-                    </header>
-                    <p>
-                        Projetos em Python focados em automação, processamento
-                        de dados e criação de ferramentas utilitárias para
-                        apoio a fluxos técnicos.
-                    </p>
-                    <a href="https://github.com/xoxpto/python-pipeline-automation"
-                       target="_blank"
-                       class="project-link">
-                        Ver no GitHub →
-                    </a>
-                </article>
+        <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
+          <i data-lucide="github"></i>
+        </a>
 
-                <article class="project-card">
-                    <header class="project-header">
-                        <h2>Exploração 3D</h2>
-                        <span class="tag">3D</span>
-                    </header>
-                    <p>
-                        Experiências em modelação e renderização 3D com Blender,
-                        com foco em aspetos visuais, composição e aprendizagem
-                        técnica da ferramenta.
-                    </p>
-                    <a href="https://github.com/xoxpto/Blender-3D-Projects"
-                       target="_blank"
-                       class="project-link">
-                        Ver no GitHub →
-                    </a>
-                </article>
+        <a
+          href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+          target="_blank"
+          class="social-pill"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
 
-            </div>
+      </div>
 
-        </section>
-    </main>
+      <p class="sidebar-footer">© 2025 André Abrantes</p>
+    </div>
+
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <section class="page-section">
+
+      <header class="page-header">
+        <h1>Projetos em Destaque</h1>
+        <p class="page-intro">
+          Aqui junto alguns projetos que quero destacar. Para ver todos os
+          repositórios públicos, consulta o
+          <a href="archives.html" class="project-link">Arquivo</a>.
+        </p>
+      </header>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>Script de Automação PowerShell</h2>
+            <span class="tag">DevOps</span>
+          </header>
+          <p>
+            Projeto focado na automatização de tarefas administrativas e
+            operacionais com <strong>PowerShell</strong>.
+          </p>
+          <a
+            href="https://github.com/xoxpto/powershell-automation"
+            target="_blank"
+            class="project-link"
+          >
+            Ver no GitHub →
+          </a>
+        </article>
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>Ferramenta Python</h2>
+            <span class="tag">Python</span>
+          </header>
+          <p>
+            Ferramenta em <strong>Python</strong> para automação e organização de
+            dados, criada para aprendizagem prática.
+          </p>
+          <a
+            href="https://github.com/xoxpto/python-pipeline-automation"
+            target="_blank"
+            class="project-link"
+          >
+            Ver no GitHub →
+          </a>
+        </article>
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>Experiência 3D</h2>
+            <span class="tag">3D</span>
+          </header>
+          <p>
+            Exploração de modelação e renderização 3D em
+            <strong>Blender</strong>, com foco visual.
+          </p>
+          <a
+            href="https://github.com/xoxpto/Blender-3D-Projects"
+            target="_blank"
+            class="project-link"
+          >
+            Ver no GitHub →
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+  </main>
 
 </div>
 

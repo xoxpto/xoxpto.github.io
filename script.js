@@ -47,14 +47,53 @@ function initThemeToggle() {
 /* ================= LANGUAGE TOGGLE ================== */
 const translations = {
   en: {
+    /* HOME */
     "home.title": "Technical Portfolio",
     "home.intro":
-      "Computer Engineering student focused on automation, DevOps, cloud computing and technical problem solving."
+      "Computer Engineering student focused on automation, DevOps, cloud computing and technical problem solving.",
+
+    "home.focus.title": "Current Focus",
+    "home.focus.1": "Automation of systems using PowerShell and Python",
+    "home.focus.2": "Foundations of DevOps, CI/CD and observability",
+    "home.focus.3": "Cloud-based architectures and system integration",
+
+    "home.areas.title": "Technical Areas",
+    "home.areas.1": "DevOps and infrastructure automation",
+    "home.areas.2": "Cloud computing and system administration",
+    "home.areas.3": "CyberSecurity fundamentals and tooling",
+
+    "home.stack.title": "Tools & Technologies",
+    "home.stack.1": "PowerShell, Python and JavaScript",
+    "home.stack.2": "Azure, Active Directory and Linux",
+    "home.stack.3": "Git, CI/CD pipelines and monitoring",
+
+    "home.cta.projects": "View Projects",
+    "home.cta.about": "About Me"
   },
+
   pt: {
+    /* HOME */
     "home.title": "Portefólio Técnico",
     "home.intro":
-      "Estudante de Engenharia Informática com foco em automação, DevOps, cloud computing e resolução de problemas técnicos."
+      "Estudante de Engenharia Informática com foco em automação, DevOps, cloud computing e resolução de problemas técnicos.",
+
+    "home.focus.title": "Foco Atual",
+    "home.focus.1": "Automação de sistemas com PowerShell e Python",
+    "home.focus.2": "Fundamentos de DevOps, CI/CD e observabilidade",
+    "home.focus.3": "Arquiteturas cloud e integração de sistemas",
+
+    "home.areas.title": "Áreas Técnicas",
+    "home.areas.1": "DevOps e automação de infraestrutura",
+    "home.areas.2": "Cloud computing e administração de sistemas",
+    "home.areas.3": "Fundamentos de CyberSecurity e ferramentas",
+
+    "home.stack.title": "Ferramentas & Tecnologias",
+    "home.stack.1": "PowerShell, Python e JavaScript",
+    "home.stack.2": "Azure, Active Directory e Linux",
+    "home.stack.3": "Git, pipelines CI/CD e monitorização",
+
+    "home.cta.projects": "Ver Projetos",
+    "home.cta.about": "Sobre Mim"
   }
 };
 

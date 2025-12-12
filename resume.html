@@ -1,131 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>André Abrantes | Resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside class="sidebar">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- BOTÃO HAMBÚRGUER -->
+<div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
         <div class="sidebar-top">
-          <div class="avatar-wrapper">
-            <img src="assets/avatar.png" alt="Foto" class="avatar-img" />
-          </div>
-          <div>
+            <div class="avatar-wrapper">
+                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
+            </div>
+
             <div class="sidebar-name">André Abrantes</div>
+
             <p class="sidebar-quote">
-              Automate what you repeat.<br />
-              Improve what you automate.
+                Automate what you repeat.<br>
+                Improve what you automate.
             </p>
 
             <nav class="sidebar-nav">
-              <a href="index.html" class="nav-item">
-                <i data-lucide="home" class="nav-icon"></i>
-                <span>Home</span>
-              </a>
-              <a href="projetos.html" class="nav-item">
-                <i data-lucide="laptop" class="nav-icon"></i>
-                <span>Projetos</span>
-              </a>
-              <a href="sobre.html" class="nav-item">
-                <i data-lucide="user" class="nav-icon"></i>
-                <span>Sobre</span>
-              </a>
-              <a href="archives.html" class="nav-item">
-                <i data-lucide="archive" class="nav-icon"></i>
-                <span>Arquivo</span>
-              </a>
-              <a href="tags.html" class="nav-item">
-                <i data-lucide="tags" class="nav-icon"></i>
-                <span>Tags</span>
-              </a>
-              <a href="resume.html" class="nav-item active">
-                <i data-lucide="file-text" class="nav-icon"></i>
-                <span>Resume</span>
-              </a>
-              <a href="contact.html" class="nav-item">
-                <i data-lucide="mail" class="nav-icon"></i>
-                <span>Contact Me</span>
-              </a>
+                <a href="index.html" class="nav-item">
+                    <i data-lucide="home" class="nav-icon"></i>
+                    <span>Home</span>
+                </a>
+                <a href="projetos.html" class="nav-item">
+                    <i data-lucide="laptop" class="nav-icon"></i>
+                    <span>Projetos</span>
+                </a>
+                <a href="sobre.html" class="nav-item">
+                    <i data-lucide="user" class="nav-icon"></i>
+                    <span>Sobre</span>
+                </a>
+                <a href="archives.html" class="nav-item">
+                    <i data-lucide="archive" class="nav-icon"></i>
+                    <span>Arquivo</span>
+                </a>
+                <a href="tags.html" class="nav-item">
+                    <i data-lucide="tags" class="nav-icon"></i>
+                    <span>Tags</span>
+                </a>
+                <a href="resume.html" class="nav-item">
+                    <i data-lucide="file-text" class="nav-icon"></i>
+                    <span>Resume</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <i data-lucide="mail" class="nav-icon"></i>
+                    <span>Contact Me</span>
+                </a>
             </nav>
-          </div>
         </div>
 
         <div class="sidebar-bottom">
-          <div class="sidebar-socials">
-            <button
-              class="theme-toggle"
-              id="theme-toggle"
-              aria-label="Alternar tema"
-            >
-              <i data-lucide="moon" class="theme-icon"></i>
-            </button>
-            <a
-              href="https://github.com/xoxpto"
-              target="_blank"
-              class="social-pill"
-              aria-label="GitHub"
-            >
-              <i data-lucide="github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-              target="_blank"
-              class="social-pill"
-              aria-label="LinkedIn"
-            >
-              <i data-lucide="linkedin"></i>
-            </a>
-          </div>
-          <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-      </aside>
+            <div class="sidebar-socials">
+                <button
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Alternar tema"
+                >
+                    <i data-lucide="moon" class="theme-icon"></i>
+                </button>
 
-      <main class="main-content">
-        <section class="page-section">
-          <header class="page-header">
-            <h1>Resume</h1>
-            <p class="page-intro">
-              Um resumo rápido do meu percurso académico e das experiências
-              técnicas que estou a construir. Esta página é um ponto de partida
-              para CVs mais formais (como o Europass) e para recruiters.
-            </p>
-          </header>
+                <a
+                    href="https://github.com/xoxpto"
+                    target="_blank"
+                    class="social-pill"
+                    aria-label="GitHub"
+                >
+                    <i data-lucide="github"></i>
+                </a>
 
-          <section class="resume-section">
-            <h2>Formação</h2>
-            <div class="resume-timeline">
-              <div class="resume-item">
-                <div class="resume-period">2023 — presente</div>
-                <div class="resume-title">
-                  Licenciatura em Engenharia Informática
-                </div>
-                <div class="resume-detail">Universidade Autónoma de Lisboa</div>
-              </div>
-              <div class="resume-item">
-                <div class="resume-period">Ensino Secundário</div>
-                <div class="resume-title">Área de Ciências e Tecnologia</div>
-                <div class="resume-detail">Concluído (12.º ano)</div>
-              </div>
+                <a
+                    href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+                    target="_blank"
+                    class="social-pill"
+                    aria-label="LinkedIn"
+                >
+                    <i data-lucide="linkedin"></i>
+                </a>
             </div>
-          </section>
 
-          <section class="resume-section">
-            <h2>Foco atual</h2>
-            <ul class="skills-list">
-              <li>Projetos de automação com PowerShell e Python</li>
-              <li>Fundamentos de DevOps, CI/CD e observabilidade</li>
-              <li>Experiências em GameDev e 3D com Blender</li>
-              <li>Primeiros passos em CyberSecurity (labs, CTFs)</li>
-            </ul>
-          </section>
+            <p class="sidebar-footer">© 2025 AA</p>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+        <section class="page-section">
+
+            <header class="page-header">
+                <div class="breadcrumb-pill">
+                    <i data-lucide="file-text"></i>
+                    <span>Resume</span>
+                </div>
+
+                <h1>Resume</h1>
+                <p class="page-intro">
+                    Um resumo rápido do meu percurso académico e das experiências
+                    técnicas que estou a construir. Esta página serve como base
+                    para CVs mais formais e para recruiters.
+                </p>
+            </header>
+
+            <section class="resume-section">
+                <h2>Formação</h2>
+                <div class="resume-timeline">
+                    <div class="resume-item">
+                        <div class="resume-period">2023 — presente</div>
+                        <div class="resume-title">
+                            Licenciatura em Engenharia Informática
+                        </div>
+                        <div class="resume-detail">
+                            Universidade Autónoma de Lisboa
+                        </div>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-period">Ensino Secundário</div>
+                        <div class="resume-title">
+                            Área de Ciências e Tecnologia
+                        </div>
+                        <div class="resume-detail">
+                            Concluído (12.º ano)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <h2>Foco atual</h2>
+                <ul class="skills-list">
+                    <li>Projetos de automação com PowerShell e Python</li>
+                    <li>Fundamentos de DevOps, CI/CD e observabilidade</li>
+                    <li>Experiências em GameDev e 3D com Blender</li>
+                    <li>Primeiros passos em CyberSecurity (labs, CTFs)</li>
+                </ul>
+            </section>
+
         </section>
-      </main>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
-  </body>
+</div>
+
+</body>
 </html>

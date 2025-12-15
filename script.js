@@ -158,6 +158,20 @@ const translations = {
     "resume.focus.3": "Cloud computing and system administration",
     "resume.focus.4": "Security fundamentals and operational best practices",
 
+    /* CONTACT */
+    "contact.title": "Contact",
+    "contact.intro":
+      "For professional inquiries, project collaboration or technical opportunities, these are the preferred contact channels.",
+    
+    "contact.direct.title": "Direct Contacts",
+    
+    "contact.email.label": "Email",
+    "contact.linkedin.label": "LinkedIn",
+    "contact.github.label": "GitHub",
+    
+    "contact.note.title": "Note",
+    "contact.note.text":
+      "This website does not currently provide a backend contact form. Please get in touch via email or LinkedIn. Messages are answered whenever possible.",
 
     /* GENERIC */
     "generic.githubLink": "View on GitHub →"
@@ -274,6 +288,21 @@ const translations = {
     "resume.focus.2": "Fundamentos de DevOps, pipelines CI/CD e observabilidade",
     "resume.focus.3": "Cloud computing e administração de sistemas",
     "resume.focus.4": "Fundamentos de segurança e boas práticas operacionais",
+    
+    /* CONTACT */
+    "contact.title": "Contactos",
+    "contact.intro":
+      "Para questões profissionais, colaboração em projetos ou oportunidades técnicas, estes são os canais de contacto preferenciais.",
+    
+    "contact.direct.title": "Contactos Diretos",
+    
+    "contact.email.label": "Email",
+    "contact.linkedin.label": "LinkedIn",
+    "contact.github.label": "GitHub",
+    
+    "contact.note.title": "Nota",
+    "contact.note.text":
+      "Este site não dispõe atualmente de formulário com backend. O contacto deverá ser efetuado por email ou LinkedIn. As mensagens são respondidas sempre que possível.",
 
     /* GENERIC */
     "generic.githubLink": "Ver no GitHub →"

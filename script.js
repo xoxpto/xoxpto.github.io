@@ -134,7 +134,7 @@ const translations = {
 
     /*TAGS*/
     "tags.title": "Tags",
-    "tags.intro": "Browse projects by technology and topic."
+    "tags.intro": "Browse projects by technology and topic.",
 
     /* GENERIC */
     "generic.githubLink": "View on GitHub →"
@@ -228,7 +228,7 @@ const translations = {
 
     /*TAGS*/
     "tags.title": "Tags",
-    "tags.intro": "Explora os projetos por tecnologia e tema."
+    "tags.intro": "Explora os projetos por tecnologia e tema.",
 
     /* GENERIC */
     "generic.githubLink": "Ver no GitHub →"

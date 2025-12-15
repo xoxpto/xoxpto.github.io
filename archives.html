@@ -1,116 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <title>André Abrantes | Arquivo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>André Abrantes | Arquivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
 <!-- BOTÃO HAMBÚRGUER -->
 <div class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
 </div>
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
 
-        <div class="sidebar-top">
-            <div class="avatar-wrapper">
-                <img src="assets/avatar.png" alt="Foto" class="avatar-img">
-            </div>
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img" />
+      </div>
 
-            <div class="sidebar-name">André Abrantes</div>
+      <div class="sidebar-name">André Abrantes</div>
 
-            <p class="sidebar-quote">
-                Automate what you repeat.<br>
-                Improve what you automate.
-            </p>
+      <p class="sidebar-quote">
+        <span data-i18n="sidebar.quote.1"></span><br />
+        <span data-i18n="sidebar.quote.2"></span>
+      </p>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-item">
-                    <i data-lucide="home" class="nav-icon"></i>
-                    <span>Home</span>
-                </a>
-                <a href="projetos.html" class="nav-item">
-                    <i data-lucide="laptop" class="nav-icon"></i>
-                    <span>Projetos</span>
-                </a>
-                <a href="sobre.html" class="nav-item">
-                    <i data-lucide="user" class="nav-icon"></i>
-                    <span>Sobre</span>
-                </a>
-                <a href="archives.html" class="nav-item">
-                    <i data-lucide="archive" class="nav-icon"></i>
-                    <span>Arquivo</span>
-                </a>
-                <a href="tags.html" class="nav-item">
-                    <i data-lucide="tags" class="nav-icon"></i>
-                    <span>Tags</span>
-                </a>
-                <a href="resume.html" class="nav-item">
-                    <i data-lucide="file-text" class="nav-icon"></i>
-                    <span>Resume</span>
-                </a>
-                <a href="contact.html" class="nav-item">
-                    <i data-lucide="mail" class="nav-icon"></i>
-                    <span>Contact Me</span>
-                </a>
-            </nav>
-        </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <i data-lucide="home" class="nav-icon"></i>
+          <span data-i18n="nav.home"></span>
+        </a>
+        <a href="projetos.html" class="nav-item">
+          <i data-lucide="laptop" class="nav-icon"></i>
+          <span data-i18n="nav.projects"></span>
+        </a>
+        <a href="sobre.html" class="nav-item">
+          <i data-lucide="user" class="nav-icon"></i>
+          <span data-i18n="nav.about"></span>
+        </a>
+        <a href="archives.html" class="nav-item active">
+          <i data-lucide="archive" class="nav-icon"></i>
+          <span data-i18n="nav.archive"></span>
+        </a>
+        <a href="tags.html" class="nav-item">
+          <i data-lucide="tags" class="nav-icon"></i>
+          <span data-i18n="nav.tags"></span>
+        </a>
+        <a href="resume.html" class="nav-item">
+          <i data-lucide="file-text" class="nav-icon"></i>
+          <span data-i18n="nav.resume"></span>
+        </a>
+        <a href="contact.html" class="nav-item">
+          <i data-lucide="mail" class="nav-icon"></i>
+          <span data-i18n="nav.contact"></span>
+        </a>
+      </nav>
+    </div>
 
-        <div class="sidebar-bottom">
-            <div class="sidebar-socials">
-                <button class="theme-toggle" id="theme-toggle">
-                    <i data-lucide="moon" class="theme-icon"></i>
-                </button>
-                <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
-                    <i data-lucide="github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="social-pill">
-                    <i data-lucide="linkedin"></i>
-                </a>
-            </div>
-            <p class="sidebar-footer">© 2025 AA</p>
-        </div>
-    </aside>
+    <!-- FOOTER -->
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i data-lucide="moon" class="theme-icon"></i>
+        </button>
 
-    <!-- CONTEÚDO -->
-    <main class="main-content">
-        <section class="page-section">
+        <button class="social-pill" id="lang-toggle" aria-label="Toggle language">
+          🇵🇹
+        </button>
 
-            <header class="page-header">
-                <h1>Arquivo</h1>
-                <p class="page-intro">
-                    Lista completa dos repositórios públicos, organizada por
-                    área técnica e atualizada automaticamente a partir do GitHub.
-                </p>
-            </header>
+        <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
+          <i data-lucide="github"></i>
+        </a>
 
-            <div class="archive-filters">
-                <button class="filter-btn active" data-area="all">Todos</button>
-                <button class="filter-btn" data-area="DevOps">DevOps</button>
-                <button class="filter-btn" data-area="GameDev">GameDev</button>
-                <button class="filter-btn" data-area="3D &amp; Design">3D &amp; Design</button>
-                <button class="filter-btn" data-area="CyberSecurity">CyberSecurity</button>
-                <button class="filter-btn" data-area="Outros">Outros</button>
-            </div>
+        <a
+          href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+          target="_blank"
+          class="social-pill"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+      </div>
 
-            <div id="repos-archive" class="archive-grid">
-                <!-- preenchido via JS -->
-            </div>
+      <p class="sidebar-footer">© 2025 André Abrantes</p>
+    </div>
+  </aside>
 
-        </section>
-    </main>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <section class="page-section">
+
+      <header class="page-header">
+        <h1 data-i18n="archive.title"></h1>
+        <p class="page-intro" data-i18n="archive.intro"></p>
+      </header>
+
+      <div class="archive-filters">
+        <button class="filter-btn active" data-area="all" data-i18n="archive.filters.all"></button>
+        <button class="filter-btn" data-area="DevOps" data-i18n="archive.filters.devops"></button>
+        <button class="filter-btn" data-area="GameDev" data-i18n="archive.filters.gamedev"></button>
+        <button class="filter-btn" data-area="3D &amp; Design" data-i18n="archive.filters.3d"></button>
+        <button class="filter-btn" data-area="CyberSecurity" data-i18n="archive.filters.cyber"></button>
+        <button class="filter-btn" data-area="Outros" data-i18n="archive.filters.other"></button>
+      </div>
+
+      <div id="repos-archive" class="archive-grid">
+        <!-- preenchido via JS -->
+      </div>
+
+    </section>
+  </main>
 
 </div>
 

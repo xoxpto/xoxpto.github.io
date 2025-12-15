@@ -102,7 +102,8 @@ const translations = {
 
     /* PROJECTS */
     "projects.title": "Featured Projects",
-    "projects.intro.1": "Here are a few projects I want to highlight. To see all public repositories, check the ",
+    "projects.intro.1":
+      "Here are a few projects I want to highlight. To see all public repositories, check the ",
     "projects.intro.archive": "Archive",
     "projects.intro.2": ".",
 
@@ -118,7 +119,21 @@ const translations = {
     "projects.card3.text":
       "Exploration of 3D modeling and rendering in Blender, with a visual focus.",
 
-    "projects.card.link": "View on GitHub →"
+    "projects.card.link": "View on GitHub →",
+
+    /* ARCHIVE */
+    "archive.title": "Archive",
+    "archive.intro":
+      "All my public GitHub repositories organized by technical area.",
+    "archive.filters.all": "All",
+    "archive.filters.devops": "DevOps",
+    "archive.filters.gamedev": "GameDev",
+    "archive.filters.3d": "3D & Design",
+    "archive.filters.cyber": "CyberSecurity",
+    "archive.filters.other": "Other",
+
+    /* GENERIC */
+    "generic.githubLink": "View on GitHub →"
   },
 
   pt: {
@@ -177,7 +192,8 @@ const translations = {
 
     /* PROJECTS */
     "projects.title": "Projetos em Destaque",
-    "projects.intro.1": "Aqui junto alguns projetos que quero destacar. Para ver todos os repositórios públicos, consulta o ",
+    "projects.intro.1":
+      "Aqui junto alguns projetos que quero destacar. Para ver todos os repositórios públicos, consulta o ",
     "projects.intro.archive": "Arquivo",
     "projects.intro.2": ".",
 
@@ -193,12 +209,26 @@ const translations = {
     "projects.card3.text":
       "Exploração de modelação e renderização 3D em Blender, com foco visual.",
 
-    "projects.card.link": "Ver no GitHub →"
+    "projects.card.link": "Ver no GitHub →",
+
+    /* ARCHIVE */
+    "archive.title": "Arquivo",
+    "archive.intro":
+      "Aqui encontras todos os meus repositórios públicos do GitHub organizados por área.",
+    "archive.filters.all": "Todos",
+    "archive.filters.devops": "DevOps",
+    "archive.filters.gamedev": "GameDev",
+    "archive.filters.3d": "3D & Design",
+    "archive.filters.cyber": "CyberSecurity",
+    "archive.filters.other": "Outros",
+
+    /* GENERIC */
+    "generic.githubLink": "Ver no GitHub →"
   }
 };
 
 function initLanguageToggle() {
-  // ✅ aplica SEMPRE no load (mesmo que o botão não exista)
+  // aplica sempre no load
   let lang = localStorage.getItem("lang") || "en";
   applyLanguage(lang);
 
@@ -212,6 +242,10 @@ function initLanguageToggle() {
     localStorage.setItem("lang", lang);
     langBtn.textContent = lang === "en" ? "🇬🇧" : "🇵🇹";
     applyLanguage(lang);
+
+    // re-render de secções geradas via JS (para atualizar textos tipo "Ver no GitHub")
+    rerenderDynamicSections();
+
     if (window.lucide) lucide.createIcons();
   });
 }
@@ -223,6 +257,15 @@ function applyLanguage(lang) {
       el.textContent = translations[lang][key];
     }
   });
+}
+
+function getLang() {
+  return localStorage.getItem("lang") || "en";
+}
+
+function t(key) {
+  const lang = getLang();
+  return (translations[lang] && translations[lang][key]) ? translations[lang][key] : null;
 }
 
 /* ================= HAMBURGER MENU ================== */
@@ -249,8 +292,7 @@ function initHamburgerMenu() {
 
 /* ================= NAV ATIVA AUTOMÁTICA ================== */
 function initActiveNav() {
-  const current =
-    window.location.pathname.split("/").pop() || "index.html";
+  const current = window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".nav-item").forEach(item => {
     item.classList.remove("active");
@@ -262,6 +304,8 @@ function initActiveNav() {
 }
 
 /* ================= GITHUB (ARCHIVE + TAGS) ================== */
+let __cachedRepos = null; // cache para re-render na troca de língua
+
 function initGitHubSections() {
   const archiveContainer = document.getElementById("repos-archive");
   const filters = document.querySelectorAll(".filter-btn");
@@ -279,6 +323,8 @@ function initGitHubSections() {
         tags: buildTags(r)
       }));
 
+      __cachedRepos = enriched;
+
       if (archiveContainer) {
         setupArchive(archiveContainer, filters, enriched);
       }
@@ -293,6 +339,18 @@ function initGitHubSections() {
           '<p class="muted">Não foi possível carregar os repositórios de momento.</p>';
       }
     });
+}
+
+function rerenderDynamicSections() {
+  const archiveContainer = document.getElementById("repos-archive");
+  const filters = document.querySelectorAll(".filter-btn");
+  const tagsCloud = document.getElementById("tags-cloud");
+  const tagResults = document.getElementById("tag-results");
+
+  if (!__cachedRepos) return;
+
+  if (archiveContainer) setupArchive(archiveContainer, filters, __cachedRepos);
+  if (tagsCloud && tagResults) setupTags(tagsCloud, tagResults, __cachedRepos);
 }
 
 function classifyRepo(repo) {
@@ -337,6 +395,8 @@ function setupArchive(container, filters, repos) {
       return;
     }
 
+    const linkText = t("generic.githubLink") || "Ver no GitHub →";
+
     container.innerHTML = list.map(r => {
       const repo = r.raw;
       const updated = repo.updated_at
@@ -351,7 +411,7 @@ function setupArchive(container, filters, repos) {
           <p class="repo-description">${repo.description || "Sem descrição."}</p>
           <footer class="repo-footer">
             <a href="${repo.html_url}" target="_blank" class="project-link">
-              Ver no GitHub →
+              ${linkText}
             </a>
             <span class="repo-date">${updated}</span>
           </footer>
@@ -362,9 +422,17 @@ function setupArchive(container, filters, repos) {
 
   render("all");
 
-  filters.forEach(btn => {
+  // evita duplicar listeners ao re-render
+  if (filters && filters.length) {
+    filters.forEach(btn => {
+      btn.replaceWith(btn.cloneNode(true));
+    });
+  }
+
+  const freshFilters = document.querySelectorAll(".filter-btn");
+  freshFilters.forEach(btn => {
     btn.addEventListener("click", () => {
-      filters.forEach(b => b.classList.remove("active"));
+      freshFilters.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       render(btn.dataset.area || "all");
     });
@@ -387,10 +455,12 @@ function setupTags(cloud, results, repos) {
   );
 
   cloud.innerHTML = allTags
-    .map(t => `<button class="tag-chip" data-tag="${t}">${t}</button>`)
+    .map(tg => `<button class="tag-chip" data-tag="${tg}">${tg}</button>`)
     .join("");
 
   const chips = cloud.querySelectorAll(".tag-chip");
+
+  const linkText = t("generic.githubLink") || "Ver no GitHub →";
 
   function renderTag(tag) {
     const list = tagMap.get(tag) || [];
@@ -408,10 +478,10 @@ function setupTags(cloud, results, repos) {
           <p class="repo-description">${repo.description || "Sem descrição."}</p>
           <p class="repo-meta">
             <span class="badge badge-small">${r.area}</span>
-            ${r.tags.map(t => `<span class="chip-mini">${t}</span>`).join("")}
+            ${r.tags.map(tg => `<span class="chip-mini">${tg}</span>`).join("")}
           </p>
           <a href="${repo.html_url}" target="_blank" class="project-link">
-            Ver no GitHub →
+            ${linkText}
           </a>
         </article>
       `;

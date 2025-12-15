@@ -134,7 +134,30 @@ const translations = {
 
     /*TAGS*/
     "tags.title": "Tags",
-    "tags.intro": "Browse projects by technology and topic.",
+    "tags.intro": "Browse projects by technology and topic
+
+    /* RESUME */
+    "resume.title": "Resume",
+    "resume.intro":
+      "A concise overview of my academic background and current technical focus, intended as a reference for recruiters and technical professionals.",
+    
+    "resume.education.title": "Education",
+    
+    "resume.education.1.period": "2023 — Present",
+    "resume.education.1.title": "Bachelor’s Degree in Computer Engineering",
+    "resume.education.1.detail": "Universidade Autónoma de Lisboa",
+    
+    "resume.education.2.period": "Secondary Education",
+    "resume.education.2.title": "Science and Technology Track",
+    "resume.education.2.detail": "Completed (12th grade)",
+    
+    "resume.focus.title": "Current Focus",
+    
+    "resume.focus.1": "Automation and scripting with PowerShell and Python",
+    "resume.focus.2": "DevOps fundamentals, CI/CD pipelines and observability",
+    "resume.focus.3": "Cloud computing and system administration",
+    "resume.focus.4": "Security fundamentals and operational best practices",
+
 
     /* GENERIC */
     "generic.githubLink": "View on GitHub →"
@@ -229,6 +252,28 @@ const translations = {
     /*TAGS*/
     "tags.title": "Tags",
     "tags.intro": "Explora os projetos por tecnologia e tema.",
+        
+    /* RESUME */
+    "resume.title": "Currículo",
+    "resume.intro":
+      "Resumo do meu percurso académico e do foco técnico atual, pensado como referência para recrutadores e profissionais da área.",
+    
+    "resume.education.title": "Formação Académica",
+    
+    "resume.education.1.period": "2023 — Presente",
+    "resume.education.1.title": "Licenciatura em Engenharia Informática",
+    "resume.education.1.detail": "Universidade Autónoma de Lisboa",
+    
+    "resume.education.2.period": "Ensino Secundário",
+    "resume.education.2.title": "Área de Ciências e Tecnologias",
+    "resume.education.2.detail": "Concluído (12.º ano)",
+    
+    "resume.focus.title": "Foco Atual",
+    
+    "resume.focus.1": "Automação e scripting com PowerShell e Python",
+    "resume.focus.2": "Fundamentos de DevOps, pipelines CI/CD e observabilidade",
+    "resume.focus.3": "Cloud computing e administração de sistemas",
+    "resume.focus.4": "Fundamentos de segurança e boas práticas operacionais",
 
     /* GENERIC */
     "generic.githubLink": "Ver no GitHub →"

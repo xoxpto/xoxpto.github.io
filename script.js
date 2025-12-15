@@ -132,6 +132,10 @@ const translations = {
     "archive.filters.cyber": "CyberSecurity",
     "archive.filters.other": "Other",
 
+    /*TAGS*/
+    "tags.title": "Tags",
+    "tags.intro": "Browse projects by technology and topic."
+
     /* GENERIC */
     "generic.githubLink": "View on GitHub →"
   },
@@ -221,6 +225,10 @@ const translations = {
     "archive.filters.3d": "3D & Design",
     "archive.filters.cyber": "CyberSecurity",
     "archive.filters.other": "Outros",
+
+    /*TAGS*/
+    "tags.title": "Tags",
+    "tags.intro": "Explora os projetos por tecnologia e tema."
 
     /* GENERIC */
     "generic.githubLink": "Ver no GitHub →"

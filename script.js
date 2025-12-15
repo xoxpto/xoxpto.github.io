@@ -98,7 +98,27 @@ const translations = {
 
     "about.goals.title": "Professional Goals",
     "about.goals.text":
-      "To continue developing technical expertise in DevOps and cloud engineering, while building real-world projects that reinforce automation, reliability and security best practices."
+      "To continue developing technical expertise in DevOps and cloud engineering, while building real-world projects that reinforce automation, reliability and security best practices.",
+
+    /* PROJECTS */
+    "projects.title": "Featured Projects",
+    "projects.intro.1": "Here are a few projects I want to highlight. To see all public repositories, check the ",
+    "projects.intro.archive": "Archive",
+    "projects.intro.2": ".",
+
+    "projects.card1.title": "PowerShell Automation Scripts",
+    "projects.card1.text":
+      "Project focused on automating administrative and operational tasks using PowerShell.",
+
+    "projects.card2.title": "Python Tooling",
+    "projects.card2.text":
+      "A Python-based tool for automation and data organization, created for hands-on learning.",
+
+    "projects.card3.title": "3D Experiments",
+    "projects.card3.text":
+      "Exploration of 3D modeling and rendering in Blender, with a visual focus.",
+
+    "projects.card.link": "View on GitHub →"
   },
 
   pt: {
@@ -153,7 +173,27 @@ const translations = {
 
     "about.goals.title": "Objetivos Profissionais",
     "about.goals.text":
-      "Continuar a desenvolver competências em DevOps e engenharia cloud, através da criação de projetos práticos que reforcem automação, fiabilidade e boas práticas de segurança."
+      "Continuar a desenvolver competências em DevOps e engenharia cloud, através da criação de projetos práticos que reforcem automação, fiabilidade e boas práticas de segurança.",
+
+    /* PROJECTS */
+    "projects.title": "Projetos em Destaque",
+    "projects.intro.1": "Aqui junto alguns projetos que quero destacar. Para ver todos os repositórios públicos, consulta o ",
+    "projects.intro.archive": "Arquivo",
+    "projects.intro.2": ".",
+
+    "projects.card1.title": "Scripts de Automação PowerShell",
+    "projects.card1.text":
+      "Projeto focado na automatização de tarefas administrativas e operacionais com PowerShell.",
+
+    "projects.card2.title": "Ferramentas em Python",
+    "projects.card2.text":
+      "Ferramenta em Python para automação e organização de dados, criada para aprendizagem prática.",
+
+    "projects.card3.title": "Experiências 3D",
+    "projects.card3.text":
+      "Exploração de modelação e renderização 3D em Blender, com foco visual.",
+
+    "projects.card.link": "Ver no GitHub →"
   }
 };
 
@@ -213,6 +253,7 @@ function initActiveNav() {
     window.location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll(".nav-item").forEach(item => {
+    item.classList.remove("active");
     const href = item.getAttribute("href");
     if (href === current) {
       item.classList.add("active");

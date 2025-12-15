@@ -134,7 +134,7 @@ const translations = {
 
     /*TAGS*/
     "tags.title": "Tags",
-    "tags.intro": "Browse projects by technology and topic
+    "tags.intro": "Browse projects by technology and topic",
 
     /* RESUME */
     "resume.title": "Resume",

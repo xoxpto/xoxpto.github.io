@@ -21,7 +21,7 @@
 
 <div class="layout">
 
-  <!-- SIDEBAR -->
+  <!-- SIDEBAR (NÃO ALTERADA) -->
   <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-top">
@@ -68,103 +68,150 @@
       </nav>
     </div>
 
+    <!-- FOOTER -->
     <div class="sidebar-bottom">
       <div class="sidebar-socials">
-        <button class="theme-toggle" id="theme-toggle">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <i data-lucide="moon" class="theme-icon"></i>
         </button>
 
-        <button class="social-pill" id="lang-toggle">🇵🇹</button>
+        <button class="social-pill" id="lang-toggle" aria-label="Toggle language">
+          🇵🇹
+        </button>
 
         <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
           <i data-lucide="github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-           target="_blank"
-           class="social-pill">
+
+        <a
+          href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+          target="_blank"
+          class="social-pill"
+        >
           <i data-lucide="linkedin"></i>
         </a>
       </div>
 
       <p class="sidebar-footer">© 2025 André Abrantes</p>
     </div>
+
   </aside>
 
-  <!-- CONTEÚDO -->
+  <!-- CONTEÚDO PRINCIPAL -->
   <main class="main-content">
     <section class="page-section">
 
       <header class="page-header">
-        <h1 data-i18n="resume.title"></h1>
-        <p class="page-intro" data-i18n="resume.intro"></p>
+        <h1>Currículo</h1>
+        <p class="page-intro">
+          Visão geral do meu percurso académico e experiência recente em IT.
+        </p>
       </header>
 
-      <!-- EDUCAÇÃO -->
-      <section class="resume-section">
-        <h2 data-i18n="resume.education.title"></h2>
-
-        <div class="resume-item">
-          <span class="resume-period" data-i18n="resume.education.1.period"></span>
-          <h3 data-i18n="resume.education.1.title"></h3>
-          <p class="muted" data-i18n="resume.education.1.detail"></p>
-        </div>
-
-        <div class="resume-item">
-          <span class="resume-period" data-i18n="resume.education.2.period"></span>
-          <h3 data-i18n="resume.education.2.title"></h3>
-          <p class="muted" data-i18n="resume.education.2.detail"></p>
-        </div>
-      </section>
+      <!-- RESUMO / INFO -->
+      <h2 class="subheading">Informação</h2>
+      <div class="home-card" style="margin-bottom: 16px;">
+        <ul style="margin: 0; padding-left: 18px;">
+          <li><strong>Nome:</strong> André Abrantes</li>
+          <li><strong>Localização:</strong> Lisboa, Portugal</li>
+          <li><strong>Telemóvel:</strong> +351 963 691 052</li>
+          <li><strong>Email:</strong> <a href="mailto:andreabrantes.dev@gmail.com" class="project-link">andreabrantes.dev@gmail.com</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank" class="project-link">andré-abrantes-04022129b</a></li>
+        </ul>
+      </div>
 
       <!-- EXPERIÊNCIA -->
-      <section class="resume-section">
-        <h2 data-i18n="resume.experience.title"></h2>
+      <h2 class="subheading">Experiência</h2>
 
-        <div class="resume-item">
-          <span class="resume-period" data-i18n="resume.experience.1.period"></span>
-          <h3 data-i18n="resume.experience.1.title"></h3>
-          <p class="muted" data-i18n="resume.experience.1.place"></p>
-          <ul>
-            <li data-i18n="resume.experience.1.1"></li>
-            <li data-i18n="resume.experience.1.2"></li>
-            <li data-i18n="resume.experience.1.3"></li>
-          </ul>
-        </div>
+      <div class="projects-grid">
 
-        <div class="resume-item">
-          <span class="resume-period" data-i18n="resume.experience.2.period"></span>
-          <h3 data-i18n="resume.experience.2.title"></h3>
-          <p class="muted" data-i18n="resume.experience.2.place"></p>
-          <ul>
-            <li data-i18n="resume.experience.2.1"></li>
-            <li data-i18n="resume.experience.2.2"></li>
-            <li data-i18n="resume.experience.2.3"></li>
+        <article class="project-card">
+          <header class="project-header">
+            <h2>TÉCNICO DE HELPDESK (IAM)</h2>
+            <span class="tag">10/2024 — Atual</span>
+          </header>
+          <p class="muted" style="margin-top: 6px;">Banco BPI — Lisboa, Portugal</p>
+        </article>
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>TÉCNICO DE INFORMÁTICA — ESTÁGIO CURRICULAR (300 horas)</h2>
+            <span class="tag">05/02/2024 — 05/04/2024</span>
+          </header>
+          <p class="muted" style="margin-top: 6px;">Tokutek — Lisboa, Portugal</p>
+          <ul style="margin-top: 10px; padding-left: 18px;">
+            <li>Suporte técnico ao público</li>
           </ul>
-        </div>
-      </section>
+        </article>
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>TÉCNICO DE INFORMÁTICA — ESTÁGIO CURRICULAR (480 horas)</h2>
+            <span class="tag">07/04/2024 — 31/07/2024</span>
+          </header>
+          <ul style="margin-top: 10px; padding-left: 18px;">
+            <li>Participação em projetos de desenvolvimento</li>
+            <li>Manutenção de computadores</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <!-- EDUCAÇÃO -->
+      <h2 class="subheading" style="margin-top: 20px;">Educação e Formação</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>ENGENHEIRO INFORMÁTICO</h2>
+            <span class="tag">03/10/2024 — Atual</span>
+          </header>
+          <p class="muted" style="margin-top: 6px;">Universidade Autónoma de Lisboa — Lisboa, Portugal</p>
+        </article>
+
+        <article class="project-card">
+          <header class="project-header">
+            <h2>CURSO PROFISSIONAL TÉCNICO DE GESTÃO E PROGRAMAÇÃO DE SISTEMAS INFORMÁTICOS</h2>
+            <span class="tag">2021 — 2024</span>
+          </header>
+          <p class="muted" style="margin-top: 6px;">Agrupamento de Escolas Rainha Dona Leonor — Lisboa, Portugal</p>
+          <p class="muted" style="margin-top: 8px;">
+            Sítio Web: <a href="https://nsite.aerdl.eu" target="_blank" class="project-link">nsite.aerdl.eu</a>
+          </p>
+        </article>
+
+      </div>
 
       <!-- COMPETÊNCIAS -->
-      <section class="resume-section">
-        <h2 data-i18n="resume.skills.title"></h2>
-        <ul class="resume-list">
-          <li data-i18n="resume.skills.1"></li>
-          <li data-i18n="resume.skills.2"></li>
-          <li data-i18n="resume.skills.3"></li>
-          <li data-i18n="resume.skills.4"></li>
-          <li data-i18n="resume.skills.5"></li>
-        </ul>
-      </section>
+      <h2 class="subheading" style="margin-top: 20px;">Competências</h2>
 
-      <!-- LÍNGUAS -->
-      <section class="resume-section">
-        <h2 data-i18n="resume.languages.title"></h2>
-        <ul class="resume-list">
-          <li data-i18n="resume.languages.1"></li>
-          <li data-i18n="resume.languages.2"></li>
-          <li data-i18n="resume.languages.3"></li>
-          <li data-i18n="resume.languages.4"></li>
-        </ul>
-      </section>
+      <div class="home-grid">
+        <article class="home-card">
+          <h2>Ferramentas / Sistemas</h2>
+          <ul>
+            <li>MS Office</li>
+            <li>Windows</li>
+            <li>iOS</li>
+            <li>Android</li>
+          </ul>
+        </article>
+
+        <article class="home-card">
+          <h2>Programação</h2>
+          <ul>
+            <li>C#</li>
+          </ul>
+        </article>
+
+        <article class="home-card">
+          <h2>Soft Skills</h2>
+          <ul>
+            <li>Comunicação</li>
+            <li>Liderança</li>
+          </ul>
+        </article>
+      </div>
 
     </section>
   </main>

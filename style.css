@@ -958,3 +958,39 @@ body.light .menu-toggle span {
     font-size: 1.7rem;
   }
 }
+
+/* =========================================================
+   ON-SCROLL REVEAL ANIMATIONS
+========================================================= */
+
+/* Estado inicial (antes de aparecer) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* Quando entra no viewport */
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger suave (efeito em cascata) */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+
+/* Respeitar utilizadores com motion reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

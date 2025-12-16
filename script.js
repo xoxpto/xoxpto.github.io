@@ -650,3 +650,43 @@ function setupTags(cloud, results, repos) {
     });
   });
 }
+
+// =========================================================
+// ON-SCROLL REVEAL ANIMATIONS
+// =========================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion) return;
+
+  const revealElements = document.querySelectorAll(
+    ".home-card, .project-card, .repo-card, .resume-item"
+  );
+
+  revealElements.forEach((el, index) => {
+    el.classList.add("reveal");
+
+    // stagger automático (0,1,2 → ciclo)
+    const delay = index % 3;
+    el.classList.add(`reveal-delay-${delay}`);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("reveal-visible");
+        obs.unobserve(entry.target); // anima só uma vez
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  revealElements.forEach(el => observer.observe(el));
+});
+

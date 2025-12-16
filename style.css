@@ -902,7 +902,54 @@ body.light .menu-toggle span {
   gap: 0.9rem;
   flex-wrap: wrap;
 }
+/* ================= SIDEBAR NAV IMPROVEMENTS ================= */
 
+.nav-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #2a2a3a,
+    transparent
+  );
+  margin: 0.9rem 0;
+}
+
+.nav-item {
+  opacity: 0.85;
+}
+
+.nav-item:hover {
+  opacity: 1;
+}
+
+.nav-item.active {
+  opacity: 1;
+}
+/* ================= SIDEBAR NAV IMPROVEMENTS ================= */
+
+.nav-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #2a2a3a,
+    transparent
+  );
+  margin: 0.9rem 0;
+}
+
+.nav-item {
+  opacity: 0.85;
+}
+
+.nav-item:hover {
+  opacity: 1;
+}
+
+.nav-item.active {
+  opacity: 1;
+}
 
 @media (max-width: 560px) {
   .page-header h1 {

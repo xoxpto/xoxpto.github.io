@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initHamburgerMenu();
   initActiveNav();
   initLanguageToggle();
+  initRevealAnimations(); 
 
   if (window.lucide) {
     lucide.createIcons();
   }
 });
+
 
 /* ================= THEME TOGGLE ================== */
 function initThemeToggle() {

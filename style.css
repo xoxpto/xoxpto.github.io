@@ -245,13 +245,14 @@ body.light .theme-toggle:hover {
 ========================================================= */
 .main-content {
   margin-left: 260px;
+  min-height: 100vh;
+  padding: 2.4rem 2.3rem;
+
   background: radial-gradient(
     circle at top left,
     #171725 0%,
-    var(--bg-main) 55%
+    var(--bg-main) 60%
   );
-  padding: 2.4rem 2.3rem;
-  min-height: 100vh;
 }
 
 .page-section {

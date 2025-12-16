@@ -172,6 +172,37 @@ const translations = {
     "contact.note.title": "Note",
     "contact.note.text":
       "This website does not currently provide a backend contact form. Please get in touch via email or LinkedIn. Messages are answered whenever possible.",
+    
+    /* RESUME — EXPERIENCE */
+    "resume.experience.title": "Professional Experience",
+    
+    "resume.experience.1.title": "Teaching Assistant Internship (120 hours)",
+    "resume.experience.1.place":
+      "Agrupamento de Escolas Rainha Dona Leonor — Lisbon",
+    "resume.experience.1.task1":
+      "Computer science teaching support for 2nd-year classes (including special education)",
+    "resume.experience.1.task2":
+      "IT technical support across multiple school facilities",
+    
+    "resume.experience.2.title":
+      "IT Technician — Internship (480 hours)",
+    "resume.experience.2.place":
+      "Assembly of the Republic — Lisbon",
+    "resume.experience.2.task1":
+      "Maintenance and technical support of computer equipment",
+    "resume.experience.2.task2":
+      "Support in internal systems and development projects",
+    
+    /* RESUME — LANGUAGES */
+    "resume.languages.title": "Languages",
+    
+    "resume.languages.pt": "Portuguese: Native",
+    "resume.languages.en": "English: C1 (comprehension), B2 (production)",
+    "resume.languages.es": "Spanish: B2 / B1",
+    "resume.languages.jp": "Japanese: A1",
+    
+    /* RESUME — SKILLS */
+    "resume.skills.title": "Technical Skills",
 
     /* GENERIC */
     "generic.githubLink": "View on GitHub →"
@@ -303,6 +334,38 @@ const translations = {
     "contact.note.title": "Nota",
     "contact.note.text":
       "Este site não dispõe atualmente de formulário com backend. O contacto deverá ser efetuado por email ou LinkedIn. As mensagens são respondidas sempre que possível.",
+    
+    /* RESUME — EXPERIENCE */
+    "resume.experience.title": "Experiência Profissional",
+    
+    "resume.experience.1.title":
+      "Estágio Curricular — Apoio à Docência (120 horas)",
+    "resume.experience.1.place":
+      "Agrupamento de Escolas Rainha Dona Leonor — Lisboa",
+    "resume.experience.1.task1":
+      "Apoio à docência de Informática em turmas do 2.º ano (incluindo educação especial)",
+    "resume.experience.1.task2":
+      "Suporte técnico informático em várias unidades escolares",
+    
+    "resume.experience.2.title":
+      "Técnico de Informática — Estágio Curricular (480 horas)",
+    "resume.experience.2.place":
+      "Assembleia da República — Lisboa",
+    "resume.experience.2.task1":
+      "Manutenção e suporte técnico a equipamentos informáticos",
+    "resume.experience.2.task2":
+      "Apoio em sistemas internos e projetos de desenvolvimento",
+    
+    /* RESUME — LANGUAGES */
+    "resume.languages.title": "Competências Linguísticas",
+    
+    "resume.languages.pt": "Português: Língua materna",
+    "resume.languages.en": "Inglês: C1 (compreensão), B2 (produção)",
+    "resume.languages.es": "Espanhol: B2 / B1",
+    "resume.languages.jp": "Japonês: A1",
+    
+    /* RESUME — SKILLS */
+    "resume.skills.title": "Competências Técnicas",
 
     /* GENERIC */
     "generic.githubLink": "Ver no GitHub →"

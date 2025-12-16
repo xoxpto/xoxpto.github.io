@@ -881,6 +881,22 @@ body.light .menu-toggle span {
     grid-template-columns: 1fr;
   }
 }
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+.bottom-cta {
+  margin-top: 4rem;
+  padding: 3rem 0 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-cta-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
 
 @media (max-width: 560px) {
   .page-header h1 {

@@ -21,7 +21,7 @@
 
 <div class="layout">
 
-  <!-- SIDEBAR (NÃO ALTERADA) -->
+  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-top">
@@ -32,35 +32,33 @@
       <div class="sidebar-name">André Abrantes</div>
 
       <p class="sidebar-quote">
-        Automate what you repeat.<br />
-        Improve what you automate.
+        <span data-i18n="sidebar.quote.1"></span><br />
+        <span data-i18n="sidebar.quote.2"></span>
       </p>
+
       <nav class="sidebar-nav">
-        <!-- MAIN -->
         <a href="index.html#home" class="nav-item">
           <i data-lucide="home" class="nav-icon"></i>
           <span data-i18n="nav.home"></span>
         </a>
-      
-        <!-- DIVIDER -->
+
         <div class="nav-divider"></div>
-      
-        <!-- CONTENT -->
+
         <a href="archives.html" class="nav-item">
           <i data-lucide="archive" class="nav-icon"></i>
           <span data-i18n="nav.archive"></span>
         </a>
-      
+
         <a href="tags.html" class="nav-item">
           <i data-lucide="tags" class="nav-icon"></i>
           <span data-i18n="nav.tags"></span>
         </a>
-      
-        <a href="resume.html" class="nav-item">
+
+        <a href="resume.html" class="nav-item active">
           <i data-lucide="file-text" class="nav-icon"></i>
           <span data-i18n="nav.resume"></span>
         </a>
-      
+
         <a href="contact.html" class="nav-item">
           <i data-lucide="mail" class="nav-icon"></i>
           <span data-i18n="nav.contact"></span>
@@ -78,11 +76,9 @@
           <i data-lucide="github"></i>
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-          target="_blank"
-          class="social-pill"
-        >
+        <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+           target="_blank"
+           class="social-pill">
           <i data-lucide="linkedin"></i>
         </a>
       </div>
@@ -96,31 +92,26 @@
     <section class="page-section">
 
       <header class="page-header">
-        <h1>Currículo</h1>
-        <p class="page-intro">
-          Resumo do meu percurso académico, experiência profissional e
-          competências técnicas.
-        </p>
+        <h1 data-i18n="resume.title"></h1>
+        <p class="page-intro" data-i18n="resume.intro"></p>
       </header>
 
       <!-- EDUCAÇÃO -->
       <section class="resume-section">
-        <h2>Educação e Formação</h2>
+        <h2 data-i18n="resume.education.title"></h2>
 
         <div class="resume-timeline">
 
           <div class="resume-item">
             <span class="resume-period">03/10/2024 — Atual</span>
-            <h3>Engenharia Informática</h3>
-            <p class="resume-place">Universidade Autónoma de Lisboa</p>
+            <h3 data-i18n="resume.education.1.title"></h3>
+            <p class="resume-place" data-i18n="resume.education.1.detail"></p>
           </div>
 
           <div class="resume-item">
             <span class="resume-period">2021 — 2024</span>
-            <h3>Curso Profissional Técnico de Informática – Sistemas</h3>
-            <p class="resume-place">
-              Agrupamento de Escolas Rainha Dona Leonor — Lisboa
-            </p>
+            <h3 data-i18n="resume.education.2.title"></h3>
+            <p class="resume-place" data-i18n="resume.education.2.detail"></p>
           </div>
 
         </div>
@@ -128,55 +119,48 @@
 
       <!-- EXPERIÊNCIA PROFISSIONAL -->
       <section class="resume-section">
-        <h2>Experiência Profissional</h2>
+        <h2 data-i18n="resume.experience.title"></h2>
 
         <div class="resume-timeline">
 
           <div class="resume-item">
             <span class="resume-period">01/04/2024 — 04/05/2024</span>
-            <h3>Estágio Curricular (120 horas)</h3>
-            <p class="resume-place">
-              Agrupamento de Escolas Rainha Dona Leonor — Lisboa
-            </p>
+            <h3 data-i18n="resume.experience.1.title"></h3>
+            <p class="resume-place" data-i18n="resume.experience.1.place"></p>
             <ul>
-              <li>
-                Professor de Informática para turmas do 2.º ano
-                (incluindo educação especial)
-              </li>
-              <li>Suporte técnico informático em várias escolas</li>
+              <li data-i18n="resume.experience.1.task1"></li>
+              <li data-i18n="resume.experience.1.task2"></li>
             </ul>
           </div>
 
           <div class="resume-item">
             <span class="resume-period">07/04/2024 — 31/07/2024</span>
-            <h3>Técnico de Informática — Estágio Curricular (480 horas)</h3>
-            <p class="resume-place">
-              Assembleia da República — Lisboa
-            </p>
+            <h3 data-i18n="resume.experience.2.title"></h3>
+            <p class="resume-place" data-i18n="resume.experience.2.place"></p>
             <ul>
-              <li>Manutenção e suporte técnico a equipamentos informáticos</li>
-              <li>Apoio em projetos de desenvolvimento e sistemas internos</li>
+              <li data-i18n="resume.experience.2.task1"></li>
+              <li data-i18n="resume.experience.2.task2"></li>
             </ul>
           </div>
 
         </div>
       </section>
 
-      <!-- COMPETÊNCIAS LINGUÍSTICAS -->
+      <!-- LÍNGUAS -->
       <section class="resume-section">
-        <h2>Competências Linguísticas</h2>
+        <h2 data-i18n="resume.languages.title"></h2>
 
         <ul class="resume-list">
-          <li><strong>Português:</strong> Língua materna</li>
-          <li><strong>Inglês:</strong> C1 (compreensão), B2 (produção)</li>
-          <li><strong>Espanhol:</strong> B2 / B1</li>
-          <li><strong>Japonês:</strong> A1</li>
+          <li data-i18n="resume.languages.pt"></li>
+          <li data-i18n="resume.languages.en"></li>
+          <li data-i18n="resume.languages.es"></li>
+          <li data-i18n="resume.languages.jp"></li>
         </ul>
       </section>
 
       <!-- COMPETÊNCIAS TÉCNICAS -->
       <section class="resume-section">
-        <h2>Competências Técnicas</h2>
+        <h2 data-i18n="resume.skills.title"></h2>
 
         <p class="resume-skills">
           HTML · CSS · JavaScript · C · C++ · C# · Python · Java · PHP · SQL ·

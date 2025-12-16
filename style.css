@@ -256,7 +256,7 @@ body.light .theme-toggle:hover {
 
 .page-section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1320px; /* ou 1200px */
   margin: 0 auto;
 }
 

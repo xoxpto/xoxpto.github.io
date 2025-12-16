@@ -1,118 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>André Abrantes | Contactos</title>
+
+  <title>Contactos — André Abrantes</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Contactos profissionais de André Abrantes. Email, LinkedIn e GitHub para oportunidades técnicas e colaboração em projetos.">
+  <meta name="author" content="André Abrantes">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="pt-PT">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://xoxpto.github.io/contact.html">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <meta name="description"
-    content="Contactos de André Abrantes — email, LinkedIn e GitHub para questões profissionais ou colaborações." />
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  <!-- Styles & Scripts -->
   <link rel="stylesheet" href="style.css" />
-
-  <script src="https://unpkg.com/lucide@latest" defer></script>
-  <script src="script.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <div class="layout">
 
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <div class="avatar-wrapper">
-          <img src="assets/avatar.png" alt="Avatar digital" />
-        </div>
+<!-- BOTÃO HAMBÚRGUER -->
+<div class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-        <div>
-          <div class="sidebar-name">André Abrantes</div>
-          <p class="sidebar-quote">
-            Automate what you repeat.<br>
-            Improve what you automate.
-          </p>
-        </div>
+<div class="layout">
 
-        <nav class="sidebar-nav">
-          <a href="index.html" class="nav-item">
-            <i data-lucide="home"></i>
-            <span class="nav-label">Home</span>
-          </a>
-          <a href="projetos.html" class="nav-item">
-            <i data-lucide="laptop"></i>
-            <span class="nav-label">Projetos</span>
-          </a>
-          <a href="sobre.html" class="nav-item">
-            <i data-lucide="user"></i>
-            <span class="nav-label">Sobre</span>
-          </a>
-          <a href="archives.html" class="nav-item">
-            <i data-lucide="archive"></i>
-            <span class="nav-label">Arquivo</span>
-          </a>
-          <a href="tags.html" class="nav-item">
-            <i data-lucide="tags"></i>
-            <span class="nav-label">Tags</span>
-          </a>
-          <a href="contactos.html" class="nav-item">
-            <i data-lucide="mail"></i>
-            <span class="nav-label">Contactos</span>
-          </a>
-        </nav>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-top">
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.png" alt="Foto de perfil" class="avatar-img" />
       </div>
 
-      <div class="sidebar-bottom">
-        <div class="sidebar-socials">
-          <button class="social-pill theme-toggle" type="button">
-            <i data-lucide="moon"></i>
-          </button>
-          <a href="https://github.com/xoxpto" class="social-pill" target="_blank">
-            <i data-lucide="github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-             class="social-pill" target="_blank">
-            <i data-lucide="linkedin"></i>
-          </a>
-        </div>
-        <div class="sidebar-footer">
-          © <span id="year"></span> AA
-        </div>
+      <div class="sidebar-name">André Abrantes</div>
+
+      <p class="sidebar-quote">
+        <span data-i18n="sidebar.quote.1"></span><br />
+        <span data-i18n="sidebar.quote.2"></span>
+      </p>
+
+      <nav class="sidebar-nav">
+
+        <!-- MAIN -->
+        <a href="index.html#home" class="nav-item">
+          <i data-lucide="home" class="nav-icon"></i>
+          <span data-i18n="nav.home"></span>
+        </a>
+
+        <!-- DIVIDER -->
+        <div class="nav-divider"></div>
+
+        <!-- CONTENT -->
+        <a href="archives.html" class="nav-item">
+          <i data-lucide="archive" class="nav-icon"></i>
+          <span data-i18n="nav.archive"></span>
+        </a>
+
+        <a href="tags.html" class="nav-item">
+          <i data-lucide="tags" class="nav-icon"></i>
+          <span data-i18n="nav.tags"></span>
+        </a>
+
+        <a href="resume.html" class="nav-item">
+          <i data-lucide="file-text" class="nav-icon"></i>
+          <span data-i18n="nav.resume"></span>
+        </a>
+
+        <a href="contact.html" class="nav-item active">
+          <i data-lucide="mail" class="nav-icon"></i>
+          <span data-i18n="nav.contact"></span>
+        </a>
+
+      </nav>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="sidebar-bottom">
+      <div class="sidebar-socials">
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i data-lucide="moon" class="theme-icon"></i>
+        </button>
+
+        <button class="social-pill" id="lang-toggle" aria-label="Toggle language">
+          🇵🇹
+        </button>
+
+        <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
+          <i data-lucide="github"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
+          target="_blank"
+          class="social-pill"
+        >
+          <i data-lucide="linkedin"></i>
+        </a>
+
       </div>
-    </aside>
 
-    <!-- MAIN -->
-    <main class="main-content">
-      <section class="page-section">
+      <p class="sidebar-footer">© 2025 André Abrantes</p>
+    </div>
+  </aside>
 
-        <h1 class="page-title">Contactos</h1>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <section class="page-section">
 
-        <p class="page-intro">
-          Se quiseres falar comigo sobre projetos, trabalho, estudos ou simplesmente trocar ideias,
-          estas são as formas mais simples de chegar a mim.
-        </p>
+      <header class="page-header">
+        <h1 data-i18n="contact.title"></h1>
+        <p class="page-intro" data-i18n="contact.intro"></p>
+      </header>
 
-        <ul class="contacts-list">
-          <li>
-            <span class="contacts-label">Email</span>
-            <a href="mailto:andrebrranteswork@hotmail.com">andrebrranteswork@hotmail.com</a>
-          </li>
-          <li>
-            <span class="contacts-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
-               target="_blank">linkedin.com/in/andré-abrantes-04022129b/</a>
-          </li>
-          <li>
-            <span class="contacts-label">GitHub</span>
-            <a href="https://github.com/xoxpto" target="_blank">github.com/xoxpto</a>
-          </li>
-        </ul>
+      <div class="contact-grid">
 
-      </section>
-    </main>
+        <div class="contact-card">
+          <h2 data-i18n="contact.direct.title"></h2>
+          <ul class="contacts-list">
+            <li>
+              <span class="contacts-label" data-i18n="contact.email.label"></span>
+              <a href="mailto:andreabrantes.dev@gmail.com">
+                andreabrantes.dev@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="contacts-label" data-i18n="contact.linkedin.label"></span>
+              <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/" target="_blank">
+                linkedin.com/in/andré-abrantes-04022129b/
+              </a>
+            </li>
+            <li>
+              <span class="contacts-label" data-i18n="contact.github.label"></span>
+              <a href="https://github.com/xoxpto" target="_blank">
+                github.com/xoxpto
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  </div>
+        <div class="contact-card">
+          <h2 data-i18n="contact.note.title"></h2>
+          <p class="muted" data-i18n="contact.note.text"></p>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+</div>
+
 </body>
 </html>

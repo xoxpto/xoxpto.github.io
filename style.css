@@ -618,45 +618,97 @@ h1 {
 /* =========================================================
    RESUME PAGE
 ========================================================= */
+
+.resume-section {
+  margin-bottom: 2.4rem;
+}
+
 .resume-section h2 {
   font-size: 1.15rem;
-  margin: 1rem 0 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
+/* TIMELINE */
 .resume-timeline {
-  border-left: 1px solid #2b2b3b;
-  margin-top: 0.4rem;
-  padding-left: 1.2rem;
-}
-
-.resume-item {
-  margin-bottom: 1rem;
   position: relative;
+  padding-left: 1.8rem;
+  margin-top: 0.6rem;
 }
 
+.resume-timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-soft),
+    rgba(255, 70, 85, 0.15)
+  );
+}
+
+/* ITEM */
+.resume-item {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+/* DOT */
 .resume-item::before {
   content: "";
   position: absolute;
-  left: -7px;
-  top: 0.25rem;
-  width: 9px;
-  height: 9px;
+  left: -2px;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
-  background: var(--accent-soft);
-  box-shadow: 0 0 8px var(--accent-glow);
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
+/* TEXT */
 .resume-period {
+  display: block;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  margin-bottom: 0.15rem;
 }
 
-.resume-title {
+.resume-item h3 {
+  font-size: 0.95rem;
   font-weight: 600;
+  margin-bottom: 0.1rem;
 }
 
-.resume-detail {
+.resume-place {
   font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+
+/* LISTS */
+.resume-item ul {
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #d4d4e5;
+}
+
+.resume-item ul li + li {
+  margin-top: 0.25rem;
+}
+
+/* GENERIC LISTS */
+.resume-list {
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  color: #d4d4e5;
+}
+
+.resume-skills {
+  font-size: 0.95rem;
+  color: #d4d4e5;
 }
 
 /* =========================================================

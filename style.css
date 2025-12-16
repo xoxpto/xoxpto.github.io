@@ -63,7 +63,6 @@ body {
   line-height: 1.6;
 }
 
-
 a {
   color: inherit;
 }
@@ -154,6 +153,7 @@ a {
   transition: background var(--transition-fast), color var(--transition-fast),
     border-color var(--transition-fast), box-shadow var(--transition-fast),
     transform var(--transition-fast);
+  opacity: 0.85;
 }
 
 .nav-item .nav-icon,
@@ -170,6 +170,7 @@ a {
 .nav-item:hover {
   background: #161623;
   color: var(--text-primary);
+  opacity: 1;
 }
 
 .nav-item.active {
@@ -178,6 +179,14 @@ a {
   box-shadow: 0 0 22px var(--accent-glow);
   color: #f9fafb;
   transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* Divider */
+.nav-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #2a2a3a, transparent);
+  margin: 0.9rem 0;
 }
 
 /* = SIDEBAR FOOTER / SOCIALS ===================================== */
@@ -207,7 +216,8 @@ a {
   cursor: pointer;
   text-decoration: none;
   transition: border-color var(--transition-fast), background var(--transition-fast),
-    box-shadow var(--transition-fast), transform var(--transition-fast), color var(--transition-fast);
+    box-shadow var(--transition-fast), transform var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .theme-toggle .theme-icon,
@@ -250,16 +260,12 @@ body.light .theme-toggle:hover {
   min-height: 100vh;
   padding: 2.4rem 2.3rem;
 
-  background: radial-gradient(
-    circle at top left,
-    #171725 0%,
-    var(--bg-main) 60%
-  );
+  background: radial-gradient(circle at top left, #171725 0%, var(--bg-main) 60%);
 }
 
 .page-section {
   width: 100%;
-  max-width: 1320px; /* ou 1200px */
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -637,7 +643,6 @@ h1 {
 /* =========================================================
    RESUME PAGE
 ========================================================= */
-
 .resume-section {
   margin-bottom: 2.6rem;
 }
@@ -661,11 +666,7 @@ h1 {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    var(--accent-soft),
-    rgba(255, 70, 85, 0.15)
-  );
+  background: linear-gradient(to bottom, var(--accent-soft), rgba(255, 70, 85, 0.15));
 }
 
 /* ================= ITEM ================= */
@@ -889,6 +890,13 @@ body.light .menu-toggle span {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+}
+
 /* =========================================================
    BOTTOM CTA
 ========================================================= */
@@ -904,87 +912,26 @@ body.light .menu-toggle span {
   gap: 0.9rem;
   flex-wrap: wrap;
 }
-/* ================= SIDEBAR NAV IMPROVEMENTS ================= */
-
-.nav-divider {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #2a2a3a,
-    transparent
-  );
-  margin: 0.9rem 0;
-}
-
-.nav-item {
-  opacity: 0.85;
-}
-
-.nav-item:hover {
-  opacity: 1;
-}
-
-.nav-item.active {
-  opacity: 1;
-}
-/* ================= SIDEBAR NAV IMPROVEMENTS ================= */
-
-.nav-divider {
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #2a2a3a,
-    transparent
-  );
-  margin: 0.9rem 0;
-}
-
-.nav-item {
-  opacity: 0.85;
-}
-
-.nav-item:hover {
-  opacity: 1;
-}
-
-.nav-item.active {
-  opacity: 1;
-}
-
-@media (max-width: 560px) {
-  .page-header h1 {
-    font-size: 1.7rem;
-  }
-}
 
 /* =========================================================
    ON-SCROLL REVEAL ANIMATIONS
 ========================================================= */
-
-/* Estado inicial (antes de aparecer) */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   will-change: opacity, transform;
 }
 
-/* Quando entra no viewport */
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Stagger suave (efeito em cascata) */
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
 
-/* Respeitar utilizadores com motion reduzido */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-visible {
@@ -994,3 +941,25 @@ body.light .menu-toggle span {
   }
 }
 
+/* =========================================================
+   LINKS + FOCUS (UX + acessibilidade)
+========================================================= */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+button:focus {
+  outline: none;
+}

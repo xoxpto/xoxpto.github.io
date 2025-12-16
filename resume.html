@@ -2,10 +2,23 @@
 <html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
-  <title>André Abrantes | Currículo</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Currículo — André Abrantes</title>
+
+  <!-- SEO básico -->
+  <meta name="description" content="Currículo de André Abrantes. Formação académica, experiência profissional, competências técnicas e línguas.">
+  <meta name="author" content="André Abrantes">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="pt-PT">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://xoxpto.github.io/resume.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Styles & Scripts -->
   <link rel="stylesheet" href="style.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
   <script defer src="script.js"></script>
@@ -38,6 +51,7 @@
       </p>
 
       <nav class="sidebar-nav">
+
         <a href="index.html#home" class="nav-item">
           <i data-lucide="home" class="nav-icon"></i>
           <span data-i18n="nav.home"></span>
@@ -64,28 +78,34 @@
           <i data-lucide="mail" class="nav-icon"></i>
           <span data-i18n="nav.contact"></span>
         </a>
+
       </nav>
     </div>
 
+    <!-- FOOTER -->
     <div class="sidebar-bottom">
       <div class="sidebar-socials">
-        <button class="theme-toggle" id="theme-toggle">
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <i data-lucide="moon" class="theme-icon"></i>
         </button>
-      
-        <!-- LANGUAGE TOGGLE -->
-        <button class="social-pill" id="lang-toggle">🇬🇧</button>
-      
+
+        <button class="social-pill" id="lang-toggle" aria-label="Toggle language">
+          🇬🇧
+        </button>
+
         <a href="https://github.com/xoxpto" target="_blank" class="social-pill">
           <i data-lucide="github"></i>
         </a>
-      
+
         <a href="https://www.linkedin.com/in/andré-abrantes-04022129b/"
            target="_blank"
            class="social-pill">
           <i data-lucide="linkedin"></i>
         </a>
+
       </div>
+
       <p class="sidebar-footer">© 2025 André Abrantes</p>
     </div>
   </aside>
@@ -120,7 +140,7 @@
         </div>
       </section>
 
-      <!-- EXPERIÊNCIA PROFISSIONAL -->
+      <!-- EXPERIÊNCIA -->
       <section class="resume-section">
         <h2 data-i18n="resume.experience.title"></h2>
 
@@ -152,7 +172,6 @@
       <!-- LÍNGUAS -->
       <section class="resume-section">
         <h2 data-i18n="resume.languages.title"></h2>
-
         <ul class="resume-list">
           <li data-i18n="resume.languages.pt"></li>
           <li data-i18n="resume.languages.en"></li>
@@ -161,10 +180,9 @@
         </ul>
       </section>
 
-      <!-- COMPETÊNCIAS TÉCNICAS -->
+      <!-- COMPETÊNCIAS -->
       <section class="resume-section">
         <h2 data-i18n="resume.skills.title"></h2>
-
         <p class="resume-skills">
           HTML · CSS · JavaScript · C · C++ · C# · Python · Java · PHP · SQL ·
           MySQL · Git · Linux · Excel · PowerPoint · Microsoft Office

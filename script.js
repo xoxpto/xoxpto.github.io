@@ -374,7 +374,16 @@ function initHamburgerMenu() {
 
 /* ================= NAV ATIVA AUTOMÁTICA ================== */
 function initActiveNav() {
-  const current = window.location.pathname.split("/").pop() || "index.html";
+  // Se estamos no index.html, o scroll spy trata disto
+  if (
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname === ""
+  ) {
+    return;
+  }
+
+  const current = window.location.pathname.split("/").pop();
 
   document.querySelectorAll(".nav-item").forEach(item => {
     item.classList.remove("active");

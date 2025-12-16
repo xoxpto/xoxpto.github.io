@@ -86,8 +86,13 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  z-index: 10;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  z-index: 100;
 }
 
 .sidebar-top {
@@ -234,9 +239,10 @@ body.light .theme-toggle:hover {
    MAIN CONTENT
 ========================================================= */
 .main-content {
-  flex: 1;
+  margin-left: 260px;
   background: var(--bg-content);
   padding: 2.4rem 2.3rem;
+  min-height: 100vh;
 }
 
 .page-section {

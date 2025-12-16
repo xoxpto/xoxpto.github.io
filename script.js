@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 /* ================= THEME TOGGLE ================== */
 function initThemeToggle() {
   const body = document.body;
@@ -656,7 +655,7 @@ function setupTags(cloud, results, repos) {
 // =========================================================
 // ON-SCROLL REVEAL ANIMATIONS
 // =========================================================
-document.addEventListener("DOMContentLoaded", () => {
+function initRevealAnimations() {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
@@ -670,7 +669,6 @@ document.addEventListener("DOMContentLoaded", () => {
   revealElements.forEach((el, index) => {
     el.classList.add("reveal");
 
-    // stagger automático (0,1,2 → ciclo)
     const delay = index % 3;
     el.classList.add(`reveal-delay-${delay}`);
   });
@@ -681,7 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!entry.isIntersecting) return;
 
         entry.target.classList.add("reveal-visible");
-        obs.unobserve(entry.target); // anima só uma vez
+        obs.unobserve(entry.target);
       });
     },
     {
@@ -690,5 +688,6 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealElements.forEach(el => observer.observe(el));
-});
+}
+
 

@@ -521,19 +521,32 @@ function classifyRepo(repo) {
 }
 
 function buildTags(repo) {
-  const tags = new Set();
+  const languages = new Set();
+  const topics = new Set();
+
   const name = (repo.name || "").toLowerCase();
   const desc = (repo.description || "").toLowerCase();
 
-  if (repo.language) tags.add(repo.language);
-  if (name.includes("python") || desc.includes("python")) tags.add("Python");
-  if (name.includes("powershell") || desc.includes("powershell")) tags.add("PowerShell");
-  if (name.includes("script")) tags.add("Automation");
-  if (name.includes("js") || name.includes("javascript")) tags.add("JavaScript");
-  if (name.includes("blender")) tags.add("3D");
-  if (name.includes("game")) tags.add("GameDev");
+  // Linguagem principal do GitHub
+  if (repo.language) languages.add(repo.language);
 
-  return Array.from(tags);
+  // Linguagens extra
+  if (name.includes("python") || desc.includes("python")) languages.add("Python");
+  if (name.includes("powershell") || desc.includes("powershell")) languages.add("PowerShell");
+  if (name.includes("js") || name.includes("javascript")) languages.add("JavaScript");
+  if (name.includes("csharp")) languages.add("C#");
+
+  // Tópicos / áreas
+  if (name.includes("script") || desc.includes("automation")) topics.add("Automation");
+  if (name.includes("devops") || desc.includes("pipeline")) topics.add("DevOps");
+  if (name.includes("game")) topics.add("GameDev");
+  if (name.includes("blender") || desc.includes("3d")) topics.add("3D");
+  if (name.includes("cyber") || desc.includes("security")) topics.add("CyberSecurity");
+
+  return {
+    languages: Array.from(languages),
+    topics: Array.from(topics)
+  };
 }
 
 /* --------------- Archive --------------- */
@@ -595,19 +608,71 @@ function setupArchive(container, filters, repos) {
 }
 
 /* --------------- Tags --------------- */
-function setupTags(cloud, results, repos) {
-  const tagMap = new Map();
+function setupTags(languagesCloud, topicsCloud, results, repos) {
+  const languageMap = new Map();
+  const topicMap = new Map();
 
   repos.forEach(r => {
-    r.tags.forEach(t => {
-      if (!tagMap.has(t)) tagMap.set(t, []);
-      tagMap.get(t).push(r);
+    r.tags.languages.forEach(tag => {
+      if (!languageMap.has(tag)) languageMap.set(tag, []);
+      languageMap.get(tag).push(r);
+    });
+
+    r.tags.topics.forEach(tag => {
+      if (!topicMap.has(tag)) topicMap.set(tag, []);
+      topicMap.get(tag).push(r);
     });
   });
 
-  const allTags = Array.from(tagMap.keys()).sort((a, b) =>
+  renderTagCloud(languagesCloud, languageMap, results, "Linguagem");
+  renderTagCloud(topicsCloud, topicMap, results, "Área");
+}
+
+function renderTagCloud(container, tagMap, results, typeLabel) {
+  const tags = Array.from(tagMap.keys()).sort((a, b) =>
     a.localeCompare(b)
   );
+
+  container.innerHTML = tags
+    .map(tag => `<button class="tag-chip" data-tag="${tag}">${tag}</button>`)
+    .join("");
+
+  const chips = container.querySelectorAll(".tag-chip");
+  const linkText = t("generic.githubLink") || "Ver no GitHub →";
+
+  function renderResults(tag) {
+    const list = tagMap.get(tag) || [];
+
+    results.innerHTML = `
+      <p class="muted">Resultados para <strong>${tag}</strong> (${typeLabel})</p>
+    ` + list.map(r => {
+      const repo = r.raw;
+      return `
+        <article class="repo-item">
+          <h3>${repo.name}</h3>
+          <p class="repo-description">${repo.description || "Sem descrição."}</p>
+          <p class="repo-meta">
+            <span class="badge badge-small">${r.area}</span>
+            ${r.tags.languages.map(t => `<span class="chip-mini">${t}</span>`).join("")}
+            ${r.tags.topics.map(t => `<span class="chip-mini">${t}</span>`).join("")}
+          </p>
+          <a href="${repo.html_url}" target="_blank" class="project-link">
+            ${linkText}
+          </a>
+        </article>
+      `;
+    }).join("");
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".tag-chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderResults(chip.dataset.tag);
+    });
+  });
+}
+
 
   cloud.innerHTML = allTags
     .map(tg => `<button class="tag-chip" data-tag="${tg}">${tg}</button>`)

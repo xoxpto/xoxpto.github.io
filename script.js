@@ -140,7 +140,7 @@ const translations = {
     "tags.topics": "Areas & Concepts",
     "tags.results": "Results for",
     "tags.type.language": "Language",
-    "tags.type.area": "Area"
+    "tags.type.area": "Area",
 
     /* RESUME */
     "resume.title": "Resume",
@@ -307,7 +307,7 @@ const translations = {
     "tags.topics": "Áreas & Conceitos",
     "tags.results": "Resultados para",
     "tags.type.language": "Linguagem",
-    "tags.type.area": "Área"
+    "tags.type.area": "Área",
 
     /* RESUME */
     "resume.title": "Currículo",

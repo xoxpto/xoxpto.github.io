@@ -638,6 +638,21 @@ h1 {
   border: 1px solid #303046;
   color: #d4d4e5;
 }
+/* Espaçamento entre secções de tags */
+.tags-section {
+  margin-bottom: 2.2rem;
+}
+
+/* Espaço entre o título e as tags */
+.tags-section h2 {
+  margin-bottom: 0.8rem;
+}
+
+/* Espaço antes dos resultados */
+.tags-results {
+  margin-top: 2.5rem;
+}
+
 
 /* =========================================================
    RESUME PAGE

@@ -661,7 +661,9 @@ function renderTagCloud(container, tagMap, results, typeLabel) {
     const list = tagMap.get(tag) || [];
 
     results.innerHTML = `
-      <p class="muted">Resultados para <strong>${tag}</strong> (${typeLabel})</p>
+      <p class="muted">
+        ${t("tags.results")} <strong>${tag}</strong> (${t(typeLabel)})
+      </p>
     ` + list.map(r => {
       const repo = r.raw;
       return `

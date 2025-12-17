@@ -677,50 +677,6 @@ function renderTagCloud(container, tagMap, results, typeLabel) {
   });
 }
 
-
-  cloud.innerHTML = allTags
-    .map(tg => `<button class="tag-chip" data-tag="${tg}">${tg}</button>`)
-    .join("");
-
-  const chips = cloud.querySelectorAll(".tag-chip");
-
-  const linkText = t("generic.githubLink") || "Ver no GitHub →";
-
-  function renderTag(tag) {
-    const list = tagMap.get(tag) || [];
-    if (!list.length) {
-      results.innerHTML =
-        '<p class="muted">Não há projetos com esta tag.</p>';
-      return;
-    }
-
-    results.innerHTML = list.map(r => {
-      const repo = r.raw;
-      return `
-        <article class="repo-item">
-          <h3>${repo.name}</h3>
-          <p class="repo-description">${repo.description || "Sem descrição."}</p>
-          <p class="repo-meta">
-            <span class="badge badge-small">${r.area}</span>
-            ${r.tags.map(tg => `<span class="chip-mini">${tg}</span>`).join("")}
-          </p>
-          <a href="${repo.html_url}" target="_blank" class="project-link">
-            ${linkText}
-          </a>
-        </article>
-      `;
-    }).join("");
-  }
-
-  chips.forEach(chip => {
-    chip.addEventListener("click", () => {
-      chips.forEach(c => c.classList.remove("active"));
-      chip.classList.add("active");
-      renderTag(chip.dataset.tag);
-    });
-  });
-}
-
 // =========================================================
 // ON-SCROLL REVEAL ANIMATIONS
 // =========================================================

@@ -138,6 +138,9 @@ const translations = {
     "tags.intro": "Browse projects by technology and topic",
     "tags.languages": "Languages & Technologies",
     "tags.topics": "Areas & Concepts",
+    "tags.results": "Results for",
+    "tags.type.language": "Language",
+    "tags.type.area": "Area"
 
     /* RESUME */
     "resume.title": "Resume",
@@ -302,6 +305,9 @@ const translations = {
     "tags.intro": "Explora os projetos por tecnologia e tema.",
     "tags.languages": "Linguagens & Tecnologias",
     "tags.topics": "Áreas & Conceitos",
+    "tags.results": "Resultados para",
+    "tags.type.language": "Linguagem",
+    "tags.type.area": "Área"
 
     /* RESUME */
     "resume.title": "Currículo",

@@ -468,10 +468,14 @@ let __cachedRepos = null; // cache para re-render na troca de língua
 function initGitHubSections() {
   const archiveContainer = document.getElementById("repos-archive");
   const filters = document.querySelectorAll(".filter-btn");
-  const tagsCloud = document.getElementById("tags-cloud");
+
+  // TAGS (nova estrutura)
+  const tagsLanguages = document.getElementById("tags-languages");
+  const tagsTopics = document.getElementById("tags-topics");
   const tagResults = document.getElementById("tag-results");
 
-  if (!archiveContainer && !tagsCloud) return;
+  // se não estamos nem no archive nem nas tags, não faz nada
+  if (!archiveContainer && !tagsLanguages && !tagsTopics) return;
 
   fetch("https://api.github.com/users/xoxpto/repos?per_page=100&sort=updated")
     .then(res => res.json())
@@ -484,11 +488,14 @@ function initGitHubSections() {
 
       __cachedRepos = enriched;
 
+      // ARCHIVE
       if (archiveContainer) {
         setupArchive(archiveContainer, filters, enriched);
       }
-      if (tagsCloud && tagResults) {
-        setupTags(tagsCloud, tagResults, enriched);
+
+      // TAGS (linguagens + áreas)
+      if (tagsLanguages && tagsTopics && tagResults) {
+        setupTags(tagsLanguages, tagsTopics, tagResults, enriched);
       }
     })
     .catch(err => {

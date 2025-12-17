@@ -36,6 +36,7 @@
         <span data-i18n="sidebar.quote.1"></span><br />
         <span data-i18n="sidebar.quote.2"></span>
       </p>
+
       <nav class="sidebar-nav">
 
         <!-- MAIN -->
@@ -43,31 +44,30 @@
           <i data-lucide="home" class="nav-icon"></i>
           <span data-i18n="nav.home"></span>
         </a>
-      
-        <!-- DIVIDER -->
+
         <div class="nav-divider"></div>
-      
+
         <!-- CONTENT -->
         <a href="archives.html" class="nav-item">
           <i data-lucide="archive" class="nav-icon"></i>
           <span data-i18n="nav.archive"></span>
         </a>
-      
-        <a href="tags.html" class="nav-item">
+
+        <a href="tags.html" class="nav-item active">
           <i data-lucide="tags" class="nav-icon"></i>
           <span data-i18n="nav.tags"></span>
         </a>
-      
+
         <a href="resume.html" class="nav-item">
           <i data-lucide="file-text" class="nav-icon"></i>
           <span data-i18n="nav.resume"></span>
         </a>
-      
+
         <a href="contact.html" class="nav-item">
           <i data-lucide="mail" class="nav-icon"></i>
           <span data-i18n="nav.contact"></span>
         </a>
-      
+
       </nav>
     </div>
 
@@ -108,10 +108,21 @@
         <p class="page-intro" data-i18n="tags.intro"></p>
       </header>
 
-      <!-- CLOUD DE TAGS -->
-      <div id="tags-cloud" class="tags-cloud">
-        <!-- preenchido via JS -->
-      </div>
+      <!-- TAGS: LINGUAGENS -->
+      <section class="tags-section">
+        <h2 data-i18n="tags.languages"></h2>
+        <div id="tags-languages" class="tags-cloud">
+          <!-- preenchido via JS -->
+        </div>
+      </section>
+
+      <!-- TAGS: ÁREAS -->
+      <section class="tags-section">
+        <h2 data-i18n="tags.topics"></h2>
+        <div id="tags-topics" class="tags-cloud">
+          <!-- preenchido via JS -->
+        </div>
+      </section>
 
       <!-- RESULTADOS -->
       <div id="tag-results" class="tags-results">
